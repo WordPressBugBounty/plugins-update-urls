@@ -31,7 +31,8 @@ class Promo {
 	 */
 	public function get_valid_promotions() {
 		return [
-            'price_increase_notification'
+            'price_increase_notification',
+            'pre_launch_offer',
 		];
 	}
 
@@ -66,27 +67,21 @@ class Promo {
 	 * @since 1.5.12.2
 	 */
 	public function handle_promotions() {
-		$price_increase_notification = [
-			'title'                         => "<b class='text-red-600 text-xl'>" . __( 'Important Announcement',
-					'update-urls' ) . "</b>",
-			'start_date'                    => '2024-08-20',
-			'end_date'                      => '2024-09-03',
+		$pre_launch_offer = [
+			'title'                         => "<b class='text-red-600 text-xl'>" . __( '🚀 Pre-launch Offer', 'update-urls' ) . "</b>",
+			'start_date'                    => '2024-09-20',
+			'end_date'                      => '2024-10-03',
 			'start_after_installation_days' => 0,
-			'pricing_url'                   => 'https://kaizencoders.com/url-shortify/',
-			'promotion'                     => 'price_increase_notification',
-			'message'                       => __( '<p class="text-xl">Buy an annual/lifetime URL Shortify PRO plan at the old price until <b class="text-red-600 text-xl">September 2, 2024</b></p>',
-				'update-urls' ),
-			'coupon_message'                => sprintf( __( 'Starting September 2, our updated pricing will apply to all our subscription plans... <b><a href="%s" target="_blank">Learn More</a></b>',
-				'update-urls' ),
-				'https://docs.kaizencoders.com/announcements/important-buy-an-annual-lifetime-url-shortify-pro-plan-at-the-old-price-until-september-2-2024?utm_source=plugin&utm_medium=notification&utm_campaign=price_increase_august_2024' ),
-			'show_upgrade'                  => true,
+			'pricing_url'                   => 'https://kaizencoders.com/social-linkz/',
+			'promotion'                     => 'pre_launch_offer',
+			'message'                       => __( '<p class="text-xl">Get <b>Update URLs</b> & <b>Social Linkz</b> (newly launched) PRO for Lifetime at Just $49 until <b class="text-red-600 text-xl">September 30, 2024</b></p>', 'update-urls' ),
+			'coupon_message'                => '',
 			'check_plan'                    => 'free',
 		];
 
-
         // Promotion.
-        if ( Helper::can_show_promotion( $price_increase_notification ) ) {
-            $this->show_promotion( 'price_increase_notification', $price_increase_notification );
+        if ( Helper::can_show_promotion( $pre_launch_offer ) ) {
+            $this->show_promotion( 'pre_launch_offer', $pre_launch_offer );
         }
 	}
 
