@@ -5,18 +5,18 @@
  *
  * Quick and Easy way to search old links and replace them with new links in WordPress
  *
- * @package   UpdateURLS
+ * @link      https://wordpress.org/plugins/update-urls
  * @author    KaizenCoders <hello@kaizencoders.com>
  * @license   GPL-2.0+
- * @link      https://wordpress.org/plugins/update-urls
+ * @package   UpdateURLS
  * @copyright 2023 KaizenCoders
  *
  * @wordpress-plugin
  *
  * Plugin Name:       Update URLs
- * Plugin URI:        https://wordpress.org/plugins/update-urls
+ * Plugin URI:        https://kaizencoders.com/update-urls
  * Description:       Quick and Easy way to search old links and replace them with new links in WordPress
- * Version:           1.2.10
+ * Version:           1.2.11
  * Requires PHP:      5.6
  * Tested up to:      6.6.2
  * Author:            KaizenCoders
@@ -37,7 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! defined( 'KC_UU_PLUGIN_VERSION' ) ) {
-	define( 'KC_UU_PLUGIN_VERSION', '1.2.10' );
+	define( 'KC_UU_PLUGIN_VERSION', '1.2.11' );
 }
 
 if ( function_exists( 'kc_uu_fs' ) ) {
@@ -51,25 +51,27 @@ if ( function_exists( 'kc_uu_fs' ) ) {
 
 			require_once dirname( __FILE__ ) . '/libs/fs/start.php';
 
-			$kc_uu_fs = fs_dynamic_init( array(
-				'id'             => '13148',
-				'slug'           => 'update-urls',
-				'type'           => 'plugin',
-				'public_key'     => 'pk_e7f60f62fb5346a24d64aeb9eea5e',
-				'is_premium'     => false,
-				'has_addons'     => false,
-				'has_paid_plans' => false,
-				'menu'           => array(
+			$kc_uu_fs = fs_dynamic_init( [
+				'id'                  => '13148',
+				'slug'                => 'update-urls',
+				'type'                => 'plugin',
+				'public_key'          => 'pk_e7f60f62fb5346a24d64aeb9eea5e',
+				'is_premium'          => false,
+				'has_premium_version' => true,
+				'has_addons'          => false,
+				'has_paid_plans'      => true,
+				'menu'                => [
 					'slug'       => 'update-urls',
 					'first-path' => 'tools.php?page=update-urls',
-					'parent'     => array(
+					'parent'     => [
 						'slug' => 'tools.php',
-					),
-					'account'    => false,
+					],
+					'account'    => true,
 					'contact'    => true,
 					'support'    => true,
-				),
-			) );
+					'affiliation' => false,
+				],
+			] );
 		}
 
 		return $kc_uu_fs;
@@ -92,7 +94,8 @@ if ( function_exists( 'kc_uu_fs' ) ) {
 		 */
 		function kc_uu_fail_php_version_notice() {
 			/* translators: %s: PHP version */
-			$message      = sprintf( esc_html__( 'Update URLs requires PHP version %s+, plugin is currently NOT RUNNING.', 'update-urls' ), '5.6' );
+			$message      = sprintf( esc_html__( 'Update URLs requires PHP version %s+, plugin is currently NOT RUNNING.',
+				'update-urls' ), '5.6' );
 			$html_message = sprintf( '<div class="error">%s</div>', wpautop( $message ) );
 			echo wp_kses_post( $html_message );
 		}

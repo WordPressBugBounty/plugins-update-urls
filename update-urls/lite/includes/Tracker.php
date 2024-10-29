@@ -276,8 +276,8 @@ class Tracker {
 		$return .= 'Memory Limit:             ' . WP_MEMORY_LIMIT . "\n";
 
 		// Plugin Configuration
-		$return .= "\n" . '-- Better Search Replace Configuration' . "\n\n";
-		$return .= 'Plugin Version:           ' . BSR_VERSION . "\n";
+		$return .= "\n" . '-- Update URLS Configuration' . "\n\n";
+		$return .= 'Plugin Version:           ' . KC_UU_PLUGIN_VERSION. "\n";
 
 		// Server Configuration
 		$return .= "\n" . '-- Server Configuration' . "\n\n";

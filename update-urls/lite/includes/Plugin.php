@@ -212,6 +212,7 @@ class Plugin {
 
 		$classes = array(
 			'KaizenCoders\UpdateURLS\Install',
+			'KaizenCoders\UpdateURLS\Uninstall',
 			'KaizenCoders\UpdateURLS\Feedback',
 			'KaizenCoders\UpdateURLS\Promo',
 		);

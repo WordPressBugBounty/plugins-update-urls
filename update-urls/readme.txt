@@ -5,7 +5,7 @@ Requires at least: 5.0.0
 Author URI: https://www.kaizencoders.com/
 Tested up to: 6.6.2
 Requires PHP: 5.6
-Stable tag: 1.2.10
+Stable tag: 1.2.11
 License: GPL-3.0+
 License URI: http://www.gnu.org/licenses
 
@@ -55,6 +55,10 @@ If you like this plugin then consider checking out our other solutions:
 
 > It’s a simple & neat plugin which helps you to customize your WordPress setup in a very elegant way.
 
+[Logify](https://wordpress.org/plugins/logify/) - Simple & Easy to use activity log plugin for monitor & record system changes
+
+[Magic Link](https://wordpress.org/plugins/magic-link/) - Simple, Easy and Secure one click login for WordPress
+
 == Installation ==
 
 **The easy way..**
@@ -92,12 +96,15 @@ Make sure that the plugin is activated and that you are an administrator level u
 
 == Upgrade Notice ==
 
-**1.2.10**
+**1.2.11**
 
-* Update: WordPress 6.6.2 compatibility check.
-* Update: Improve UI / UX.
+* Fix: Undefined constant error.
 
 == Change Log ==
+
+**1.2.11**
+
+* Fix: Undefined constant error.
 
 **1.2.10**
 
