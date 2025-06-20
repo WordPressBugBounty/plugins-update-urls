@@ -3,9 +3,9 @@ Contributors: kaizencoders, mikeatkaizencoders
 Tags: search replace, migration, update urls, search and replace, change links
 Requires at least: 5.0.0
 Author URI: https://www.kaizencoders.com/
-Tested up to: 6.7.2
+Tested up to: 6.8.1
 Requires PHP: 5.6
-Stable tag: 1.2.12
+Stable tag: 1.2.13
 License: GPL-3.0+
 License URI: http://www.gnu.org/licenses
 
@@ -96,11 +96,15 @@ Make sure that the plugin is activated and that you are an administrator level u
 
 == Upgrade Notice ==
 
-**1.2.12**
+**1.2.13**
 
-* Update: WordPress 6.7.2 compatibility check.
+* Update: WordPress 6.8.1 compatibility check.
 
 == Change Log ==
+
+**1.2.13**
+
+* Update: WordPress 6.8.1 compatibility check.
 
 **1.2.12**
 
