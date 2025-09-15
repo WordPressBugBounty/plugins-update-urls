@@ -193,6 +193,10 @@ class Plugin {
 		return $this->loader;
 	}
 
+	public function get_pricing_url( $billing_cycle = 'annual' ) {
+		return admin_url( 'admin.php?page=update-urls-pricing&billing_cycle=' . $billing_cycle );
+	}
+
 	/**
 	 * Retrieve the version number of the plugin.
 	 *

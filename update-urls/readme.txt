@@ -3,9 +3,9 @@ Contributors: kaizencoders, mikeatkaizencoders
 Tags: search replace, migration, update urls, search and replace, change links
 Requires at least: 5.0.0
 Author URI: https://www.kaizencoders.com/
-Tested up to: 6.8.1
+Tested up to: 6.8.2
 Requires PHP: 5.6
-Stable tag: 1.2.13
+Stable tag: 1.2.14
 License: GPL-3.0+
 License URI: http://www.gnu.org/licenses
 
@@ -96,25 +96,29 @@ Make sure that the plugin is activated and that you are an administrator level u
 
 == Upgrade Notice ==
 
-**1.2.13**
+= 1.2.14 =
 
-* Update: WordPress 6.8.1 compatibility check.
+* Update: WordPress 6.8.2 compatibility check.
 
 == Change Log ==
 
-**1.2.13**
+= 1.2.14 =
+
+* Update: WordPress 6.8.2 compatibility check.
+
+= 1.2.13 =
 
 * Update: WordPress 6.8.1 compatibility check.
 
-**1.2.12**
+= 1.2.12 =
 
 * Update: WordPress 6.7.2 compatibility check.
 
-**1.2.11**
+= 1.2.11 =
 
 * Fix: Undefined constant error.
 
-**1.2.10**
+= 1.2.10 =
 
 * Update: WordPress 6.6.2 compatibility check.
 * Update: Improve UI / UX.
@@ -123,22 +127,22 @@ Make sure that the plugin is activated and that you are an administrator level u
 
 * Fix: UI / UX Improvements.
 
-**1.2.8**
+= 1.2.8 =
 
 * Update: WordPress 6.6.1 compatibility check.
 * Update: Improve UI / UX.
 * Update: .POT file
 
-**1.2.7.1**
+= 1.2.7.1 =
 
 * Update: Small bug fix.
 * Update: WordPress 6.5.2 compatibility check.
 
-**1.2.6**
+= 1.2.6 =
 
 * Fix: Remove unused JS & CSS files.
 
-**1.2.5**
+= 1.2.5 =
 
 * Update: WordPress 6.4.2 compatibility check.
 * Fix: Deprecated: Creation of dynamic property is deprecated issue.
