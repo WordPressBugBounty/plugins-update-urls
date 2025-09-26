@@ -82,15 +82,17 @@ $plugins = [
 
 <div class="bg-gray-200 flex flex-wrap w-full mt-4 mb-7">
     <div class="grid w-full text-center m-5">
-        <h3 class="text-3xl font-bold leading-9 text-gray-700 sm:truncate mb-3 text-center"><?php echo sprintf( 'Other awesome plugins from <a href="%s" target="_blank">KaizenCoders</a>',
-				$kaizencoders_url ); ?></h3>
+        <h3 class="text-3xl font-bold leading-9 text-gray-700 sm:truncate mb-3 text-center"><?php
+            echo sprintf( 'Other awesome plugins from <a href="%s" target="_blank">KaizenCoders</a>',
+                    $kaizencoders_url ); ?></h3>
     </div>
     <div class="grid w-full grid-cols-3">
-		<?php foreach ( $plugins as $plugin ) {
-			if ( $current_plugin == $plugin['slug'] ) {
-				continue;
-			}
-			?>
+        <?php
+        foreach ( $plugins as $plugin ) {
+            if ( $current_plugin == $plugin['slug'] ) {
+                continue;
+            }
+            ?>
             <div class="flex flex-col m-2 mb-4 mr-3 bg-white rounded-lg shadow">
                 <div class="flex h-48">
                     <div class="flex pl-1">
@@ -98,68 +100,178 @@ $plugins = [
                             <div class="flex flex-col w-full h-6">
                                 <div>
                                     <img class="mx-auto my-4 border-0 h-15"
-                                         src="<?php echo esc_url( $plugin['logo'] ); ?>" alt="">
+                                         src="<?php
+                                         echo esc_url( $plugin['logo'] ); ?>" alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="flex w-3/4 pt-2">
                             <div class="flex flex-col">
                                 <div class="flex w-full">
-                                    <a href="<?php echo esc_url( $plugin['plugin_url'] ); ?>" target="_blank"><h3
-                                                class="pb-2 pl-2 mt-2 text-lg font-medium text-indigo-600"><?php echo esc_html( $plugin['title'] ); ?></h3>
+                                    <a href="<?php
+                                    echo esc_url( $plugin['plugin_url'] ); ?>" target="_blank"><h3
+                                                class="pb-2 pl-2 mt-2 text-lg font-medium text-indigo-600"><?php
+                                            echo esc_html( $plugin['title'] ); ?></h3>
                                     </a>
                                 </div>
                                 <div class="flex w-full pl-2 leading-normal xl:pb-4 lg:pb-2 md:pb-2">
-                                    <h4 class="pt-1 pr-4 text-sm text-gray-700"><?php echo esc_html( $plugin['desc'] ); ?></h4>
+                                    <h4 class="pt-1 pr-4 text-sm text-gray-700"><?php
+                                        echo esc_html( $plugin['desc'] ); ?></h4>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="flex flex-row mb-0 border-t">
-                    <div class="flex w-2/3 px-3 py-5 text-sm"><?php echo esc_html__( 'Status', 'update-urls' ); ?>:
-						<?php if ( in_array( $plugin['name'], $active_plugins ) ) { ?>
-                            <span class="font-bold text-green-600">&nbsp;<?php echo esc_html__( 'Active',
-									'update-urls' ); ?></span>
-						<?php } elseif ( in_array( $plugin['name'], $inactive_plugins ) ) { ?>
-                            <span class="font-bold text-red-600">&nbsp;<?php echo esc_html__( 'Inactive',
-									'update-urls' ); ?></span>
-						<?php } else { ?>
-                            <span class="font-bold text-orange-500">&nbsp;<?php echo esc_html__( 'Not Installed',
-									'update-urls' ); ?></span>
-						<?php } ?>
+                    <div class="flex w-2/3 px-3 py-5 text-sm"><?php
+                        echo esc_html__( 'Status', 'update-urls' ); ?>:
+                        <?php
+                        if ( in_array( $plugin['name'], $active_plugins ) ) { ?>
+                            <span class="font-bold text-green-600"><?php
+                                echo esc_html__( 'Active', 'update-urls' ); ?></span>
+                            <?php
+                        } elseif ( in_array( $plugin['name'], $inactive_plugins ) ) { ?>
+                            <span class="font-bold text-red-600">&nbsp;<?php
+                                echo esc_html__( 'Inactive', 'update-urls' ); ?></span>
+                            <?php
+                        } else { ?>
+                            <span class="font-bold text-orange-500">&nbsp;<?php
+                                echo esc_html__( 'Not Installed', 'update-urls' ); ?></span>
+                            <?php
+                        } ?>
                     </div>
+
+                    <!-- Buttons -->
                     <div class="flex justify-center w-1/3 py-3 md:pr-4">
-		  <span class="rounded-md shadow-sm">
-				<?php if ( ! in_array( $plugin['name'], $active_plugins ) ) { ?>
-			  <a href="<?php echo esc_url( $plugin['install_url'] ); ?>" target="_blank">
-					<?php
-					}
-
-					if ( ! in_array( $plugin['name'], $all_plugins ) ) {
-
-					if ( isset( $plugin['is_premium'] ) && true === $plugin['is_premium'] ) { ?>
-                                    <button type="button"
-                                            class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-green-500 border border-transparent rounded-md hover:bg-green-600 focus:outline-none focus:shadow-outline-blue">
-                                        <?php echo esc_html__( 'Buy Now', 'update-urls' ); ?>
-	                                    <?php } else { ?>
-                                    <button type="button"
-                                            class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-orange-400 border border-transparent rounded-md hover:bg-orange-500 focus:outline-none focus:shadow-outline-blue">
-                                        <?php echo esc_html__( 'Install', 'update-urls' ); ?>
-                                        <?php } ?>
-                        </button>
-					<?php } elseif ( in_array( $plugin['name'], $inactive_plugins ) ) { ?>
-                        <button type="button"
-                                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-indigo-500 border border-transparent rounded-md hover:bg-indigo-600 focus:outline-none focus:shadow-outline-blue">
-					<?php echo esc_html__( 'Activate', 'update-urls' ); ?> </button>
-					<?php } ?>
-			  </a>
-			</span>
+                        <div class="plugin-action-container relative">
+                            <span class="rounded-md shadow-sm">
+            <?php
+            if ( ! in_array( $plugin['name'], $all_plugins ) ) : ?>
+                <button type="button"
+                        class="plugin-action-btn inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-green-600 border border-transparent rounded-md hover:bg-green-700 focus:outline-none"
+                        data-action="install"
+                        data-plugin="<?php
+                        echo esc_attr( $plugin['name'] ); ?>"
+                        data-slug="<?php
+                        echo esc_attr( $plugin['slug'] ); ?>">
+                    <?php
+                    echo esc_html__( 'Install', 'update-urls' ); ?>
+                </button>
+            <?php
+            elseif ( in_array( $plugin['name'], $inactive_plugins ) ) : ?>
+                <button type="button"
+                        class="plugin-action-btn inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-700 focus:outline-none"
+                        data-action="activate"
+                        data-plugin="<?php
+                        echo esc_attr( $plugin['name'] ); ?>"
+                        data-slug="<?php
+                        echo esc_attr( $plugin['slug'] ); ?>">
+                    <?php
+                    echo esc_html__( 'Activate', 'update-urls' ); ?>
+                </button>
+            <?php
+            elseif ( in_array( $plugin['name'], $active_plugins ) ) : ?>
+                <button type="button"
+                        class="plugin-action-btn inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-red-600 border border-transparent rounded-md hover:bg-red-700 focus:outline-none"
+                        data-action="deactivate"
+                        data-plugin="<?php
+                        echo esc_attr( $plugin['name'] ); ?>"
+                        data-slug="<?php
+                        echo esc_attr( $plugin['slug'] ); ?>"><?php
+                    echo esc_html__( 'Deactivate', 'update-urls' ); ?>
+                </button>
+            <?php
+            endif; ?>
+        </span>
+                            <div class="spinner-container absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden">
+                                <div class="spinner"></div>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
             </div>
-		<?php } ?>
+            <?php
+        } ?>
 
     </div>
+
+    <script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const buttons = document.querySelectorAll('.plugin-action-btn');
+
+			buttons.forEach(button => {
+				button.addEventListener('click', async function (e) {
+					const button = e.currentTarget;
+					const container = button.closest('.plugin-action-container');
+					const spinnerContainer = container.querySelector('.spinner-container');
+					const action = button.dataset.action;
+					const plugin = button.dataset.plugin;
+					const slug = button.dataset.slug;
+
+					button.classList.add('button-disabled');
+					spinnerContainer.classList.remove('hidden');
+
+					try {
+						const response = await fetch(ajaxurl, {
+							method: 'POST',
+							headers: {
+								'Content-Type': 'application/x-www-form-urlencoded',
+							},
+							body: new URLSearchParams({
+								action: 'update_urls_manage_plugin',
+								nonce: '<?php echo wp_create_nonce( "update-urls-plugin-management" ); ?>',
+								plugin_action: action,
+								plugin: plugin,
+								slug: slug
+							})
+						});
+
+						const data = await response.json();
+
+						if (data.success) {
+							window.location.reload();
+						} else {
+							alert(data.data.message || 'Operation failed');
+						}
+					} catch (error) {
+						alert('An error occurred');
+					} finally {
+						button.classList.remove('button-disabled');
+						spinnerContainer.classList.add('hidden');
+					}
+				});
+			});
+		});
+    </script>
+
+    <style>
+        .plugin-action-container {
+            position: relative;
+        }
+
+        .spinner-container {
+            align-items: center;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #3498db;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
 </div>
 

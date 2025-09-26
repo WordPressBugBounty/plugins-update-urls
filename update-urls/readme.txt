@@ -5,7 +5,7 @@ Requires at least: 5.0.0
 Author URI: https://www.kaizencoders.com/
 Tested up to: 6.8.2
 Requires PHP: 5.6
-Stable tag: 1.2.14
+Stable tag: 1.2.15
 License: GPL-3.0+
 License URI: http://www.gnu.org/licenses
 
@@ -55,26 +55,32 @@ If you like this plugin then consider checking out our other solutions:
 
 > It’s a simple & neat plugin which helps you to customize your WordPress setup in a very elegant way.
 
-[Logify](https://wordpress.org/plugins/logify/) - Simple & Easy to use activity log plugin for monitor & record system changes
+[Logify](https://wordpress.org/plugins/logify/)
 
-[Magic Link](https://wordpress.org/plugins/magic-link/) - Simple, Easy and Secure one click login for WordPress
+> Logify is a comprehensive logging and monitoring plugin for WordPress that helps you keep track of various activities and events on your website. It provides detailed logs of user actions, system events, and errors, allowing you to monitor and troubleshoot your site effectively.
+
+[Magic Link](https://wordpress.org/plugins/magic-link/)
+
+> Magic Link is a passwordless authentication plugin for WordPress that allows users to log in securely via email links. It eliminates the need for traditional passwords, enhancing both security and user convenience.
+
+> With Magic Link, users simply enter their email address, receive a unique login link, and gain instant access to their accounts. This plugin is perfect for improving user experience while maintaining strong security standards.
 
 == Installation ==
 
 **The easy way..**
 
-1. Go to WordPress Dashboard. Locate Plugins -> Add New
+1. Go to WordPress Dashboard. Locate **Plugins -> Add New**
 2. Search **Update Urls** plugin using the search option
-3. Find the plugin and click Install Now button
-4. After installation, click on Activate Plugin link to activate the plugin.
+3. Find the plugin and click **Install Now** button
+4. After installation, click on **Activate** Plugin link to activate the plugin.
 
 **The hard way..**
 
 1. Download the plugin [update-urls.zip](https://downloads.wordpress.org/plugins/update-urls.zip)
-2. Go to WordPress Dashboard. Locate Plugins -> Add New
-3. Click on the Upload Plugin link from the top
+2. Go to WordPress Dashboard. Locate **Plugins -> Add New**
+3. Click on the **Upload Plugin** link from the top
 4. Upload the downloaded **update-urls.zip** file and click on Install Now
-5. After installation, click on Activate Plugin link to activate the plugin.
+5. After installation, click on **Activate** Plugin link to activate the plugin.
 
 = Usage: =
 
@@ -96,11 +102,17 @@ Make sure that the plugin is activated and that you are an administrator level u
 
 == Upgrade Notice ==
 
-= 1.2.14 =
+= 1.2.15 =
 
-* Update: WordPress 6.8.2 compatibility check.
+* Update: UX Improvements
+* Translation: Update .POT file
 
 == Change Log ==
+
+= 1.2.15 =
+
+* Update: UX Improvements
+* Translation: Update .POT file
 
 = 1.2.14 =
 

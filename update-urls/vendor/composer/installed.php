@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'kaizencoders/update-urls',
-        'pretty_version' => '1.2.14',
-        'version' => '1.2.14.0',
-        'reference' => '8991085a9740da383b105d1a473143f1683fad31',
+        'pretty_version' => '1.2.15',
+        'version' => '1.2.15.0',
+        'reference' => '2b19d5de27a14e4c52259c1bb9c6f40455819406',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -20,9 +20,9 @@
             'dev_requirement' => false,
         ),
         'kaizencoders/update-urls' => array(
-            'pretty_version' => '1.2.14',
-            'version' => '1.2.14.0',
-            'reference' => '8991085a9740da383b105d1a473143f1683fad31',
+            'pretty_version' => '1.2.15',
+            'version' => '1.2.15.0',
+            'reference' => '2b19d5de27a14e4c52259c1bb9c6f40455819406',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

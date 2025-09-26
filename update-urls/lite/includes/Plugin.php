@@ -219,6 +219,7 @@ class Plugin {
 			'KaizenCoders\UpdateURLS\Uninstall',
 			'KaizenCoders\UpdateURLS\Feedback',
 			'KaizenCoders\UpdateURLS\Promo',
+			'KaizenCoders\UpdateURLS\Ajax',
 		);
 
 		foreach ( $classes as $class ) {
