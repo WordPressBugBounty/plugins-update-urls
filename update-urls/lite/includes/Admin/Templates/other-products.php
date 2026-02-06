@@ -9,74 +9,7 @@ $all_plugins      = Tracker::get_plugins();
 
 $kaizencoders_url = 'https://kaizencoders.com';
 
-$plugins = [
-	[
-		'title'       => __( 'URL Shortify', 'update-urls' ),
-		'logo'        => 'https://ps.w.org/url-shortify/assets/icon-256x256.png',
-		'desc'        => __( 'Simple, Powerful and Easy URL Shortener Plugin For WordPress', 'update-urls' ),
-		'name'        => 'url-shortify/url-shortify.php',
-		'install_url' => admin_url( 'plugin-install.php?s=url+shortify&tab=search&type=term' ),
-		'plugin_url'  => 'https://wordpress.org/plugins/url-shortify/',
-		'is_premium'  => false,
-		'slug'        => 'url-shortify',
-	],
-	[
-		'title'       => __( 'Social Linkz', 'update-urls' ),
-		'logo'        => 'https://ps.w.org/social-linkz/assets/icon-256x256.png',
-		'desc'        => __( 'Lightweight and fast social media sharing plugin', 'update-urls' ),
-		'name'        => 'social-linkz/social-linkz.php',
-		'install_url' => admin_url( 'plugin-install.php?s=social-likz&tab=search&type=term' ),
-		'plugin_url'  => 'https://wordpress.org/plugins/social-linkz/',
-		'slug'        => 'social-linkz',
-		'is_premium'  => false,
-	],
-	[
-		'title'       => __( 'Update URLs', 'update-urls' ),
-		'logo'        => 'https://ps.w.org/update-urls/assets/icon-256x256.png',
-		'desc'        => __( 'Quick and Easy way to search old links and replace them with new links in WordPress',
-			'update-urls' ),
-		'name'        => 'update-urls/update-urls.php',
-		'install_url' => admin_url( 'plugin-install.php?s=update+urls&tab=search&type=term' ),
-		'plugin_url'  => 'https://wordpress.org/plugins/update-urls/',
-		'is_premium'  => false,
-		'slug'        => 'update-urls',
-	],
-
-	[
-		'title'       => __( 'Logify', 'update-urls' ),
-		'logo'        => 'https://ps.w.org/logify/assets/icon-256x256.png',
-		'desc'        => __( 'Simple and Easy To Use Activity Log Plugin For WordPress',
-			'update-urls' ),
-		'name'        => 'logify/logify.php',
-		'install_url' => admin_url( 'plugin-install.php?s=logify&tab=search&type=term' ),
-		'plugin_url'  => 'https://wordpress.org/plugins/logify/',
-		'is_premium'  => false,
-		'slug'        => 'logify',
-	],
-
-	[
-		'title'       => __( 'Magic Link', 'update-urls' ),
-		'logo'        => 'https://ps.w.org/magic-link/assets/icon-256x256.png',
-		'desc'        => __( 'Simple, Easy and Secure one click login for WordPress.',
-			'update-urls' ),
-		'name'        => 'magic-link/magic-link.php',
-		'install_url' => admin_url( 'plugin-install.php?s=magic-link&tab=search&type=term' ),
-		'plugin_url'  => 'https://wordpress.org/plugins/magic-link/',
-		'is_premium'  => false,
-		'slug'        => 'magic-link',
-	],
-
-	[
-		'title'       => __( 'Utilitify', 'update-urls' ),
-		'logo'        => 'https://ps.w.org/utilitify/assets/icon-256x256.png',
-		'desc'        => __( 'Supercharge Your WordPress Site With Powerpack WordPress Utilities', 'update-urls' ),
-		'name'        => 'utilitify/utilitify.php',
-		'install_url' => admin_url( 'plugin-install.php?s=utilitify&tab=search&type=term' ),
-		'plugin_url'  => 'https://wordpress.org/plugins/utilitify/',
-		'is_premium'  => false,
-		'slug'        => 'utilitify',
-	],
-];
+$plugins = \KaizenCoders\UpdateURLS\Helper::get_kc_plugins_info();
 
 ?>
 
@@ -92,6 +25,7 @@ $plugins = [
             if ( $current_plugin == $plugin['slug'] ) {
                 continue;
             }
+
             ?>
             <div class="flex flex-col m-2 mb-4 mr-3 bg-white rounded-lg shadow">
                 <div class="flex h-48">
@@ -124,19 +58,19 @@ $plugins = [
                 </div>
                 <div class="flex flex-row mb-0 border-t">
                     <div class="flex w-2/3 px-3 py-5 text-sm"><?php
-                        echo esc_html__( 'Status', 'update-urls' ); ?>:
+                        echo esc_html__( 'Status', 'url-shortify' ); ?>:
                         <?php
                         if ( in_array( $plugin['name'], $active_plugins ) ) { ?>
                             <span class="font-bold text-green-600"><?php
-                                echo esc_html__( 'Active', 'update-urls' ); ?></span>
+                                echo esc_html__( 'Active', 'url-shortify' ); ?></span>
                             <?php
                         } elseif ( in_array( $plugin['name'], $inactive_plugins ) ) { ?>
                             <span class="font-bold text-red-600">&nbsp;<?php
-                                echo esc_html__( 'Inactive', 'update-urls' ); ?></span>
+                                echo esc_html__( 'Inactive', 'url-shortify' ); ?></span>
                             <?php
                         } else { ?>
                             <span class="font-bold text-orange-500">&nbsp;<?php
-                                echo esc_html__( 'Not Installed', 'update-urls' ); ?></span>
+                                echo esc_html__( 'Not Installed', 'url-shortify' ); ?></span>
                             <?php
                         } ?>
                     </div>
@@ -155,7 +89,7 @@ $plugins = [
                         data-slug="<?php
                         echo esc_attr( $plugin['slug'] ); ?>">
                     <?php
-                    echo esc_html__( 'Install', 'update-urls' ); ?>
+                    echo esc_html__( 'Install', 'url-shortify' ); ?>
                 </button>
             <?php
             elseif ( in_array( $plugin['name'], $inactive_plugins ) ) : ?>
@@ -167,7 +101,7 @@ $plugins = [
                         data-slug="<?php
                         echo esc_attr( $plugin['slug'] ); ?>">
                     <?php
-                    echo esc_html__( 'Activate', 'update-urls' ); ?>
+                    echo esc_html__( 'Activate', 'url-shortify' ); ?>
                 </button>
             <?php
             elseif ( in_array( $plugin['name'], $active_plugins ) ) : ?>
@@ -178,7 +112,7 @@ $plugins = [
                         echo esc_attr( $plugin['name'] ); ?>"
                         data-slug="<?php
                         echo esc_attr( $plugin['slug'] ); ?>"><?php
-                    echo esc_html__( 'Deactivate', 'update-urls' ); ?>
+                    echo esc_html__( 'Deactivate', 'url-shortify' ); ?>
                 </button>
             <?php
             endif; ?>
@@ -219,8 +153,8 @@ $plugins = [
 								'Content-Type': 'application/x-www-form-urlencoded',
 							},
 							body: new URLSearchParams({
-								action: 'update_urls_manage_plugin',
-								nonce: '<?php echo wp_create_nonce( "update-urls-plugin-management" ); ?>',
+								action: 'url_shortify_manage_plugin',
+								nonce: '<?php echo wp_create_nonce( "url-shortify-plugin-management" ); ?>',
 								plugin_action: action,
 								plugin: plugin,
 								slug: slug
@@ -272,6 +206,5 @@ $plugins = [
             }
         }
     </style>
-
 </div>
 

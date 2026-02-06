@@ -134,10 +134,29 @@ class Admin {
 	 * @since 1.0.0
 	 */
 	public function add_admin_menu() {
-		add_management_page( 'Update URLs', 'Update URLs', 'manage_options', 'update-urls', array(
-			$this,
-			'render_UpdateURLS_page'
-		) );
+		add_menu_page( __( 'Update URLS', 'url-shortify' ), __( 'Update URLS', 'update-urls' ), 'manage_options',
+			'update-urls', [
+				$this,
+				'render_UpdateURLS_page',
+			], 'dashicons-update', 30 );
+
+
+		$hook = add_submenu_page(
+			'update-urls',
+			__( 'Other Products', 'update-urls' ),
+			__( 'Other Products', 'update-urls' ),
+			'manage_options',
+			'update-urls-other-products',
+			[
+				$this,
+				'render_other_products_page',
+			],
+			9
+		);
+	}
+
+	public function render_other_products_page() {
+		include_once KC_UU_ADMIN_TEMPLATES_DIR . '/other-products.php';
 	}
 
 	function render_UpdateURLS_page() {

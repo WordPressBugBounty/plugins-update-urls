@@ -7,9 +7,9 @@ use KaizenCoders\UpdateURLS\Option;
 /**
  * Plugin_Name
  *
- * @package   UpdateURLS
- * @author    KaizenCoders <hello@kaizencoders.com>
  * @link      https://kaizencoders.com
+ * @author    KaizenCoders <hello@kaizencoders.com>
+ * @package   UpdateURLS
  */
 
 /**
@@ -20,7 +20,7 @@ class Helper {
     /**
      * Whether given user is an administrator.
      *
-     * @param \WP_User $user The given user.
+     * @param  \WP_User  $user  The given user.
      *
      * @return bool
      */
@@ -39,7 +39,7 @@ class Helper {
     /**
      * What type of request is this?
      *
-     * @param string $type admin, ajax, cron, cli or frontend.
+     * @param  string  $type  admin, ajax, cron, cli or frontend.
      *
      * @return bool
      * @since 1.2
@@ -230,7 +230,6 @@ class Helper {
      * @since 1.2
      */
     public static function get_ip() {
-
         // Get real visitor IP behind CloudFlare network
         if ( isset( $_SERVER['HTTP_CF_CONNECTING_IP'] ) ) {
             $ip = $_SERVER['HTTP_CF_CONNECTING_IP'];
@@ -256,15 +255,14 @@ class Helper {
     /**
      * Get GMT Offset
      *
-     * @param bool $in_seconds
-     * @param null $timestamp
+     * @param  bool  $in_seconds
+     * @param  null  $timestamp
      *
      * @return float|int
      *
      * @since 1.2
      */
     public static function get_gmt_offset( $in_seconds = false, $timestamp = null ) {
-
         $offset = get_option( 'gmt_offset' );
 
         if ( $offset == '' ) {
@@ -305,24 +303,24 @@ class Helper {
         return array_merge( array_slice( $array, 0, $pos ), $new, array_slice( $array, $pos ) );
     }
 
-	/**
-	 * Insert a value or key/value pair before a specific key in an array.  If key doesn't exist, value is prepended
-	 * to the beginning of the array.
-	 *
-	 * @param array $array
-	 * @param string $key
-	 * @param array $new
-	 *
-	 * @return array
-	 *
-	 * @since 1.2
-	 */
-	public static function array_insert_before( array $array, $key, array $new ) {
-		$keys = array_keys( $array );
-		$pos  = (int) array_search( $key, $keys );
+    /**
+     * Insert a value or key/value pair before a specific key in an array.  If key doesn't exist, value is prepended
+     * to the beginning of the array.
+     *
+     * @param  array   $array
+     * @param  string  $key
+     * @param  array   $new
+     *
+     * @return array
+     *
+     * @since 1.2
+     */
+    public static function array_insert_before( array $array, $key, array $new ) {
+        $keys = array_keys( $array );
+        $pos  = (int) array_search( $key, $keys );
 
-		return array_merge( array_slice( $array, 0, $pos ), $new, array_slice( $array, $pos ) );
-	}
+        return array_merge( array_slice( $array, 0, $pos ), $new, array_slice( $array, $pos ) );
+    }
 
     /**
      * Insert $new in $array after $key
@@ -333,8 +331,7 @@ class Helper {
      *
      * @since 1.2
      */
-    public static function is_forechable( $array = array() ) {
-
+    public static function is_forechable( $array = [] ) {
         if ( ! is_array( $array ) ) {
             return false;
         }
@@ -360,387 +357,475 @@ class Helper {
         return Option::get( 'db_version', null );
     }
 
-	/**
-	 * Get data from array
-	 *
-	 * @param array $array
-	 * @param string $var
-	 * @param string $default
-	 * @param bool $clean
-	 *
-	 * @return array|string
-	 *
-	 * @since 1.2
-	 */
-	public static function get_data( $array = array(), $var = '', $default = '', $clean = false ) {
+    /**
+     * Get data from array
+     *
+     * @param  array   $array
+     * @param  string  $var
+     * @param  string  $default
+     * @param  bool    $clean
+     *
+     * @return array|string
+     *
+     * @since 1.2
+     */
+    public static function get_data( $array = [], $var = '', $default = '', $clean = false ) {
+        if ( empty( $array ) ) {
+            return $default;
+        }
 
-		if ( empty( $array ) ) {
-			return $default;
-		}
+        if ( ! empty( $var ) || ( 0 === $var ) ) {
+            if ( strpos( $var, '|' ) > 0 ) {
+                $vars = array_map( 'trim', explode( '|', $var ) );
+                foreach ( $vars as $var ) {
+                    if ( isset( $array[ $var ] ) ) {
+                        $array = $array[ $var ];
+                    } else {
+                        return $default;
+                    }
+                }
 
-		if ( ! empty( $var ) || ( 0 === $var ) ) {
-			if ( strpos( $var, '|' ) > 0 ) {
-				$vars = array_map('trim', explode( '|', $var ));
-				foreach ( $vars as $var ) {
-					if ( isset( $array[ $var ] ) ) {
-						$array = $array[ $var ];
-					} else {
-						return $default;
-					}
-				}
+                return wp_unslash( $array );
+            } else {
+                $value = isset( $array[ $var ] ) ? wp_unslash( $array[ $var ] ) : $default;
+            }
+        } else {
+            $value = wp_unslash( $array );
+        }
 
-				return wp_unslash( $array );
-			} else {
-				$value = isset( $array[ $var ] ) ? wp_unslash( $array[ $var ] ) : $default;
-			}
-		} else {
-			$value = wp_unslash( $array );
-		}
+        if ( $clean ) {
+            $value = self::clean( $value );
+        }
 
-		if ( $clean ) {
-			$value = self::clean( $value );
-		}
-
-		return $value;
-	}
+        return $value;
+    }
 
 
-	/**
-	 * Get POST | GET data from $_REQUEST
-	 *
-	 * @param string $var
-	 * @param string $default
-	 * @param bool $clean
-	 *
-	 * @return array|string
-	 *
-	 * @since 1.2
-	 */
-	public static function get_request_data( $var = '', $default = '', $clean = true ) {
-		return self::get_data( $_REQUEST, $var, $default, $clean );
-	}
+    /**
+     * Get POST | GET data from $_REQUEST
+     *
+     * @param  string  $var
+     * @param  string  $default
+     * @param  bool    $clean
+     *
+     * @return array|string
+     *
+     * @since 1.2
+     */
+    public static function get_request_data( $var = '', $default = '', $clean = true ) {
+        return self::get_data( $_REQUEST, $var, $default, $clean );
+    }
 
-	/**
-	 * Get POST data from $_POST
-	 *
-	 * @param string $var
-	 * @param string $default
-	 * @param bool $clean
-	 *
-	 * @return array|string
-	 *
-	 * @since 1.2
-	 */
-	public static function get_post_data( $var = '', $default = '', $clean = true ) {
-		return self::get_data( $_POST, $var, $default, $clean );
-	}
+    /**
+     * Get POST data from $_POST
+     *
+     * @param  string  $var
+     * @param  string  $default
+     * @param  bool    $clean
+     *
+     * @return array|string
+     *
+     * @since 1.2
+     */
+    public static function get_post_data( $var = '', $default = '', $clean = true ) {
+        return self::get_data( $_POST, $var, $default, $clean );
+    }
 
-	/**
-	 * Get Current Screen Id
-	 *
-	 * @return string
-	 *
-	 * @since 1.2
-	 */
-	public static function get_current_screen_id() {
+    /**
+     * Get Current Screen Id
+     *
+     * @return string
+     *
+     * @since 1.2
+     */
+    public static function get_current_screen_id() {
+        $current_screen = function_exists( 'get_current_screen' ) ? get_current_screen() : false;
 
-		$current_screen = function_exists( 'get_current_screen' ) ? get_current_screen() : false;
+        if ( ! $current_screen instanceof \WP_Screen ) {
+            return '';
+        }
 
-		if ( ! $current_screen instanceof \WP_Screen ) {
-			return '';
-		}
+        $current_screen = get_current_screen();
 
-		$current_screen = get_current_screen();
+        return ( $current_screen ? $current_screen->id : '' );
+    }
 
-		return ( $current_screen ? $current_screen->id : '' );
-	}
+    /**
+     * Get all Plugin admin screens
+     *
+     * @return array|mixed|void
+     *
+     * @since 1.2
+     */
+    public static function get_plugin_admin_screens() {
+        $prefix = sanitize_title( __( 'Update URLS', 'update-urls' ) );
 
-	/**
-	 * Get all Plugin admin screens
-	 *
-	 * @return array|mixed|void
-	 *
-	 * @since 1.2
-	 */
-	public static function get_plugin_admin_screens() {
+        $screens = [
+                "toplevel_page_update-urls",
+                "{$prefix}_page_update-urls-other-products",
+        ];
 
-		$screens = array(
-			'tools_page_update-urls'
-		);
+        $screens = apply_filters( 'kc_uu_admin_screens', $screens );
 
-		return apply_filters( 'kc_uu_admin_screens', $screens );
-	}
+        return $screens;
+    }
 
-	/**
-	 * Is es admin screen?
-	 *
-	 * @param string $screen_id Admin screen id
-	 *
-	 * @return bool
-	 *
-	 * @since 1.0.0
-	 */
-	public static function is_plugin_admin_screen( $screen_id = '' ) {
+    /**
+     * Is es admin screen?
+     *
+     * @param  string  $screen_id  Admin screen id
+     *
+     * @return bool
+     *
+     * @since 1.0.0
+     */
+    public static function is_plugin_admin_screen( $screen_id = '' ) {
+        $current_screen_id = self::get_current_screen_id();
 
-		$current_screen_id = self::get_current_screen_id();
+        // Check for specific admin screen id if passed.
+        if ( ! empty( $screen_id ) ) {
+            if ( $current_screen_id === $screen_id ) {
+                return true;
+            } else {
+                return false;
+            }
+        }
 
-		// Check for specific admin screen id if passed.
-		if ( ! empty( $screen_id ) ) {
-			if ( $current_screen_id === $screen_id ) {
-				return true;
-			} else {
-				return false;
-			}
-		}
+        $plugin_admin_screens = self::get_plugin_admin_screens();
 
-		$plugin_admin_screens = self::get_plugin_admin_screens();
+        if ( in_array( $current_screen_id, $plugin_admin_screens ) ) {
+            return true;
+        }
 
-		if ( in_array( $current_screen_id, $plugin_admin_screens ) ) {
-			return true;
-		}
+        return false;
+    }
 
-		return false;
-	}
+    /**
+     * Replace into serialised data.
+     *
+     * @param $from
+     * @param $to
+     * @param $data
+     * @param $serialised
+     *
+     * @return array|mixed|object|string|string[]
+     *
+     * @since 1.2
+     */
+    public static function replace_into_serialized_data( $from = '', $to = '', $data = '', $serialised = false ) {
+        try {
+            if ( false !== is_serialized( $data ) ) {
+                $un_serialized = maybe_unserialize( $data );
+                $data          = self::replace_into_serialized_data( $from, $to, $un_serialized, true );
+            } elseif ( is_array( $data ) ) {
+                $_tmp = [];
+                foreach ( $data as $key => $value ) {
+                    $_tmp[ $key ] = self::replace_into_serialized_data( $from, $to, $value, false );
+                }
+                $data = $_tmp;
+                unset( $_tmp );
+            } else {
+                if ( is_string( $data ) ) {
+                    $data = str_replace( $from, $to, $data );
+                }
+            }
+            if ( $serialised ) {
+                return maybe_serialize( $data );
+            }
+        } catch ( Exception $error ) {
+        }
 
-	/**
-	 * Replace into serialised data.
-	 *
-	 * @param $from
-	 * @param $to
-	 * @param $data
-	 * @param $serialised
-	 *
-	 * @return array|mixed|object|string|string[]
-	 *
-	 * @since 1.2
-	 */
-	public static function replace_into_serialized_data( $from = '', $to = '', $data = '', $serialised = false ) {
-		try {
-			if ( false !== is_serialized( $data ) ) {
-				$un_serialized = maybe_unserialize( $data );
-				$data         = self::replace_into_serialized_data( $from, $to, $un_serialized, true );
-			} elseif ( is_array( $data ) ) {
-				$_tmp = array();
-				foreach ( $data as $key => $value ) {
-					$_tmp[ $key ] = self::replace_into_serialized_data( $from, $to, $value, false );
-				}
-				$data = $_tmp;
-				unset( $_tmp );
-			} else {
-				if ( is_string( $data ) ) {
-					$data = str_replace( $from, $to, $data );
-				}
-			}
-			if ( $serialised ) {
-				return maybe_serialize( $data );
-			}
-		} catch ( Exception $error ) {
+        return $data;
+    }
 
-		}
+    /**
+     * Update URLs
+     *
+     * @param $options
+     * @param $oldurl
+     * @param $newurl
+     *
+     * @return array
+     *
+     * @since 1.2
+     */
+    public static function UpdateURLS( $options, $oldurl, $newurl ) {
+        global $wpdb;
 
-		return $data;
-	}
+        $results = [];
+        $queries = [
+                'content'     => [
+                        "UPDATE $wpdb->posts SET post_content = replace(post_content, %s, %s)",
+                        __( 'Content Items (Posts, Pages, Custom Post Types, Revisions)', 'update-urls' ),
+                ],
+                'excerpts'    => [
+                        "UPDATE $wpdb->posts SET post_excerpt = replace(post_excerpt, %s, %s)",
+                        __( 'Excerpts', 'update-urls' ),
+                ],
+                'attachments' => [
+                        "UPDATE $wpdb->posts SET guid = replace(guid, %s, %s) WHERE post_type = 'attachment'",
+                        __( 'Attachments', 'update-urls' ),
+                ],
+                'links'       => [
+                        "UPDATE $wpdb->links SET link_url = replace(link_url, %s, %s)",
+                        __( 'Links', 'update-urls' ),
+                ],
+                'custom'      => [
+                        "UPDATE $wpdb->postmeta SET meta_value = replace(meta_value, %s, %s)",
+                        __( 'Custom Fields', 'update-urls' ),
+                ],
+                'guids'       => [
+                        "UPDATE $wpdb->posts SET guid = replace(guid, %s, %s)",
+                        __( 'GUIDs', 'update-urls' ),
+                ],
+        ];
 
-	/**
-	 * Update URLs
-	 *
-	 * @param $options
-	 * @param $oldurl
-	 * @param $newurl
-	 *
-	 * @return array
-	 *
-	 * @since 1.2
-	 */
-	public static function UpdateURLS( $options, $oldurl, $newurl ) {
-		global $wpdb;
+        foreach ( $options as $option ) {
+            if ( 'custom' === $option ) {
+                $n         = 0;
+                $row_count = $wpdb->get_var( "SELECT COUNT(*) FROM $wpdb->postmeta" );
+                $page_size = 10000;
+                $pages     = ceil( $row_count / $page_size );
 
-		$results = array();
-		$queries = array(
-			'content'     => array(
-				"UPDATE $wpdb->posts SET post_content = replace(post_content, %s, %s)",
-				__( 'Content Items (Posts, Pages, Custom Post Types, Revisions)', 'update-urls' )
-			),
-			'excerpts'    => array(
-				"UPDATE $wpdb->posts SET post_excerpt = replace(post_excerpt, %s, %s)",
-				__( 'Excerpts', 'update-urls' )
-			),
-			'attachments' => array(
-				"UPDATE $wpdb->posts SET guid = replace(guid, %s, %s) WHERE post_type = 'attachment'",
-				__( 'Attachments', 'update-urls' )
-			),
-			'links'       => array(
-				"UPDATE $wpdb->links SET link_url = replace(link_url, %s, %s)",
-				__( 'Links', 'update-urls' )
-			),
-			'custom'      => array(
-				"UPDATE $wpdb->postmeta SET meta_value = replace(meta_value, %s, %s)",
-				__( 'Custom Fields', 'update-urls' )
-			),
-			'guids'       => array(
-				"UPDATE $wpdb->posts SET guid = replace(guid, %s, %s)",
-				__( 'GUIDs', 'update-urls' )
-			),
-		);
+                for ( $page = 0; $page < $pages; $page ++ ) {
+                    $current_row = 0;
+                    $start       = $page * $page_size;
+                    $end         = $start + $page_size;
+                    $pmquery     = "SELECT * FROM $wpdb->postmeta WHERE meta_value <> ''";
+                    $items       = $wpdb->get_results( $pmquery );
+                    foreach ( $items as $item ) {
+                        $value = $item->meta_value;
+                        if ( trim( $value ) == '' ) {
+                            continue;
+                        }
 
-		foreach ( $options as $option ) {
-			if ( 'custom' === $option ) {
-				$n         = 0;
-				$row_count = $wpdb->get_var( "SELECT COUNT(*) FROM $wpdb->postmeta" );
-				$page_size = 10000;
-				$pages     = ceil( $row_count / $page_size );
+                        $edited = self::replace_into_serialized_data( $oldurl, $newurl, $value );
 
-				for ( $page = 0; $page < $pages; $page ++ ) {
-					$current_row = 0;
-					$start       = $page * $page_size;
-					$end         = $start + $page_size;
-					$pmquery     = "SELECT * FROM $wpdb->postmeta WHERE meta_value <> ''";
-					$items       = $wpdb->get_results( $pmquery );
-					foreach ( $items as $item ) {
-						$value = $item->meta_value;
-						if ( trim( $value ) == '' ) {
-							continue;
-						}
+                        if ( $edited != $value ) {
+                            $fix = $wpdb->query( "UPDATE $wpdb->postmeta SET meta_value = '" . $edited . "' WHERE meta_id = " . $item->meta_id );
+                            if ( $fix ) {
+                                $n ++;
+                            }
+                        }
+                    }
+                }
+                $results[ $option ] = [ $n, $queries[ $option ][1] ];
+            } else {
+                $result             = $wpdb->query( $wpdb->prepare( $queries[ $option ][0], $oldurl, $newurl ) );
+                $results[ $option ] = [ $result, $queries[ $option ][1] ];
+            }
+        }
 
-						$edited = self::replace_into_serialized_data( $oldurl, $newurl, $value );
+        return $results;
+    }
 
-						if ( $edited != $value ) {
-							$fix = $wpdb->query( "UPDATE $wpdb->postmeta SET meta_value = '" . $edited . "' WHERE meta_id = " . $item->meta_id );
-							if ( $fix ) {
-								$n ++;
-							}
-						}
-					}
-				}
-				$results[ $option ] = array( $n, $queries[ $option ][1] );
-			} else {
-				$result             = $wpdb->query( $wpdb->prepare( $queries[ $option ][0], $oldurl, $newurl ) );
-				$results[ $option ] = array( $result, $queries[ $option ][1] );
-			}
-		}
+    public static function can_show_promotion( $conditions = [], $force = false ) {
+        if ( ! Helper::is_plugin_admin_screen() ) {
+            return false;
+        }
 
-		return $results;
-	}
+        if ( $force ) {
+            return true;
+        }
 
-	public static function can_show_promotion( $conditions = [], $force = false ) {
+        $conditions = array_merge(
+                [
+                        'check_plan'                    => 'pro',
+                        'meta'                          => [],
+                        'start_after_installation_days' => 2,
+                        'end_before_installation_days'  => 999999,
+                        'total_links'                   => 2,
+                        'start_date'                    => null,
+                        'end_date'                      => null,
+                        'promotion'                     => null,
+                ], $conditions
+        );
 
-		if ( ! Helper::is_plugin_admin_screen() ) {
-			return false;
-		}
+        extract( $conditions );
 
-		if ( $force ) {
-			return true;
-		}
+        // Already seen this promotion?
+        if ( ! is_null( $promotion ) && self::is_promotion_dismissed( $promotion ) ) {
+            return false;
+        }
 
-		$conditions = array_merge(
-			[
-				'check_plan'                    => 'pro',
-				'meta'                          => [],
-				'start_after_installation_days' => 2,
-				'end_before_installation_days'  => 999999,
-				'total_links'                   => 2,
-				'start_date'                    => null,
-				'end_date'                      => null,
-				'promotion'                     => null,
-			], $conditions
-		);
+        $today = Helper::get_current_date_time();
 
-		extract( $conditions );
+        // Don't show if start date is future.
+        if ( ! is_null( $start_date ) && ( $today < $start_date ) ) {
+            return false;
+        }
 
-		// Already seen this promotion?
-		if ( ! is_null( $promotion ) && self::is_promotion_dismissed( $promotion ) ) {
-			return false;
-		}
+        // Don't show if end date is past.
+        if ( ! is_null( $end_date ) && ( $today > $end_date ) ) {
+            return false;
+        }
 
-		$today = Helper::get_current_date_time();
+        $installed_on = Option::get( 'installed_on', 0 );
+        if ( 0 === $installed_on ) {
+            Option::set( 'installed_on', time() );
+        }
 
-		// Don't show if start date is future.
-		if ( ! is_null( $start_date ) && ( $today < $start_date ) ) {
-			return false;
-		}
+        $since_installed = ceil( ( time() - $installed_on ) / 86400 );
 
-		// Don't show if end date is past.
-		if ( ! is_null( $end_date ) && ( $today > $end_date ) ) {
-			return false;
-		}
+        if ( $since_installed >= $start_after_installation_days && $since_installed <= $end_before_installation_days ) {
+            return true;
+        }
 
-		$installed_on = Option::get( 'installed_on', 0 );
-		if ( 0 === $installed_on ) {
-			Option::set( 'installed_on', time() );
-		}
+        return false;
+    }
 
-		$since_installed = ceil( ( time() - $installed_on ) / 86400 );
+    public static function get_upgrade_banner( $query_strings = [], $show_coupon = false, $data = [] ) {
+        $message        = Helper::get_data( $data, 'message', '' );
+        $title          = Helper::get_data( $data, 'title', 'Upgrade Now.' );
+        $coupon_message = Helper::get_data( $data, 'coupon_message', '' );
+        $pricing_url    = Helper::get_data( $data, 'pricing_url', '' );
+        $dismiss_url    = Helper::get_data( $data, 'dismiss_url', '' );
+        $show_upgrade   = Helper::get_data( $data, 'show_upgrade', true );
 
-		if ( $since_installed >= $start_after_installation_days && $since_installed <= $end_before_installation_days ) {
-			return true;
-		}
+        if ( $query_strings ) {
+            $pricing_url = add_query_arg( $query_strings, $pricing_url );
+            $dismiss_url = add_query_arg( $query_strings, $dismiss_url );
+        }
 
-		return false;
-	}
+        ?>
 
-	public static function get_upgrade_banner( $query_strings = [], $show_coupon = false, $data = [] ) {
-		$message        = Helper::get_data( $data, 'message', '' );
-		$title          = Helper::get_data( $data, 'title', 'Upgrade Now.' );
-		$coupon_message = Helper::get_data( $data, 'coupon_message', '' );
-		$pricing_url    = Helper::get_data( $data, 'pricing_url', '' );
-		$dismiss_url    = Helper::get_data( $data, 'dismiss_url', '' );
-		$show_upgrade   = Helper::get_data( $data, 'show_upgrade', true );
-
-		if ( $query_strings ) {
-			$pricing_url = add_query_arg( $query_strings, $pricing_url );
-			$dismiss_url = add_query_arg( $query_strings, $dismiss_url );
-		}
-
-		?>
-
-		<div class="rounded-md bg-green-50 p-4">
-			<div class="flex">
-				<div class="flex-shrink-0">
-					<svg class="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-						<path fill-rule="evenodd"
-						      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-						      clip-rule="evenodd"/>
-					</svg>
-				</div>
-				<div class="ml-3">
-					<h3 class="text-sm font-medium text-green-800"><?php echo $title; ?></h3>
-					<div class="mt-2 text-sm">
+        <div class="rounded-md bg-green-50 p-4">
+            <div class="flex">
+                <div class="flex-shrink-0">
+                    <svg class="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd"
+                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                              clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <div class="ml-3">
+                    <h3 class="text-sm font-medium text-green-800"><?php
+                        echo $title; ?></h3>
+                    <div class="mt-2 text-sm">
                         <span class="text-base">
-                                 <?php echo $message; ?>
+                                 <?php
+                                 echo $message; ?>
 
-	                        <?php if ( $show_coupon ) { ?>
-		                        <br/>
-		                        <?php echo $coupon_message;
-	                        } ?>
+                            <?php
+                            if ( $show_coupon ) { ?>
+                                <br/>
+                                <?php
+                                echo $coupon_message;
+                            } ?>
                         </span>
-					</div>
-					<div class="mt-4">
-						<div class="-mx-2 -my-1.5 flex">
-							<?php if ( $show_upgrade ) { ?>
-								<button type="button"
-								        class="rounded-md border-2 border-green-800 bg-green-50 px-2 py-1.5 text-sm font-medium text-green-800 hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2 focus:ring-offset-green-50">
-									<a href="<?php echo esc_url( $pricing_url ); ?>" class="text-green-800 hover:text-green-800" target="_blank">Upgrade
-										Now</a></button>
-							<?php } ?>
-							<button type="button"
-							        class="ml-3 rounded-md px-2 py-1.5 text-sm font-medium text-red-800 focus:outline-none focus:ring-2">
-								<a href="<?php echo esc_url( $dismiss_url ); ?>" class="text-red-500">Dismiss</a>
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<?php
-	}
+                    </div>
+                    <div class="mt-4">
+                        <div class="-mx-2 -my-1.5 flex">
+                            <?php
+                            if ( $show_upgrade ) { ?>
+                                <button type="button"
+                                        class="rounded-md border-2 border-green-800 bg-green-50 px-2 py-1.5 text-sm font-medium text-green-800 hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2 focus:ring-offset-green-50">
+                                    <a href="<?php
+                                    echo esc_url( $pricing_url ); ?>" class="text-green-800 hover:text-green-800"
+                                       target="_blank">Upgrade
+                                        Now</a></button>
+                                <?php
+                            } ?>
+                            <button type="button"
+                                    class="ml-3 rounded-md px-2 py-1.5 text-sm font-medium text-red-800 focus:outline-none focus:ring-2">
+                                <a href="<?php
+                                echo esc_url( $dismiss_url ); ?>" class="text-red-500">Dismiss</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php
+    }
 
-	public static function is_promotion_dismissed( $promotion ) {
-		if ( empty( $promotion ) ) {
-			return false;
-		}
+    public static function is_promotion_dismissed( $promotion ) {
+        if ( empty( $promotion ) ) {
+            return false;
+        }
 
-		$promotion_dismissed_option = 'kc_uu_' . trim( $promotion ) . '_dismissed';
+        $promotion_dismissed_option = 'kc_uu_' . trim( $promotion ) . '_dismissed';
 
-		return 'yes' === get_option( $promotion_dismissed_option );
-	}
+        return 'yes' === get_option( $promotion_dismissed_option );
+    }
+
+    public static function get_kc_plugins_info( $force = false ) {
+        // Get cached data
+        $plugins_info = get_transient( 'kc_plugins_info' );
+
+        if ( $force || false === $plugins_info ) {
+            // Base plugin data
+            $plugins = [
+                    'url-shortify' => [
+                            'name'         => 'url-shortify/url-shortify.php',
+                            'is_premium'   => true,
+                            'premium_slug' => 'url-shortify-premium/url-shortify.php',
+                            'premium_url'  => 'https://kaizencoders.com/url-shortify',
+                    ],
+
+                    'update-urls' => [
+                            'name'         => 'update-urls/update-urls.php',
+                            'is_premium'   => true,
+                            'premium_slug' => 'update-urls-premium/update-urls.php',
+                            'premium_url'  => 'https://kaizencoders.com/update-urls',
+
+                    ],
+
+                    'logify' => [
+                            'name'       => 'logify/logify.php',
+                            'is_premium' => false,
+                    ],
+
+                    'magic-link' => [
+                            'name'       => 'magic-link/magic-link.php',
+                            'is_premium' => false,
+                    ],
+
+
+                    'social-linkz' => [
+                            'name'       => 'social-linkz/social-linkz.php',
+                            'is_premium' => false,
+                    ],
+
+                    'zapify'    => [
+                            'name'       => 'zapify/zapify.php',
+                            'is_premium' => false,
+                    ],
+                    'utilitify' => [
+                            'name'       => 'utilitify/utilitify.php',
+                            'is_premium' => false,
+                    ],
+            ];
+
+            $plugins_info = [];
+            require_once( ABSPATH . 'wp-admin/includes/plugin-install.php' );
+
+            foreach ( $plugins as $slug => $base_data ) {
+                $api = plugins_api( 'plugin_information', [
+                        'slug'   => $slug,
+                        'fields' => [
+                                'short_description' => true,
+                                'icons'             => true,
+                        ],
+                ] );
+
+                if ( ! is_wp_error( $api ) ) {
+                    $data = [
+                            'title'      => $api->name,
+                            'logo'       => $api->icons['2x'] ?? ( $api->icons['1x'] ?? ( $api->icons['default'] ?? '' ) ),
+                            'desc'       => $api->short_description,
+                            'plugin_url' => "https://wordpress.org/plugins/{$slug}/",
+                            'slug'       => $slug,
+                    ];
+
+                    $plugins_info[ $slug ] = array_merge( $data, $base_data );
+                }
+            }
+
+            // Cache for 30 days
+            set_transient( 'kc_plugins_info', $plugins_info, 7 * DAY_IN_SECONDS );
+        }
+
+        return $plugins_info;
+    }
 }

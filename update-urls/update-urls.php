@@ -16,9 +16,9 @@
  * Plugin Name:       Update URLs
  * Plugin URI:        https://kaizencoders.com/update-urls
  * Description:       Quick and Easy way to search old links and replace them with new links in WordPress
- * Version:           1.2.15
+ * Version:           1.3.0
  * Requires PHP:      5.6
- * Tested up to:      6.8.2
+ * Tested up to:      6.8
  * Author:            KaizenCoders
  * Author URI:        https://kaizencoders.com
  * Text Domain:       update-urls
@@ -37,7 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! defined( 'KC_UU_PLUGIN_VERSION' ) ) {
-	define( 'KC_UU_PLUGIN_VERSION', '1.2.15' );
+	define( 'KC_UU_PLUGIN_VERSION', '1.3.0' );
 }
 
 if ( function_exists( 'kc_uu_fs' ) ) {
@@ -62,9 +62,9 @@ if ( function_exists( 'kc_uu_fs' ) ) {
 				'has_paid_plans'      => true,
 				'menu'                => [
 					'slug'       => 'update-urls',
-					'first-path' => 'tools.php?page=update-urls',
+					'first-path'  => 'admin.php?page=update-urls',
 					'parent'     => [
-						'slug' => 'tools.php',
+						'slug' => 'update-urls',
 					],
 					'account'    => true,
 					'contact'    => true,
