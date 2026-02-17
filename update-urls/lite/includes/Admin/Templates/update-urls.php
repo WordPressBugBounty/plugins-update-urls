@@ -2,14 +2,20 @@
 
 $nav_menus['search'] = [
         'title' => __( 'Search / Replace', 'update-urls' ),
-        'link'  => add_query_arg( [ 'tab' => 'search' ], admin_url( 'tools.php?page=update-urls' ) ),
+        'link'  => add_query_arg( [ 'tab' => 'search' ], admin_url( 'admin.php?page=update-urls' ) ),
 ];
+
+/**
+ * Filter admin tabs for PRO extensions.
+ *
+ * @param array $nav_menus The navigation menu tabs.
+ */
+$nav_menus = apply_filters( 'kc_uu_admin_tabs', $nav_menus );
 
 $nav_menus['help'] = [
         'title' => __( 'Help', 'update-urls' ),
-        'link'  => add_query_arg( [ 'tab' => 'help' ], admin_url( 'tools.php?page=update-urls' ) ),
+        'link'  => add_query_arg( [ 'tab' => 'help' ], admin_url( 'admin.php?page=update-urls' ) ),
 ];
-
 
 $tab = ! empty( $_GET['tab'] ) ? \KaizenCoders\UpdateURLS\Helper::clean( $_GET['tab'] ) : 'search';
 
@@ -18,7 +24,7 @@ $tab = ! empty( $_GET['tab'] ) ? \KaizenCoders\UpdateURLS\Helper::clean( $_GET['
 
 <div class="wrap">
 
-    <h2>Update URLs</h2>
+    <h2><?php esc_html_e('Search & Replace', 'update-urls'); ?></h2>
 
     <h2 class="nav-tab-wrapper">
         <?php
@@ -37,10 +43,33 @@ $tab = ! empty( $_GET['tab'] ) ? \KaizenCoders\UpdateURLS\Helper::clean( $_GET['
 
     <div class="bg-white">
         <?php
+        /**
+         * Hook before tab content for PRO to render results.
+         *
+         * @param string $tab The current active tab.
+         */
+        do_action( 'kc_uu_before_tab_content', $tab );
+
         if ( 'search' === $tab ) {
-            include_once KC_UU_ADMIN_TEMPLATES_DIR . '/search-replace.php';
+            $template = KC_UU_ADMIN_TEMPLATES_DIR . '/search-replace.php';
+
+            /**
+             * Filter the search/replace template path for PRO override.
+             *
+             * @param string $template The template file path.
+             */
+            $template = apply_filters( 'kc_uu_search_replace_template', $template );
+
+            include_once $template;
         } elseif ( 'help' === $tab ) {
             include_once KC_UU_ADMIN_TEMPLATES_DIR . '/help.php';
+        } else {
+            /**
+             * Allow PRO to render custom tab content.
+             *
+             * @param string $tab The current active tab.
+             */
+            do_action( 'kc_uu_render_tab_content', $tab );
         }
         ?>
     </div>

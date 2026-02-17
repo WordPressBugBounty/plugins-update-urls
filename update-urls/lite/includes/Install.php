@@ -17,6 +17,11 @@ class Install {
 			'kc_uu_update_123_add_installed_on_option',
 		),
 
+		'1.5.0' => array(
+			'kc_uu_update_150_create_custom_tables',
+			'kc_uu_update_150_migrate_data',
+		),
+
 	);
 
 	/**
@@ -100,6 +105,9 @@ class Install {
 			Cache::set_transient( 'installing', 'yes', MINUTE_IN_SECONDS * 10 );
 
 			Helper::maybe_define_constant( 'KC_UU_INSTALLING', true );
+
+			// Create Tables
+			self::create_tables();
 
 			// Create Default Option
 			self::create_options();
@@ -445,6 +453,53 @@ class Install {
 	private static function get_schema( $collate = '' ) {
 
 		$tables = self::get_100_schema( $collate );
+
+		return $tables;
+	}
+
+	/**
+	 * Get 1.0.0 schema.
+	 *
+	 * @param string $collate
+	 *
+	 * @return string
+	 *
+	 * @since 1.5.0
+	 */
+	private static function get_100_schema( $collate = '' ) {
+
+		global $wpdb;
+
+		$tables = "
+CREATE TABLE {$wpdb->prefix}kc_uu_history (
+  id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  entry_id VARCHAR(50) NOT NULL,
+  date DATETIME NOT NULL,
+  search_for TEXT NOT NULL,
+  replace_with TEXT NOT NULL,
+  tables TEXT NOT NULL,
+  case_insensitive TINYINT(1) NOT NULL DEFAULT 0,
+  replace_guids TINYINT(1) NOT NULL DEFAULT 0,
+  total_changes INT UNSIGNED NOT NULL DEFAULT 0,
+  total_updates INT UNSIGNED NOT NULL DEFAULT 0,
+  undone TINYINT(1) NOT NULL DEFAULT 0,
+  details LONGTEXT,
+  PRIMARY KEY (id),
+  UNIQUE KEY entry_id (entry_id),
+  KEY date (date)
+) $collate;
+CREATE TABLE {$wpdb->prefix}kc_uu_profiles (
+  id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  search_for TEXT NOT NULL,
+  replace_with TEXT NOT NULL,
+  select_tables TEXT NOT NULL,
+  case_insensitive VARCHAR(5) NOT NULL DEFAULT 'off',
+  replace_guids VARCHAR(5) NOT NULL DEFAULT 'off',
+  PRIMARY KEY (id),
+  UNIQUE KEY name (name)
+) $collate;
+";
 
 		return $tables;
 	}

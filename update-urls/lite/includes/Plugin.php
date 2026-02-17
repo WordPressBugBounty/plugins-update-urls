@@ -92,6 +92,14 @@ class Plugin {
 	}
 
 	public function is_pro() {
+		if ( defined( 'KC_UU_DEV_MODE' ) && KC_UU_DEV_MODE ) {
+			return true;
+		}
+
+		if ( function_exists( 'kc_uu_fs' ) ) {
+			return kc_uu_fs()->can_use_premium_code();
+		}
+
 		return false;
 	}
 
@@ -221,6 +229,10 @@ class Plugin {
 			'KaizenCoders\UpdateURLS\Promo',
 			'KaizenCoders\UpdateURLS\Ajax',
 		);
+
+		if ( $this->is_pro() ) {
+			$classes[] = 'KaizenCoders\UpdateURLS\PRO\Pro';
+		}
 
 		foreach ( $classes as $class ) {
 			$this->loader->add_class( $class );

@@ -7,27 +7,27 @@ namespace Composer\Autoload;
 class ComposerStaticInit213d4bd6c88328df21ce7e36c78e5f76
 {
     public static $prefixLengthsPsr4 = array (
-        'K' => 
+        'K' =>
         array (
             'KaizenCoders\\UpdateURLS\\PRO\\' => 28,
             'KaizenCoders\\UpdateURLS\\' => 24,
         ),
-        'C' => 
+        'C' =>
         array (
             'Composer\\Installers\\' => 20,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'KaizenCoders\\UpdateURLS\\PRO\\' => 
+        'KaizenCoders\\UpdateURLS\\PRO\\' =>
         array (
             0 => __DIR__ . '/../..' . '/pro/includes',
         ),
-        'KaizenCoders\\UpdateURLS\\' => 
+        'KaizenCoders\\UpdateURLS\\' =>
         array (
             0 => __DIR__ . '/../..' . '/lite/includes',
         ),
-        'Composer\\Installers\\' => 
+        'Composer\\Installers\\' =>
         array (
             0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
         ),

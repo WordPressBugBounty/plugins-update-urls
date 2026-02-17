@@ -20,7 +20,11 @@ class Uninstall {
 	 * @since 1.4.9
 	 */
 	public function uninstall_cleanup() {
+		global $wpdb;
 
+		// Drop custom tables.
+		$wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}kc_uu_history" );
+		$wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}kc_uu_profiles" );
 	}
 
 }

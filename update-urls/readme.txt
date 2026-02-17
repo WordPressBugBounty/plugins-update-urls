@@ -1,15 +1,15 @@
-=== Update URLs - Quick and Easy way to search old links and replace them with new links in WordPress ===
+=== Search & Replace Everything - Quick and Easy Way to Find and Replace Text, Links ===
 Contributors: kaizencoders, mikeatkaizencoders
 Tags: search replace, migration, update urls, search and replace, change links
 Requires at least: 5.0.0
 Author URI: https://www.kaizencoders.com/
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 5.6
-Stable tag: 1.3.0
+Stable tag: 1.4.0
 License: GPL-3.0+
 License URI: http://www.gnu.org/licenses
 
-Quick and Easy way to search all urls, content and replace them with new links and content in WordPress website.
+Quick and Easy way to search all URLS, Content and replace them with new links and content in WordPress website.
 
 == Description ==
 
@@ -23,17 +23,39 @@ If you move your WordPress website to a new domain name, you will find that inte
 
 === Features ===
 
-*   Users can choose to update links embedded in content, excerpts, or custom fields
-*   Users can choose whether to update links for attachments
-*   View how many items were updated
+* 👉 Users can choose to update links embedded in content, excerpts, or custom fields
+* 👉 Users can choose whether to update links for attachments
+* 👉 View how many items were updated
 
-=== Time-saving features available in the Pro version ===
+=== 🚀 Time-Saving Features in Update URLs PRO ===
 
-* View exactly what changed during a search/replace
-* Backup and import the database while running a search/replace
-* Priority email support from the developer of the plugin
-* Save or load custom profiles for quickly repeating a search/replace in the future
-* Premium Support and updates for 1 year
+Upgrade to PRO and unlock powerful tools designed to give you complete control, safety, and efficiency while performing database search & replace operations.
+
+> 👉 **Select Specific Tables for Search/Replace**
+> Choose exactly which WordPress database tables you want to update. No unnecessary changes — only modify what truly matters.
+
+> 👉 **Perform a Safe Dry Run**
+> Preview the changes before applying them. The Dry Run feature shows exactly what will be updated, helping you avoid costly mistakes.
+
+> 👉 **Choose Which Results to Apply**
+> After running a Dry Run, you can either apply all changes or selectively execute specific search/replace results. Full precision. Full control.
+
+> 👉 **One-Click Database Export & Import**
+> Always backup before making database changes — and now you can do it instantly. PRO includes a built-in one-click database backup and restore feature, so you’re always protected.
+
+> 👉 **Complete Search/Replace History**
+> Keep track of every operation performed. View detailed history logs to monitor changes and maintain accountability.
+
+> 👉 **One-Click Undo (Rollback)**
+> Made a mistake? No problem. Instantly undo or roll back a search/replace operation with a single click.
+
+> 👉 **Save & Load Custom Profiles**
+> Frequently repeat the same search/replace tasks? Save custom profiles and reload them anytime to streamline recurring workflows.
+
+> 👉 **Priority Email Support and updates**
+> Your success matters to us. PRO users receive priority support and ongoing updates to ensure a smooth and reliable experience.
+
+**Update URLs PRO** is built for developers, agencies, and site owners who want speed, safety, and total confidence while managing their WordPress database.
 
 **Spread The Love ❤️**
 
@@ -70,7 +92,7 @@ If you like this plugin then consider checking out our other solutions:
 **The easy way..**
 
 1. Go to WordPress Dashboard. Locate **Plugins -> Add New**
-2. Search **Update Urls** plugin using the search option
+2. Search **Update URLS** plugin using the search option
 3. Find the plugin and click **Install Now** button
 4. After installation, click on **Activate** Plugin link to activate the plugin.
 
@@ -84,11 +106,11 @@ If you like this plugin then consider checking out our other solutions:
 
 = Usage: =
 
-Using this plugin is very simple. Once it has been activated, navigate to Tools -> Update URLs and follow the instructions. Please Note: Changes are irreversible. If you haven't used this plugin before, please backup your website before proceeding.
+Using this plugin is very simple. Once it has been activated, navigate to **Update URLS** and follow the instructions. Please Note: Changes are irreversible. If you haven't used this plugin before, please backup your website before proceeding.
 
 == Frequently Asked Questions ==
 
-= Why are my urls not updated? =
+= Why are my URLS not updated? =
 
 URLs are only replaced when an exact match is found. Be sure that you have entered the correct url and hit submit. (Note: Matching is case-sensitive.)
 
@@ -99,15 +121,38 @@ Make sure that the plugin is activated and that you are an administrator level u
 == Screenshots ==
 
 1. The Admin screen for the plugin.
+2. Select table to search/replace. **[PRO]**
+3. Additional Settings - Dry Run. **[PRO]**
+4. Setting. **[PRO]**
+5. Search & Replace History. **[PRO]**
+6. Details Of Specific Search/Replace. **[PRO]**
+7. One-Click Database Backup/Import. **[PRO]**
 
 == Upgrade Notice ==
 
-= 1.3.0 =
+= 1.4.0 =
 
-* Update: UX Improvements
+* New: Added support to select tables to do search/replace. **PRO**
+* New: Added support to do dry run before actually perform search/replace. **PRO**
+* New: Added support to select which search/replace to perform after doing dry-run. **PRO**
+* New: Added support to do one-click database Export/Import. **PRO**
+* New: Added support to store a complete history of performed search/replace. **PRO**
+* New: Added support to do one-click undo of performed search/replace.
+* Update: WordPress 6.9.1 compatibility check.
 * Translation: Update .POT file
 
 == Change Log ==
+
+= 1.4.0 =
+
+* New: Added support to select tables to do search/replace. **PRO**
+* New: Added support to do dry run before actually perform search/replace. **PRO**
+* New: Added support to select which search/replace to perform after doing dry-run. **PRO**
+* New: Added support to do one-click database Export/Import. **PRO**
+* New: Added support to store a complete history of performed search/replace. **PRO**
+* New: Added support to do one-click undo of performed search/replace.
+* Update: WordPress 6.9.1 compatibility check.
+* Translation: Update .POT file
 
 = 1.3.0 =
 

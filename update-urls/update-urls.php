@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Update URLs
+ * Search & Replace
  *
- * Quick and Easy way to search old links and replace them with new links in WordPress
+ * Search & Replace Everything - Quick and Easy Way to Find and Replace Text, Links
  *
  * @link      https://wordpress.org/plugins/update-urls
  * @author    KaizenCoders <hello@kaizencoders.com>
@@ -15,10 +15,10 @@
  *
  * Plugin Name:       Update URLs
  * Plugin URI:        https://kaizencoders.com/update-urls
- * Description:       Quick and Easy way to search old links and replace them with new links in WordPress
- * Version:           1.3.0
+ * Description:       Search & Replace Everything - Quick and Easy Way to Find and Replace Text, Links
+ * Version:           1.4.0
  * Requires PHP:      5.6
- * Tested up to:      6.8
+ * Tested up to:      6.9
  * Author:            KaizenCoders
  * Author URI:        https://kaizencoders.com
  * Text Domain:       update-urls
@@ -37,7 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! defined( 'KC_UU_PLUGIN_VERSION' ) ) {
-	define( 'KC_UU_PLUGIN_VERSION', '1.3.0' );
+	define( 'KC_UU_PLUGIN_VERSION', '1.4.0' );
 }
 
 if ( function_exists( 'kc_uu_fs' ) ) {
@@ -131,6 +131,10 @@ if ( function_exists( 'kc_uu_fs' ) ) {
 
 	if ( ! defined( 'KC_UU_PLUGIN_ASSETS_DIR_URL' ) ) {
 		define( 'KC_UU_PLUGIN_ASSETS_DIR_URL', KC_UU_PLUGIN_URL . 'lite/dist/assets' );
+	}
+
+	if ( ! defined( 'KC_UU_PRO_DIR' ) ) {
+		define( 'KC_UU_PRO_DIR', KC_UU_PLUGIN_DIR . 'pro/' );
 	}
 
 	/**
