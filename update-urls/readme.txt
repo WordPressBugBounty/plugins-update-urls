@@ -5,7 +5,7 @@ Requires at least: 5.0.0
 Author URI: https://www.kaizencoders.com/
 Tested up to: 6.9
 Requires PHP: 5.6
-Stable tag: 1.4.0
+Stable tag: 1.4.1
 License: GPL-3.0+
 License URI: http://www.gnu.org/licenses
 
@@ -55,7 +55,7 @@ Upgrade to PRO and unlock powerful tools designed to give you complete control, 
 > 👉 **Priority Email Support and updates**
 > Your success matters to us. PRO users receive priority support and ongoing updates to ensure a smooth and reliable experience.
 
-**Update URLs PRO** is built for developers, agencies, and site owners who want speed, safety, and total confidence while managing their WordPress database.
+[Update URLs PRO](https://kaizencoders.com/update-urls) is built for developers, agencies, and site owners who want speed, safety, and total confidence while managing their WordPress database.
 
 **Spread The Love ❤️**
 
@@ -130,18 +130,17 @@ Make sure that the plugin is activated and that you are an administrator level u
 
 == Upgrade Notice ==
 
-= 1.4.0 =
+= 1.4.1 =
 
-* New: Added support to select tables to do search/replace. **PRO**
-* New: Added support to do dry run before actually perform search/replace. **PRO**
-* New: Added support to select which search/replace to perform after doing dry-run. **PRO**
-* New: Added support to do one-click database Export/Import. **PRO**
-* New: Added support to store a complete history of performed search/replace. **PRO**
-* New: Added support to do one-click undo of performed search/replace.
-* Update: WordPress 6.9.1 compatibility check.
+* Update: UI Enhancements.
 * Translation: Update .POT file
 
 == Change Log ==
+
+= 1.4.1 =
+
+* Update: UI Enhancements.
+* Translation: Update .POT file
 
 = 1.4.0 =
 

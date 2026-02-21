@@ -12,45 +12,45 @@ namespace KaizenCoders\UpdateURLS;
  *
  */
 class Promo {
-	/**
-	 * Initialize Promotions
-	 *
-	 * @since 1.8.0
-	 */
-	public function init() {
-		add_action( 'admin_init', [ $this, 'dismiss_promotions' ] );
-		add_action( 'admin_notices', [ $this, 'handle_promotions' ] );
-	}
+    /**
+     * Initialize Promotions
+     *
+     * @since 1.8.0
+     */
+    public function init() {
+        add_action( 'admin_init', [ $this, 'dismiss_promotions' ] );
+        add_action( 'admin_notices', [ $this, 'handle_promotions' ] );
+    }
 
-	/**
-	 * Get Valid Promotions.
-	 *
-	 * @since 1.5.12.2
-	 * @return string[]
-	 *
-	 */
+    /**
+     * Get Valid Promotions.
+     *
+     * @return string[]
+     *
+     * @since 1.5.12.2
+     */
     public function get_valid_promotions() {
         return [
                 'price_increase_notification',
                 'magic_link_launch_offer',
                 'pre_launch_offer',
+                'major_upgrade_pro',
         ];
     }
 
-	/**
-	 * Dismiss Promotions.
-	 *
-	 * @since 1.5.12.2
-	 */
-	public function dismiss_promotions() {
-		if ( isset( $_GET['kc_uu_dismiss_admin_notice'] ) && $_GET['kc_uu_dismiss_admin_notice'] == '1' && isset( $_GET['option_name'] ) ) {
-			$option_name = sanitize_text_field( $_GET['option_name'] );
+    /**
+     * Dismiss Promotions.
+     *
+     * @since 1.5.12.2
+     */
+    public function dismiss_promotions() {
+        if ( isset( $_GET['kc_uu_dismiss_admin_notice'] ) && $_GET['kc_uu_dismiss_admin_notice'] == '1' && isset( $_GET['option_name'] ) ) {
+            $option_name = sanitize_text_field( $_GET['option_name'] );
 
-			$valid_options = $this->get_valid_promotions();
+            $valid_options = $this->get_valid_promotions();
 
-			if ( in_array( $option_name, $valid_options ) ) {
-
-				update_option( 'kc_uu_' . $option_name . '_dismissed', 'yes', false );
+            if ( in_array( $option_name, $valid_options ) ) {
+                update_option( 'kc_uu_' . $option_name . '_dismissed', 'yes', false );
 
                 if ( in_array( $option_name, $valid_options ) ) {
                     if ( isset( $_GET['redirect_to'] ) && ! empty( $_GET['redirect_to'] ) ) {
@@ -62,17 +62,29 @@ class Promo {
                     }
                 }
 
-				exit();
-			}
-		}
-	}
+                exit();
+            }
+        }
+    }
 
-	/**
-	 * Handle promotions activity.
-	 *
-	 * @since 1.5.12.2
-	 */
-	public function handle_promotions() {
+    /**
+     * Handle promotions activity.
+     *
+     * @since 1.5.12.2
+     */
+    public function handle_promotions() {
+        $major_upgrade = [
+                'title'                         => "<b class='text-red-600 text-xl'>" . __( 'Major Upgrade', 'update-urls' ) . "</b>",
+                'start_date'                    => '2026-02-20',
+                'end_date'                      => '2026-03-05',
+                'start_after_installation_days' => 0,
+                'pricing_url'                   => 'https://kaizencoders.com/update-urls/',
+                'promotion'                     => 'major_upgrade_pro',
+                'message'                       => __( '<p class="text-xl">Get Dry-Run, One Click Export/Import Database, History and much more at flat 50% OFF unitll <b class="text-red-600 text-xl">February 28, 2026</b></p>', 'update-urls' ),
+                'coupon_message'                => '<p class="text-xl">Use Coupon Code - <b class="text-red-600">SPECIAL50</b></p>',
+                'check_plan'                    => 'free',
+        ];
+
         $magic_link_launch_offer = [
                 'title'                         => "<b class='text-red-600 text-xl'>" . __( 'WordPress Plugin Launch Offer - Magic Link PRO', 'update-urls' ) . "</b>",
                 'start_date'                    => '2025-09-10',
@@ -87,89 +99,92 @@ class Promo {
                 'show_plan'                     => 'free',
                 'dismiss_url'                   => add_query_arg( 'pricing', 'true', 'https://kaizencoders.com/magic-link' ),
                 'banner'                        => false,
-                'redirect_to'                  => 'https://kaizencoders.com/magic-link',
+                'redirect_to'                   => 'https://kaizencoders.com/magic-link',
         ];
 
-		$pre_launch_offer = [
-			'title'                         => "<b class='text-red-600 text-xl'>" . __( '🚀 Pre-launch Offer', 'update-urls' ) . "</b>",
-			'start_date'                    => '2024-09-20',
-			'end_date'                      => '2024-10-03',
-			'start_after_installation_days' => 0,
-			'pricing_url'                   => 'https://kaizencoders.com/social-linkz/',
-			'promotion'                     => 'pre_launch_offer',
-			'message'                       => __( '<p class="text-xl">Get <b>Update URLs</b> & <b>Social Linkz</b> (newly launched) PRO for Lifetime at Just $49 until <b class="text-red-600 text-xl">September 30, 2024</b></p>', 'update-urls' ),
-			'coupon_message'                => '',
-			'check_plan'                    => 'free',
-		];
+        $pre_launch_offer = [
+                'title'                         => "<b class='text-red-600 text-xl'>" . __( '🚀 Pre-launch Offer', 'update-urls' ) . "</b>",
+                'start_date'                    => '2024-09-20',
+                'end_date'                      => '2024-10-03',
+                'start_after_installation_days' => 0,
+                'pricing_url'                   => 'https://kaizencoders.com/social-linkz/',
+                'promotion'                     => 'pre_launch_offer',
+                'message'                       => __( '<p class="text-xl">Get <b>Update URLs</b> & <b>Social Linkz</b> (newly launched) PRO for Lifetime at Just $49 until <b class="text-red-600 text-xl">September 30, 2024</b></p>', 'update-urls' ),
+                'coupon_message'                => '',
+                'check_plan'                    => 'free',
+        ];
 
         // Promotion.
-        if ( Helper::can_show_promotion( $magic_link_launch_offer )) {
+        if ( Helper::can_show_promotion( $major_upgrade ) ) {
+            $this->show_promotion( 'major_upgrade_pro', $major_upgrade );
+        } elseif ( Helper::can_show_promotion( $magic_link_launch_offer ) ) {
             $this->show_promotion( 'magic_link_launch_offer', $magic_link_launch_offer );
         } elseif ( Helper::can_show_promotion( $pre_launch_offer ) ) {
             $this->show_promotion( 'pre_launch_offer', $pre_launch_offer );
         }
-	}
+    }
 
-	/**
-	 * Show Promotion.
-	 *
-	 * @since 1.5.12.2
-	 *
-	 * @param $data      array
-	 * @param $promotion string
-	 *
-	 */
-	public function show_promotion( $promotion, $data ) {
+    /**
+     * Show Promotion.
+     *
+     * @param $data      array
+     * @param $promotion string
+     *
+     * @since 1.5.12.2
+     *
+     */
+    public function show_promotion( $promotion, $data ) {
+        $current_screen_id = Helper::get_current_screen_id();
 
-		$current_screen_id = Helper::get_current_screen_id();
-
-		if ( in_array( $promotion, [
-				'initial_upgrade',
-				'regular_upgrade_banner',
-			] ) && Helper::is_plugin_admin_screen( $current_screen_id ) ) {
-			$action = Helper::get_data( $_GET, 'action' );
-			if ( 'statistics' === $action ) {
-				?>
+        if ( in_array( $promotion, [
+                        'initial_upgrade',
+                        'regular_upgrade_banner',
+                ] ) && Helper::is_plugin_admin_screen( $current_screen_id ) ) {
+            $action = Helper::get_data( $_GET, 'action' );
+            if ( 'statistics' === $action ) {
+                ?>
                 <div class="wrap">
-					<?php Helper::get_upgrade_banner( null, null, $data ); ?>
+                    <?php
+                    Helper::get_upgrade_banner( null, null, $data ); ?>
                 </div>
-				<?php
-			}
-		} else {
-			$query_strings = [
-				'kc_uu_dismiss_admin_notice' => 1,
-				'option_name'                => $promotion,
-			];
+                <?php
+            }
+        } else {
+            $query_strings = [
+                    'kc_uu_dismiss_admin_notice' => 1,
+                    'option_name'                => $promotion,
+            ];
 
             if ( isset( $data['redirect_to'] ) && ! empty( $data['redirect_to'] ) ) {
                 $query_strings['redirect_to'] = esc_url( $data['redirect_to'] );
             }
-			?>
+            ?>
 
             <div class="wrap">
-				<?php Helper::get_upgrade_banner( $query_strings, true, $data ); ?>
+                <?php
+                Helper::get_upgrade_banner( $query_strings, true, $data ); ?>
             </div>
-			<?php
-		}
-	}
+            <?php
+        }
+    }
 
-	/**
-	 * Is Promo displayed and dismissed by user?
-	 *
-	 * @since 1.5.12.2
-	 *
-	 * @param $promo
-	 *
-	 * @return bool
-	 *
-	 */
-	public function is_promotion_dismissed( $promotion ) {
-		if ( empty( $promotion ) ) {
-			return false;
-		}
+    /**
+     * Is Promo displayed and dismissed by user?
+     *
+     * @param $promo
+     *
+     * @return bool
+     *
+     * @since 1.5.12.2
+     *
+     */
+    public function is_promotion_dismissed( $promotion ) {
+        if ( empty( $promotion ) ) {
+            return false;
+        }
 
-		$promotion_dismissed_option = 'kc_us_' . trim( $promotion ) . '_dismissed';
+        $promotion_dismissed_option = 'kc_us_' . trim( $promotion ) . '_dismissed';
 
-		return 'yes' === get_option( $promotion_dismissed_option );
-	}
+        return 'yes' === get_option( $promotion_dismissed_option );
+    }
 }

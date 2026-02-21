@@ -643,10 +643,18 @@ class Helper {
 
         extract( $conditions );
 
+        if ( $check_plan == 'free' ) {
+            if ( UU()->is_pro() ) {
+                return false;
+            }
+        }
+
         // Already seen this promotion?
         if ( ! is_null( $promotion ) && self::is_promotion_dismissed( $promotion ) ) {
             return false;
         }
+
+
 
         $today = Helper::get_current_date_time();
 
