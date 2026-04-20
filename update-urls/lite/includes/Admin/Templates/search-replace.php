@@ -74,6 +74,14 @@ if ( isset( $_POST['search_for'] ) && isset( $_POST['replace_with'] ) ) {
 if ( ( $search_for && $search_for != 'http://www.oldurl.com' && trim( $search_for ) != '' ) && ( $replace_with && $replace_with != 'http://www.newurl.com' && trim( $replace_with ) != '' ) ) {
 $results = \KaizenCoders\UpdateURLS\Helper::UpdateURLS( $kc_uu_update_links, $search_for, $replace_with );
 
+\KaizenCoders\UpdateURLS\Option::set( 'last_run', [
+	'timestamp'     => time(),
+	'search_for'    => $search_for,
+	'replace_with'  => $replace_with,
+	'tables'        => $kc_uu_update_links,
+	'total_changes' => array_sum( array_column( $results, 0 ) ),
+] );
+
 
 $empty       = true;
 $emptystring = '<strong>' . __( 'Why do the results show 0 URLs updated?',
@@ -138,14 +146,46 @@ if ( $empty ) :
 							<?php wp_nonce_field( 'kc_uu_submit', 'kc_uu_nonce' ); ?>
 
                             <!-- Important Notice -->
-                            <div class="section bg-gray-100 p-5 mb-5 border-2">
-                                <p class="text-xl bold-text text-center mb-5 underline">Important Note</p>
-                                <ul>
-                                    <li class="text-red-500 bold-text">
-                                        <?php esc_html_e( 'WE RECOMMEND THAT YOU BACKUP YOUR WEBSITE.',
-                                                'update-urls' ); ?> </li><p><?php esc_html_e( 'You may need to restore it if incorrect data are entered in the fields below.',
-											'update-urls' ); ?></p>
-                                </ul>
+                            <div class="section mb-5">
+                                <div class="flex gap-3 items-start bg-amber-50 border border-amber-200 rounded-lg p-4">
+                                    <svg class="h-5 w-5 text-amber-500 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+                                    </svg>
+                                    <div>
+                                        <p class="text-sm font-semibold text-amber-800"><?php esc_html_e( 'Back up your database before running Search & Replace.', 'update-urls' ); ?></p>
+                                        <p class="text-sm text-amber-700 mt-1"><?php esc_html_e( 'Search & Replace directly modifies your database. A backup lets you restore your site if anything goes wrong.', 'update-urls' ); ?></p>
+                                    </div>
+                                </div>
+
+								<?php if ( ! UU()->is_pro() ) : ?>
+                                <div class="flex gap-3 items-center justify-between bg-indigo-50 border border-indigo-200 rounded-lg p-4 mt-3">
+                                    <div class="flex gap-3 items-start">
+                                        <svg class="h-5 w-5 text-indigo-500 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                                            <path d="M10.75 2.75a.75.75 0 00-1.5 0v8.614L6.295 8.235a.75.75 0 10-1.09 1.03l4.25 4.5a.75.75 0 001.09 0l4.25-4.5a.75.75 0 00-1.09-1.03l-2.955 3.129V2.75z" />
+                                            <path d="M3.5 12.75a.75.75 0 00-1.5 0v2.5A2.75 2.75 0 004.75 18h10.5A2.75 2.75 0 0018 15.25v-2.5a.75.75 0 00-1.5 0v2.5c0 .69-.56 1.25-1.25 1.25H4.75c-.69 0-1.25-.56-1.25-1.25v-2.5z" />
+                                        </svg>
+                                        <div>
+                                            <p class="text-sm font-semibold text-indigo-800"><?php esc_html_e( 'One-click database backup & import &#8212; available in PRO.', 'update-urls' ); ?></p>
+                                            <p class="text-sm text-indigo-600 mt-0.5"><?php esc_html_e( 'Backup your entire database before any operation and restore it with a single click if needed.', 'update-urls' ); ?></p>
+                                        </div>
+                                    </div>
+                                    <a href="<?php echo esc_url( UU()->get_pricing_url() ); ?>" class="button-primary whitespace-nowrap bg-indigo-600 font-semibold text-white hover:text-white text-sm">
+										<?php esc_html_e( 'Upgrade to PRO', 'update-urls' ); ?> &rarr;
+                                    </a>
+                                </div>
+								<?php else : ?>
+                                <div class="flex gap-3 items-center bg-green-50 border border-green-200 rounded-lg p-4 mt-3">
+                                    <svg class="h-5 w-5 text-green-500 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M10.75 2.75a.75.75 0 00-1.5 0v8.614L6.295 8.235a.75.75 0 10-1.09 1.03l4.25 4.5a.75.75 0 001.09 0l4.25-4.5a.75.75 0 00-1.09-1.03l-2.955 3.129V2.75z" />
+                                        <path d="M3.5 12.75a.75.75 0 00-1.5 0v2.5A2.75 2.75 0 004.75 18h10.5A2.75 2.75 0 0018 15.25v-2.5a.75.75 0 00-1.5 0v2.5c0 .69-.56 1.25-1.25 1.25H4.75c-.69 0-1.25-.56-1.25-1.25v-2.5z" />
+                                    </svg>
+                                    <p class="text-sm text-green-800">
+                                        <?php esc_html_e( 'Want to be safe? ', 'update-urls' ); ?>
+                                        <a href="<?php echo esc_url( admin_url( 'admin.php?page=update-urls-tools&tab=backup-import' ) ); ?>" class="font-semibold underline text-green-700"><?php esc_html_e( 'Create a database backup', 'update-urls' ); ?></a>
+                                        <?php esc_html_e( ' before proceeding.', 'update-urls' ); ?>
+                                    </p>
+                                </div>
+								<?php endif; ?>
                             </div>
 
                             <!-- Search / Replace -->

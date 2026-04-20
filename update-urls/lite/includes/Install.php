@@ -17,6 +17,10 @@ class Install {
 			'kc_uu_update_123_add_installed_on_option',
 		),
 
+		'1.4.2' => array(
+			'kc_uu_update_142_set_email_digest_defaults',
+		),
+
 		'1.5.0' => array(
 			'kc_uu_update_150_create_custom_tables',
 			'kc_uu_update_150_migrate_data',
@@ -401,6 +405,8 @@ class Install {
 				Option::add( $option, $values['default'], false );
 			}
 		}
+
+		self::set_email_digest_defaults();
 	}
 
 	/**
@@ -412,6 +418,31 @@ class Install {
 	 */
 	public static function get_options() {
 		return array();
+	}
+
+	/**
+	 * Set email digest defaults without overwriting existing values.
+	 *
+	 * @since 1.4.2
+	 */
+	public static function set_email_digest_defaults() {
+		$settings = get_option( 'kc_uu_settings', array() );
+
+		$defaults = array(
+			'email_digest_enabled'   => 1,
+			'email_digest_frequency' => 'daily',
+			'email_digest_time'      => '09:00',
+			'email_digest_day'       => 1,
+			'email_digest_recipients' => '',
+		);
+
+		foreach ( $defaults as $key => $value ) {
+			if ( ! isset( $settings['email_digest']['settings'][ $key ] ) ) {
+				$settings['email_digest']['settings'][ $key ] = $value;
+			}
+		}
+
+		update_option( 'kc_uu_settings', $settings );
 	}
 
 	/**

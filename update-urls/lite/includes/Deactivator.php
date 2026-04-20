@@ -58,9 +58,7 @@ class Deactivator {
     }
 
     public static function do_deactivation() {
-        /**
-         * Cleanup all plugin related code
-         */
+        \KaizenCoders\UpdateURLS\EmailReports\Init::unschedule();
     }
 
 }

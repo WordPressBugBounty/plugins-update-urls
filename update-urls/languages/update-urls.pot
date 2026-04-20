@@ -2,14 +2,14 @@
 # This file is distributed under the GPL-3.0+.
 msgid ""
 msgstr ""
-"Project-Id-Version: Update URLS 1.4.1\n"
+"Project-Id-Version: Update URLS 1.4.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/update-urls\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-02-21T06:52:24+00:00\n"
+"POT-Creation-Date: 2026-04-20T08:52:19+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: update-urls\n"
@@ -36,13 +36,232 @@ msgstr ""
 msgid "https://kaizencoders.com"
 msgstr ""
 
+#: lite/includes/Admin.php:145
 #: lite/includes/Admin.php:146
-#: lite/includes/Admin.php:147
+#: lite/includes/Admin/Templates/update-urls.php:10
+msgid "Search & Replace"
+msgstr ""
+
+#: lite/includes/Admin.php:155
+#: lite/includes/Admin.php:156
+#: lite/includes/Admin/Templates/history.php:9
+msgid "History"
+msgstr ""
+
+#: lite/includes/Admin.php:165
+#: lite/includes/Admin.php:166
+#: lite/includes/Admin/Templates/tools.php:15
+msgid "Tools"
+msgstr ""
+
+#: lite/includes/Admin.php:175
+#: lite/includes/Admin.php:176
 msgid "Other Products"
 msgstr ""
 
-#: lite/includes/Admin.php:244
+#: lite/includes/Admin.php:280
 msgid "<span id=\"footer-thankyou\">Thank you for creating with <a href=\"%1$s\" target=\"_blank\">WordPress</a> | %2$s <b>%3$s</b>. Developed by team <a href=\"%4$s\" target=\"_blank\">KaizenCoders</a></span>"
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:9
+msgid "General"
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:13
+#: lite/includes/Admin/admin-settings.php:130
+msgid "Email Digest"
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:20
+msgid "Delete Data on Uninstall"
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:21
+msgid "Remove all plugin data when the plugin is deleted."
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:31
+#: pro/includes/Admin/Templates/settings.php:30
+msgid "Max Page Size"
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:32
+#: lite/includes/Admin/admin-settings.php:33
+#: pro/includes/Admin/Templates/settings.php:32
+msgid "The number of rows to process per batch. Decrease if you experience timeouts."
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:40
+#: pro/includes/Admin/Templates/settings.php:53
+msgid "Max Results"
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:41
+#: lite/includes/Admin/admin-settings.php:42
+#: pro/includes/Admin/Templates/settings.php:55
+msgid "Maximum number of change details to track per table. Higher values use more memory."
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:49
+#: pro/includes/Admin/Templates/settings.php:76
+msgid "Backup Compression"
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:50
+#: lite/includes/Admin/admin-settings.php:51
+#: pro/includes/Admin/Templates/settings.php:78
+msgid "Compress backup files using gzip to reduce file size."
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:63
+msgid "Enable Email Digest"
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:64
+msgid "Automatically send a summary of your site's URL health via email."
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:71
+msgid "Digest Frequency"
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:75
+#: lite/includes/EmailReports/ReportGenerator.php:83
+msgid "Daily"
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:76
+#: lite/includes/EmailReports/ReportGenerator.php:84
+#: lite/includes/EmailReports/ReportGenerator.php:87
+msgid "Weekly"
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:77
+#: lite/includes/EmailReports/ReportGenerator.php:85
+msgid "Monthly"
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:83
+msgid "Digest Day"
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:84
+msgid "Day of the week for weekly digests, or day of the month for monthly digests. Not used for daily digests."
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:91
+msgid "Send Time"
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:92
+msgid "Time of day to send the digest in your site timezone."
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:100
+msgid "Recipients"
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:101
+msgid "Enter one email address per line. If left blank, the digest is sent to the admin email: <b>%s</b>"
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:109
+msgid "Digest Status"
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:123
+msgid "General Settings"
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:164
+#: lite/includes/Admin/admin-settings.php:213
+msgid "Monday"
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:165
+#: lite/includes/Admin/admin-settings.php:214
+msgid "Tuesday"
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:166
+#: lite/includes/Admin/admin-settings.php:215
+msgid "Wednesday"
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:167
+#: lite/includes/Admin/admin-settings.php:216
+msgid "Thursday"
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:168
+#: lite/includes/Admin/admin-settings.php:217
+msgid "Friday"
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:169
+#: lite/includes/Admin/admin-settings.php:218
+msgid "Saturday"
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:170
+#: lite/includes/Admin/admin-settings.php:219
+msgid "Sunday"
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:206
+#: pro/includes/Admin/Templates/history.php:93
+msgid "Active"
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:207
+msgid "Inactive"
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:210
+msgid "Never"
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:227
+#: pro/includes/Admin/Templates/history.php:51
+msgid "Status"
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:231
+msgid "Frequency"
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:235
+msgid "Last Sent"
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:239
+msgid "Timezone"
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:246
+#: lite/includes/Admin/admin-settings.php:248
+msgid "Preview Email"
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:247
+msgid "Open a preview of the digest in a new tab using sample data from the last 7 days."
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:251
+msgid "Send Test Email"
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:252
+msgid "Send a test digest to verify formatting and delivery."
+msgstr ""
+
+#: lite/includes/Admin/admin-settings.php:255
+msgid "Send Test"
+msgstr ""
+
+#: lite/includes/Admin/Settings.php:77
+#: lite/includes/Admin/Settings.php:78
+msgid "Settings"
 msgstr ""
 
 #: lite/includes/Admin/Templates/search-replace.php:5
@@ -54,7 +273,7 @@ msgid "Search in page content (posts, pages, custom post types, revisions)"
 msgstr ""
 
 #: lite/includes/Admin/Templates/search-replace.php:9
-#: lite/includes/Helper.php:563
+#: lite/includes/Helper.php:566
 msgid "Excerpts"
 msgstr ""
 
@@ -63,7 +282,7 @@ msgid "Search in excerpts"
 msgstr ""
 
 #: lite/includes/Admin/Templates/search-replace.php:14
-#: lite/includes/Helper.php:567
+#: lite/includes/Helper.php:570
 msgid "Attachments"
 msgstr ""
 
@@ -72,7 +291,7 @@ msgid "Search in attachments (images, documents, general media)"
 msgstr ""
 
 #: lite/includes/Admin/Templates/search-replace.php:19
-#: lite/includes/Helper.php:571
+#: lite/includes/Helper.php:574
 msgid "Links"
 msgstr ""
 
@@ -89,7 +308,7 @@ msgid "Search in custom fields and meta boxes"
 msgstr ""
 
 #: lite/includes/Admin/Templates/search-replace.php:36
-#: pro/includes/Admin/Templates/search-replace.php:209
+#: pro/includes/Admin/Templates/search-replace.php:221
 msgid "Replace GUIDs"
 msgstr ""
 
@@ -99,7 +318,7 @@ msgstr ""
 
 #: lite/includes/Admin/Templates/search-replace.php:52
 #: lite/includes/Admin/Templates/search-replace.php:59
-#: lite/includes/Admin/Templates/search-replace.php:125
+#: lite/includes/Admin/Templates/search-replace.php:133
 msgid "ERROR"
 msgstr ""
 
@@ -115,290 +334,616 @@ msgstr ""
 msgid "Please select at least one checkbox."
 msgstr ""
 
-#: lite/includes/Admin/Templates/search-replace.php:79
+#: lite/includes/Admin/Templates/search-replace.php:87
 msgid "Why do the results show 0 URLs updated?"
 msgstr ""
 
-#: lite/includes/Admin/Templates/search-replace.php:80
+#: lite/includes/Admin/Templates/search-replace.php:88
 msgid "This happens if a URL is incorrect OR if it is not found in the content. Check your URLs and try again."
 msgstr ""
 
-#: lite/includes/Admin/Templates/search-replace.php:95
+#: lite/includes/Admin/Templates/search-replace.php:103
 msgid "ERROR: Something may have gone wrong."
 msgstr ""
 
-#: lite/includes/Admin/Templates/search-replace.php:97
+#: lite/includes/Admin/Templates/search-replace.php:105
 msgid "No search found."
 msgstr ""
 
-#: lite/includes/Admin/Templates/search-replace.php:106
+#: lite/includes/Admin/Templates/search-replace.php:114
 msgid "Success! data have been updated."
 msgstr ""
 
-#: lite/includes/Admin/Templates/search-replace.php:112
+#: lite/includes/Admin/Templates/search-replace.php:120
 msgid "Results"
 msgstr ""
 
-#: lite/includes/Admin/Templates/search-replace.php:126
+#: lite/includes/Admin/Templates/search-replace.php:134
 msgid "Your data have not been updated."
 msgstr ""
 
-#: lite/includes/Admin/Templates/search-replace.php:127
+#: lite/includes/Admin/Templates/search-replace.php:135
 msgid "Please enter values for both search for and replace with."
 msgstr ""
 
-#: lite/includes/Admin/Templates/search-replace.php:145
-#: pro/includes/Admin/Templates/search-replace.php:70
-msgid "WE RECOMMEND THAT YOU BACKUP YOUR WEBSITE."
+#: lite/includes/Admin/Templates/search-replace.php:155
+#: pro/includes/Admin/Templates/search-replace.php:72
+msgid "Back up your database before running Search & Replace."
 msgstr ""
 
-#: lite/includes/Admin/Templates/search-replace.php:146
+#: lite/includes/Admin/Templates/search-replace.php:156
 #: pro/includes/Admin/Templates/search-replace.php:73
-msgid "You may need to restore it if incorrect data are entered in the fields below."
+msgid "Search & Replace directly modifies your database. A backup lets you restore your site if anything goes wrong."
 msgstr ""
 
-#: lite/includes/Admin/Templates/search-replace.php:154
-#: lite/includes/Admin/Templates/update-urls.php:4
+#: lite/includes/Admin/Templates/search-replace.php:168
+msgid "One-click database backup & import &#8212; available in PRO."
+msgstr ""
+
+#: lite/includes/Admin/Templates/search-replace.php:169
+msgid "Backup your entire database before any operation and restore it with a single click if needed."
+msgstr ""
+
+#: lite/includes/Admin/Templates/search-replace.php:173
+msgid "Upgrade to PRO"
+msgstr ""
+
+#: lite/includes/Admin/Templates/search-replace.php:183
+#: pro/includes/Admin/Templates/search-replace.php:83
+msgid "Want to be safe? "
+msgstr ""
+
+#: lite/includes/Admin/Templates/search-replace.php:184
+#: pro/includes/Admin/Templates/search-replace.php:84
+msgid "Create a database backup"
+msgstr ""
+
+#: lite/includes/Admin/Templates/search-replace.php:185
 #: pro/includes/Admin/Templates/search-replace.php:85
+msgid " before proceeding."
+msgstr ""
+
+#: lite/includes/Admin/Templates/search-replace.php:194
+#: pro/includes/Admin/Templates/search-replace.php:97
 msgid "Search / Replace"
 msgstr ""
 
-#: lite/includes/Admin/Templates/search-replace.php:163
-#: pro/includes/Admin/Templates/search-replace.php:91
+#: lite/includes/Admin/Templates/search-replace.php:203
+#: pro/includes/Admin/Templates/search-replace.php:103
 msgid "Search For"
 msgstr ""
 
-#: lite/includes/Admin/Templates/search-replace.php:178
-#: pro/includes/Admin/Templates/search-replace.php:108
+#: lite/includes/Admin/Templates/search-replace.php:218
+#: pro/includes/Admin/Templates/search-replace.php:120
 msgid "Replace With"
 msgstr ""
 
-#: lite/includes/Admin/Templates/search-replace.php:195
+#: lite/includes/Admin/Templates/search-replace.php:235
 msgid "Where to Update?"
 msgstr ""
 
-#: lite/includes/Admin/Templates/search-replace.php:226
-#: pro/includes/Admin/Templates/search-replace.php:186
+#: lite/includes/Admin/Templates/search-replace.php:266
+#: pro/includes/Admin/Templates/search-replace.php:198
 msgid "Additional Settings"
 msgstr ""
 
-#: lite/includes/Admin/Templates/search-replace.php:258
-#: pro/includes/Admin/Templates/search-replace.php:266
+#: lite/includes/Admin/Templates/search-replace.php:298
+#: pro/includes/Admin/Templates/search-replace.php:278
 msgid "Run Search/Replace"
 msgstr ""
 
-#: lite/includes/Admin/Templates/update-urls.php:9
-#: pro/includes/Admin.php:52
-msgid "History"
+#: lite/includes/Admin/Templates/tools.php:20
+msgid "Backup & Import"
 msgstr ""
 
-#: lite/includes/Admin/Templates/update-urls.php:15
-#: pro/includes/Admin.php:58
-msgid "Settings"
+#: lite/includes/Admin/Templates/tools.php:24
+msgid "System Info"
 msgstr ""
 
-#: lite/includes/Admin/Templates/update-urls.php:20
-#: pro/includes/Admin.php:63
-msgid "Backup / Import"
+#. translators: 1: preview prefix (may be empty), 2: period label, 3: site name
+#: lite/includes/EmailReports/EmailSender.php:46
+msgid "%1$sUpdate URLS %2$s Digest — %3$s"
 msgstr ""
 
-#: lite/includes/Admin/Templates/update-urls.php:32
-msgid "Help"
+#: lite/includes/EmailReports/EmailTemplate.php:91
+msgid "Digest"
 msgstr ""
 
-#: lite/includes/Admin/Templates/update-urls.php:44
-msgid "Search & Replace"
+#. translators: 1: start date, 2: end date
+#: lite/includes/EmailReports/EmailTemplate.php:99
+msgid "Reporting period: %1$s – %2$s"
 msgstr ""
 
-#: lite/includes/Helper.php:559
-msgid "Content Items (Posts, Pages, Custom Post Types, Revisions)"
+#: lite/includes/EmailReports/EmailTemplate.php:107
+msgid "Site Health"
 msgstr ""
 
-#: lite/includes/Helper.php:575
-msgid "Custom Fields"
+#: lite/includes/EmailReports/EmailTemplate.php:114
+msgid "URL Consistency Check"
 msgstr ""
 
-#: lite/includes/Helper.php:579
-msgid "GUIDs"
+#: lite/includes/EmailReports/EmailTemplate.php:121
+msgid "Last Search & Replace Activity"
 msgstr ""
 
-#: lite/includes/Promo.php:77
-msgid "Major Upgrade"
+#: lite/includes/EmailReports/EmailTemplate.php:166
+msgid "Site URL and Home URL match"
 msgstr ""
 
-#: lite/includes/Promo.php:83
-msgid "<p class=\"text-xl\">Get Dry-Run, One Click Export/Import Database, History and much more at flat 50% OFF unitll <b class=\"text-red-600 text-xl\">February 28, 2026</b></p>"
+#: lite/includes/EmailReports/EmailTemplate.php:166
+msgid "OK"
 msgstr ""
 
-#: lite/includes/Promo.php:89
-msgid "WordPress Plugin Launch Offer - Magic Link PRO"
+#: lite/includes/EmailReports/EmailTemplate.php:171
+msgid "Site URL and Home URL do not match"
 msgstr ""
 
-#: lite/includes/Promo.php:96
-msgid "<p class=\"text-xl\">Magic Link PRO launch offer <b class=\"text-2xl\">flat 50%</b> discount until <b class=\"text-red-600 text-xl\">September 30, 2025</b></p>"
+#: lite/includes/EmailReports/EmailTemplate.php:171
+msgid "Warning"
 msgstr ""
 
-#: lite/includes/Promo.php:97
-msgid "Use Coupon Code - <b>LAUNCH50</b>"
+#: lite/includes/EmailReports/EmailTemplate.php:172
+msgid "siteurl:"
 msgstr ""
 
-#: lite/includes/Promo.php:106
-msgid "🚀 Pre-launch Offer"
+#: lite/includes/EmailReports/EmailTemplate.php:173
+msgid "home:"
 msgstr ""
 
-#: lite/includes/Promo.php:112
-msgid "<p class=\"text-xl\">Get <b>Update URLs</b> & <b>Social Linkz</b> (newly launched) PRO for Lifetime at Just $49 until <b class=\"text-red-600 text-xl\">September 30, 2024</b></p>"
+#: lite/includes/EmailReports/EmailTemplate.php:180
+msgid "Site is served over HTTPS"
 msgstr ""
 
-#: pro/includes/Admin.php:142
-#: pro/includes/Admin.php:281
-#: pro/includes/Admin.php:315
+#: lite/includes/EmailReports/EmailTemplate.php:180
+msgid "Secure"
+msgstr ""
+
+#: lite/includes/EmailReports/EmailTemplate.php:184
+msgid "Site is not using HTTPS"
+msgstr ""
+
+#: lite/includes/EmailReports/EmailTemplate.php:184
+msgid "Consider upgrading"
+msgstr ""
+
+#: lite/includes/EmailReports/EmailTemplate.php:185
+msgid "Migrate to HTTPS and use Update URLS to replace all http:// references."
+msgstr ""
+
+#: lite/includes/EmailReports/EmailTemplate.php:196
+msgid "This check applies to HTTPS sites. Migrate to HTTPS to detect mixed-content issues."
+msgstr ""
+
+#: lite/includes/EmailReports/EmailTemplate.php:203
+msgid "No HTTP references found in published posts"
+msgstr ""
+
+#: lite/includes/EmailReports/EmailTemplate.php:203
+msgid "Clean"
+msgstr ""
+
+#: lite/includes/EmailReports/EmailTemplate.php:204
+msgid "No published posts contain an http:// version of your domain."
+msgstr ""
+
+#. translators: %d: number of posts
+#: lite/includes/EmailReports/EmailTemplate.php:212
+msgid "%d published post contains HTTP references"
+msgid_plural "%d published posts contain HTTP references"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lite/includes/EmailReports/EmailTemplate.php:214
+msgid "Action needed"
+msgstr ""
+
+#. translators: %s: old http URL
+#: lite/includes/EmailReports/EmailTemplate.php:217
+msgid "Search for \"%s\" and replace with the https:// version to fix mixed-content warnings."
+msgstr ""
+
+#: lite/includes/EmailReports/EmailTemplate.php:220
+msgid "Fix now with Update URLS →"
+msgstr ""
+
+#: lite/includes/EmailReports/EmailTemplate.php:229
+msgid "No Search & Replace has been run yet."
+msgstr ""
+
+#: lite/includes/EmailReports/EmailTemplate.php:237
+msgid "ago"
+msgstr ""
+
+#: lite/includes/EmailReports/EmailTemplate.php:245
+#: pro/includes/Admin.php:186
+msgid "From"
+msgstr ""
+
+#: lite/includes/EmailReports/EmailTemplate.php:246
+msgid "to"
+msgstr ""
+
+#. translators: %d: number of changes
+#: lite/includes/EmailReports/EmailTemplate.php:251
+msgid "%d row updated"
+msgid_plural "%d rows updated"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lite/includes/EmailReports/EmailTemplate.php:270
+msgid "News, Tips & Announcements"
+msgstr ""
+
+#: lite/includes/EmailReports/EmailTemplate.php:278
+#: lite/includes/EmailReports/ReportGenerator.php:152
+#: lite/includes/EmailReports/ReportGenerator.php:159
+#: lite/includes/EmailReports/ReportGenerator.php:166
+#: lite/includes/EmailReports/ReportGenerator.php:173
+#: lite/includes/EmailReports/ReportGenerator.php:180
+#: lite/includes/EmailReports/ReportGenerator.php:187
+#: lite/includes/EmailReports/ReportGenerator.php:194
+#: lite/includes/EmailReports/ReportGenerator.php:201
+#: lite/includes/EmailReports/ReportGenerator.php:208
+#: lite/includes/EmailReports/ReportGenerator.php:215
+#: lite/includes/EmailReports/ReportGenerator.php:222
+msgid "Learn more →"
+msgstr ""
+
+#: lite/includes/EmailReports/EmailTemplate.php:306
+msgid "Unlock the Full Power of Update URLS"
+msgstr ""
+
+#: lite/includes/EmailReports/EmailTemplate.php:307
+msgid "Upgrade to PRO for complete database safety tools, operation history, one-click undo, and more."
+msgstr ""
+
+#: lite/includes/EmailReports/EmailTemplate.php:309
+msgid "One-Click Database Backup & Import"
+msgstr ""
+
+#: lite/includes/EmailReports/EmailTemplate.php:310
+msgid "Full Operation History with Undo"
+msgstr ""
+
+#: lite/includes/EmailReports/EmailTemplate.php:311
+msgid "Dry Run — Preview Changes Before Applying"
+msgstr ""
+
+#: lite/includes/EmailReports/EmailTemplate.php:312
+msgid "Table Selection & Search Profiles"
+msgstr ""
+
+#: lite/includes/EmailReports/EmailTemplate.php:313
+msgid "Weekly Digest with Operations Summary"
+msgstr ""
+
+#: lite/includes/EmailReports/EmailTemplate.php:315
+#: lite/includes/EmailReports/ReportGenerator.php:229
+msgid "Upgrade to PRO →"
+msgstr ""
+
+#: lite/includes/EmailReports/EmailTemplate.php:316
+msgid "Limited time — flat 50% off. Use coupon"
+msgstr ""
+
+#. translators: %s: site name
+#: lite/includes/EmailReports/EmailTemplate.php:327
+msgid "You are receiving this digest because you enabled it for %s."
+msgstr ""
+
+#: lite/includes/EmailReports/EmailTemplate.php:331
+msgid "Manage digest preferences"
+msgstr ""
+
+#. translators: %s: plugin version
+#: lite/includes/EmailReports/EmailTemplate.php:335
+msgid "Update URLS v%s"
+msgstr ""
+
+#: lite/includes/EmailReports/Init.php:144
+#: lite/includes/EmailReports/Init.php:171
+#: pro/includes/Admin.php:127
+#: pro/includes/Admin.php:271
+#: pro/includes/Admin.php:307
 #: pro/includes/Ajax.php:38
 #: pro/includes/Profile.php:101
 #: pro/includes/Profile.php:131
 msgid "Unauthorized."
 msgstr ""
 
-#: pro/includes/Admin.php:148
+#: lite/includes/EmailReports/Init.php:150
+msgid "Please enter a valid email address."
+msgstr ""
+
+#. translators: %s: email address
+#: lite/includes/EmailReports/Init.php:158
+msgid "Test email sent to %s."
+msgstr ""
+
+#: lite/includes/EmailReports/Init.php:162
+msgid "Failed to send. Check your WordPress mail configuration."
+msgstr ""
+
+#: lite/includes/EmailReports/ReportGenerator.php:80
+msgid "Last 7 Days (Preview)"
+msgstr ""
+
+#: lite/includes/EmailReports/ReportGenerator.php:149
+msgid "Always backup before Search & Replace"
+msgstr ""
+
+#: lite/includes/EmailReports/ReportGenerator.php:150
+msgid "A database backup takes seconds and gives you a safety net. Run a backup before any Search & Replace operation, especially on production sites."
+msgstr ""
+
+#: lite/includes/EmailReports/ReportGenerator.php:156
+msgid "Watch out for serialized data"
+msgstr ""
+
+#: lite/includes/EmailReports/ReportGenerator.php:157
+msgid "WordPress serializes some option values and post meta. Update URLS handles this automatically — never manually edit serialized strings or they will break."
+msgstr ""
+
+#: lite/includes/EmailReports/ReportGenerator.php:163
+msgid "HTTP → HTTPS is the most common migration"
+msgstr ""
+
+#: lite/includes/EmailReports/ReportGenerator.php:164
+msgid "After installing an SSL certificate, search for your old http:// address and replace it with https://. This fixes mixed-content warnings site-wide."
+msgstr ""
+
+#: lite/includes/EmailReports/ReportGenerator.php:170
+msgid "Staging to production? Update every URL"
+msgstr ""
+
+#: lite/includes/EmailReports/ReportGenerator.php:171
+msgid "When pushing from staging to live, replace the staging domain with your production domain. Don't forget wp-content paths if they differ between environments."
+msgstr ""
+
+#: lite/includes/EmailReports/ReportGenerator.php:177
+msgid "The siteurl and home options matter"
+msgstr ""
+
+#: lite/includes/EmailReports/ReportGenerator.php:178
+msgid "WordPress uses the siteurl and home options to build every URL on the site. Make sure they both point to your current domain after any migration."
+msgstr ""
+
+#: lite/includes/EmailReports/ReportGenerator.php:184
+msgid "Use Dry Run to preview changes safely"
+msgstr ""
+
+#: lite/includes/EmailReports/ReportGenerator.php:185
+msgid "Not sure what will be affected? PRO's Dry Run mode shows you exactly which rows would change — without touching the database."
+msgstr ""
+
+#: lite/includes/EmailReports/ReportGenerator.php:191
+msgid "CDN URL changes are easy with Update URLS"
+msgstr ""
+
+#: lite/includes/EmailReports/ReportGenerator.php:192
+msgid "Switching CDN providers? Update URLS can replace old CDN domains in post content, meta values, and option rows in one pass."
+msgstr ""
+
+#: lite/includes/EmailReports/ReportGenerator.php:198
+msgid "Replace works across all tables"
+msgstr ""
+
+#: lite/includes/EmailReports/ReportGenerator.php:199
+msgid "Update URLS touches posts, post meta, custom fields, and links in one go — so you don't miss any stray references to old URLs."
+msgstr ""
+
+#: lite/includes/EmailReports/ReportGenerator.php:205
+msgid "Need passwordless login for WordPress?"
+msgstr ""
+
+#: lite/includes/EmailReports/ReportGenerator.php:206
+msgid "Say goodbye to forgotten passwords. Enable a secure, passwordless login experience for your WordPress site using Magic Link."
+msgstr ""
+
+#: lite/includes/EmailReports/ReportGenerator.php:212
+msgid "Shorten & track links with URL Shortify"
+msgstr ""
+
+#: lite/includes/EmailReports/ReportGenerator.php:213
+msgid "Create branded short links, track clicks, and analyse your audience — all from inside WordPress using URL Shortify."
+msgstr ""
+
+#: lite/includes/EmailReports/ReportGenerator.php:219
+msgid "Monitor WordPress Activity using Logify"
+msgstr ""
+
+#: lite/includes/EmailReports/ReportGenerator.php:220
+msgid "Gain clear insights into events happening on your site, track changes effortlessly, and ensure accountability."
+msgstr ""
+
+#: lite/includes/EmailReports/ReportGenerator.php:226
+msgid "Operation History & One-Click Undo in PRO"
+msgstr ""
+
+#: lite/includes/EmailReports/ReportGenerator.php:227
+msgid "Every Search & Replace is logged in PRO. Browse your full history and undo any operation with a single click — no manual restore needed."
+msgstr ""
+
+#: lite/includes/Helper.php:562
+msgid "Content Items (Posts, Pages, Custom Post Types, Revisions)"
+msgstr ""
+
+#: lite/includes/Helper.php:578
+msgid "Custom Fields"
+msgstr ""
+
+#: lite/includes/Helper.php:582
+msgid "GUIDs"
+msgstr ""
+
+#: lite/includes/Promo.php:75
+msgid "Major Upgrade"
+msgstr ""
+
+#: lite/includes/Promo.php:81
+msgid "<p class=\"text-xl\">Get Dry-Run, One Click Export/Import Database, History and much more at flat 50% OFF until <b class=\"text-red-600 text-xl\">April 30, 2026</b></p>"
+msgstr ""
+
+#: pro/includes/Admin.php:133
 msgid "No results found."
 msgstr ""
 
-#: pro/includes/Admin.php:167
+#: pro/includes/Admin.php:152
 msgid "Search/Replace Results Details"
 msgstr ""
 
-#: pro/includes/Admin.php:172
+#: pro/includes/Admin.php:157
 #: pro/includes/Admin/Templates/history.php:169
-#: pro/includes/Admin/Templates/search-replace.php:306
+#: pro/includes/Admin/Templates/search-replace.php:318
 msgid "Table"
 msgstr ""
 
-#: pro/includes/Admin.php:173
+#: pro/includes/Admin.php:158
 msgid "Changes Found"
 msgstr ""
 
-#: pro/includes/Admin.php:174
+#: pro/includes/Admin.php:159
 msgid "Rows Updated"
 msgstr ""
 
-#: pro/includes/Admin.php:175
+#: pro/includes/Admin.php:160
 msgid "Time (s)"
 msgstr ""
 
-#: pro/includes/Admin.php:199
+#: pro/includes/Admin.php:184
 #: pro/includes/Admin/Templates/history.php:171
-#: pro/includes/Admin/Templates/search-replace.php:308
+#: pro/includes/Admin/Templates/search-replace.php:320
 msgid "Row"
 msgstr ""
 
-#: pro/includes/Admin.php:200
+#: pro/includes/Admin.php:185
 #: pro/includes/Admin/Templates/history.php:170
-#: pro/includes/Admin/Templates/search-replace.php:307
+#: pro/includes/Admin/Templates/search-replace.php:319
 msgid "Column"
 msgstr ""
 
-#: pro/includes/Admin.php:201
-msgid "From"
-msgstr ""
-
-#: pro/includes/Admin.php:202
+#: pro/includes/Admin.php:187
 msgid "To"
 msgstr ""
 
-#: pro/includes/Admin.php:247
+#: pro/includes/Admin.php:236
+msgid "Please select a file to import."
+msgstr ""
+
+#: pro/includes/Admin.php:237
 #: pro/includes/Ajax.php:92
 #: pro/includes/Ajax.php:232
 msgid "Please enter a search string."
 msgstr ""
 
-#: pro/includes/Admin.php:248
+#: pro/includes/Admin.php:238
 #: pro/includes/Ajax.php:96
 msgid "Please select at least one table."
 msgstr ""
 
-#: pro/includes/Admin.php:249
+#: pro/includes/Admin.php:239
 msgid "An unknown error occurred."
 msgstr ""
 
-#: pro/includes/Admin.php:250
-#: pro/includes/Admin/Templates/search-replace.php:280
+#: pro/includes/Admin.php:240
+#: pro/includes/Admin/Templates/search-replace.php:292
 msgid "Processing..."
 msgstr ""
 
-#: pro/includes/Admin.php:251
+#: pro/includes/Admin.php:241
 msgid "Are you sure you want to proceed? This will make changes to your database that are not easily reversible."
 msgstr ""
 
-#: pro/includes/Admin.php:252
+#: pro/includes/Admin.php:242
 msgid "Are you sure you want to undo this operation? This will restore the original values where possible."
 msgstr ""
 
-#: pro/includes/Admin.php:253
+#: pro/includes/Admin.php:243
 msgid "Are you sure you want to delete this history entry? This cannot be undone."
 msgstr ""
 
-#: pro/includes/Admin.php:254
+#: pro/includes/Admin.php:244
 msgid "Undoing..."
 msgstr ""
 
-#: pro/includes/Admin.php:255
+#: pro/includes/Admin.php:245
 msgid "Deleting..."
 msgstr ""
 
-#: pro/includes/Admin.php:327
+#: pro/includes/Admin.php:319
 msgid "Backup file not found."
 msgstr ""
 
-#: pro/includes/Admin/Templates/backup-import.php:21
+#: pro/includes/Admin/Templates/backup-import.php:35
 msgid "Database imported successfully!"
 msgstr ""
 
-#: pro/includes/Admin/Templates/backup-import.php:27
-#: pro/includes/Admin/Templates/backup-import.php:58
+#: pro/includes/Admin/Templates/backup-import.php:41
+#: pro/includes/Admin/Templates/backup-import.php:72
 msgid "Backup Database"
 msgstr ""
 
-#: pro/includes/Admin/Templates/backup-import.php:29
+#: pro/includes/Admin/Templates/backup-import.php:43
 msgid "Create a complete backup of your database. The backup will be downloaded as a SQL file."
 msgstr ""
 
-#: pro/includes/Admin/Templates/backup-import.php:38
+#: pro/includes/Admin/Templates/backup-import.php:52
 msgid "Run search/replace profile on backup (optional)"
 msgstr ""
 
-#: pro/includes/Admin/Templates/backup-import.php:41
-#: pro/includes/Admin/Templates/backup-import.php:108
+#: pro/includes/Admin/Templates/backup-import.php:55
+#: pro/includes/Admin/Templates/backup-import.php:105
+#: pro/includes/Admin/Templates/backup-import.php:169
 msgid "-- No profile --"
 msgstr ""
 
-#: pro/includes/Admin/Templates/backup-import.php:65
-#: pro/includes/Admin/Templates/backup-import.php:130
+#: pro/includes/Admin/Templates/backup-import.php:79
 msgid "Import Database"
 msgstr ""
 
-#: pro/includes/Admin/Templates/backup-import.php:67
-msgid "Import a SQL file to restore your database. Supported formats: .sql and .sql.gz"
+#: pro/includes/Admin/Templates/backup-import.php:83
+msgid "Option 1: Upload SQL File"
 msgstr ""
 
-#: pro/includes/Admin/Templates/backup-import.php:75
+#: pro/includes/Admin/Templates/backup-import.php:85
+msgid "Select a .sql or .sql.gz file from your computer to upload and import."
+msgstr ""
+
+#: pro/includes/Admin/Templates/backup-import.php:93
 msgid "Choose SQL File"
 msgstr ""
 
-#: pro/includes/Admin/Templates/backup-import.php:84
-msgid "A manually uploaded backup file was detected and will be used if no file is selected above."
-msgstr ""
-
-#: pro/includes/Admin/Templates/backup-import.php:91
-msgid "Manual Upload:"
-msgstr ""
-
-#. translators: %s: path to manual upload directory
-#: pro/includes/Admin/Templates/backup-import.php:95
-msgid "For large files, upload via FTP/SFTP to: %s"
-msgstr ""
-
-#: pro/includes/Admin/Templates/backup-import.php:105
+#: pro/includes/Admin/Templates/backup-import.php:102
+#: pro/includes/Admin/Templates/backup-import.php:166
 msgid "Run search/replace profile after import (optional)"
+msgstr ""
+
+#: pro/includes/Admin/Templates/backup-import.php:126
+msgid "Upload & Import"
+msgstr ""
+
+#: pro/includes/Admin/Templates/backup-import.php:133
+msgid "Option 2: Import from Server"
+msgstr ""
+
+#: pro/includes/Admin/Templates/backup-import.php:135
+msgid "For large files, upload via FTP/SFTP to the directory below, then select the file to import."
+msgstr ""
+
+#: pro/includes/Admin/Templates/backup-import.php:140
+msgid "Upload directory:"
+msgstr ""
+
+#: pro/includes/Admin/Templates/backup-import.php:149
+msgid "Available files:"
+msgstr ""
+
+#: pro/includes/Admin/Templates/backup-import.php:190
+msgid "Import Selected File"
+msgstr ""
+
+#: pro/includes/Admin/Templates/backup-import.php:196
+msgid "No SQL files found in the upload directory. Upload a .sql file via FTP/SFTP to the path shown above, then refresh this page."
 msgstr ""
 
 #: pro/includes/Admin/Templates/history.php:37
@@ -429,10 +974,6 @@ msgstr ""
 msgid "Changes"
 msgstr ""
 
-#: pro/includes/Admin/Templates/history.php:51
-msgid "Status"
-msgstr ""
-
 #: pro/includes/Admin/Templates/history.php:52
 msgid "Actions"
 msgstr ""
@@ -450,10 +991,6 @@ msgstr ""
 msgid "Undone"
 msgstr ""
 
-#: pro/includes/Admin/Templates/history.php:93
-msgid "Active"
-msgstr ""
-
 #: pro/includes/Admin/Templates/history.php:99
 #: pro/includes/Admin/Templates/history.php:157
 msgid "Details"
@@ -469,17 +1006,17 @@ msgid "Delete"
 msgstr ""
 
 #: pro/includes/Admin/Templates/history.php:172
-#: pro/includes/Admin/Templates/search-replace.php:309
+#: pro/includes/Admin/Templates/search-replace.php:321
 msgid "Before"
 msgstr ""
 
 #: pro/includes/Admin/Templates/history.php:173
-#: pro/includes/Admin/Templates/search-replace.php:310
+#: pro/includes/Admin/Templates/search-replace.php:322
 msgid "After"
 msgstr ""
 
 #: pro/includes/Admin/Templates/history.php:182
-#: pro/includes/Admin/Templates/search-replace.php:325
+#: pro/includes/Admin/Templates/search-replace.php:337
 msgid "Close"
 msgstr ""
 
@@ -522,81 +1059,77 @@ msgstr ""
 msgid "Saved Profiles"
 msgstr ""
 
-#: pro/includes/Admin/Templates/search-replace.php:67
-msgid "Important Note"
-msgstr ""
-
-#: pro/includes/Admin/Templates/search-replace.php:103
+#: pro/includes/Admin/Templates/search-replace.php:115
 msgid "Swap values"
 msgstr ""
 
-#: pro/includes/Admin/Templates/search-replace.php:124
+#: pro/includes/Admin/Templates/search-replace.php:136
 msgid "Select Tables"
 msgstr ""
 
-#: pro/includes/Admin/Templates/search-replace.php:125
+#: pro/includes/Admin/Templates/search-replace.php:137
 msgid "Select the tables you want to search."
 msgstr ""
 
-#: pro/includes/Admin/Templates/search-replace.php:133
+#: pro/includes/Admin/Templates/search-replace.php:145
 msgid "Available Tables"
 msgstr ""
 
-#: pro/includes/Admin/Templates/search-replace.php:137
+#: pro/includes/Admin/Templates/search-replace.php:149
 msgid "Filter tables..."
 msgstr ""
 
-#: pro/includes/Admin/Templates/search-replace.php:156
-#: pro/includes/Admin/Templates/search-replace.php:304
+#: pro/includes/Admin/Templates/search-replace.php:168
+#: pro/includes/Admin/Templates/search-replace.php:316
 msgid "Select All"
 msgstr ""
 
-#: pro/includes/Admin/Templates/search-replace.php:163
+#: pro/includes/Admin/Templates/search-replace.php:175
 msgid "Tables to Include"
 msgstr ""
 
-#: pro/includes/Admin/Templates/search-replace.php:168
+#: pro/includes/Admin/Templates/search-replace.php:180
 msgid "No tables selected"
 msgstr ""
 
-#: pro/includes/Admin/Templates/search-replace.php:197
+#: pro/includes/Admin/Templates/search-replace.php:209
 msgid "Case-Insensitive"
 msgstr ""
 
-#: pro/includes/Admin/Templates/search-replace.php:198
+#: pro/includes/Admin/Templates/search-replace.php:210
 msgid "Searches are case-sensitive by default."
 msgstr ""
 
 #. translators: %s: URL to WordPress GUID documentation
-#: pro/includes/Admin/Templates/search-replace.php:213
+#: pro/includes/Admin/Templates/search-replace.php:225
 msgid "Update ALL GUIDs. GUIDs for posts should only be changed on development sites. <a href=\"%s\" target=\"_blank\">Learn More</a>."
 msgstr ""
 
-#: pro/includes/Admin/Templates/search-replace.php:227
+#: pro/includes/Admin/Templates/search-replace.php:239
 msgid "Run as dry run"
 msgstr ""
 
-#: pro/includes/Admin/Templates/search-replace.php:228
+#: pro/includes/Admin/Templates/search-replace.php:240
 msgid "If checked, no changes will be made to the database, allowing you to check the results beforehand."
 msgstr ""
 
-#: pro/includes/Admin/Templates/search-replace.php:239
+#: pro/includes/Admin/Templates/search-replace.php:251
 msgid "Save as Profile"
 msgstr ""
 
-#: pro/includes/Admin/Templates/search-replace.php:240
+#: pro/includes/Admin/Templates/search-replace.php:252
 msgid "Save this search/replace configuration for reuse."
 msgstr ""
 
-#: pro/includes/Admin/Templates/search-replace.php:247
+#: pro/includes/Admin/Templates/search-replace.php:259
 msgid "Profile Name"
 msgstr ""
 
-#: pro/includes/Admin/Templates/search-replace.php:319
+#: pro/includes/Admin/Templates/search-replace.php:331
 msgid "Replace Selected"
 msgstr ""
 
-#: pro/includes/Admin/Templates/search-replace.php:322
+#: pro/includes/Admin/Templates/search-replace.php:334
 msgid "Replace All"
 msgstr ""
 
@@ -604,36 +1137,12 @@ msgstr ""
 msgid "Settings saved successfully."
 msgstr ""
 
-#: pro/includes/Admin/Templates/settings.php:30
-msgid "Max Page Size"
-msgstr ""
-
-#: pro/includes/Admin/Templates/settings.php:32
-msgid "The number of rows to process per batch. Decrease if you experience timeouts."
-msgstr ""
-
 #: pro/includes/Admin/Templates/settings.php:46
 msgid "Range: 1,000 - 50,000 (default: 20,000)"
 msgstr ""
 
-#: pro/includes/Admin/Templates/settings.php:53
-msgid "Max Results"
-msgstr ""
-
-#: pro/includes/Admin/Templates/settings.php:55
-msgid "Maximum number of change details to track per table. Higher values use more memory."
-msgstr ""
-
 #: pro/includes/Admin/Templates/settings.php:69
 msgid "Range: 20 - 1,000 (default: 60)"
-msgstr ""
-
-#: pro/includes/Admin/Templates/settings.php:76
-msgid "Backup Compression"
-msgstr ""
-
-#: pro/includes/Admin/Templates/settings.php:78
-msgid "Compress backup files using gzip to reduce file size."
 msgstr ""
 
 #: pro/includes/Admin/Templates/settings.php:91
@@ -682,72 +1191,76 @@ msgstr ""
 msgid "Starting backup..."
 msgstr ""
 
-#: pro/includes/Ajax.php:447
+#: pro/includes/Ajax.php:448
 msgid "Backup complete!"
 msgstr ""
 
 #. translators: 1: current table number, 2: total tables, 3: table name
-#: pro/includes/Ajax.php:480
+#: pro/includes/Ajax.php:481
 msgid "Backing up table %1$d of %2$d: %3$s"
 msgstr ""
 
-#: pro/includes/Ajax.php:506
+#: pro/includes/Ajax.php:507
 msgid "Invalid or missing import file."
 msgstr ""
 
-#: pro/includes/Ajax.php:516
+#: pro/includes/Ajax.php:517
 msgid "Starting import..."
 msgstr ""
 
-#: pro/includes/Ajax.php:532
+#: pro/includes/Ajax.php:533
 msgid "Import complete! Tables have been restored."
 msgstr ""
 
 #. translators: 1: current page, 2: total pages
-#: pro/includes/Ajax.php:549
+#: pro/includes/Ajax.php:550
 msgid "Importing page %1$d of %2$d..."
 msgstr ""
 
-#: pro/includes/Ajax.php:571
-msgid "No file uploaded."
+#: pro/includes/Ajax.php:569
+msgid "Invalid or missing server file."
 msgstr ""
 
-#: pro/includes/Ajax.php:581
+#: pro/includes/Ajax.php:579
+msgid "No file selected. Please choose a SQL file to upload or select a file from the server."
+msgstr ""
+
+#: pro/includes/Ajax.php:589
 msgid "Invalid file type. Only .sql and .sql.gz files are allowed."
 msgstr ""
 
-#: pro/includes/Ajax.php:594
+#: pro/includes/Ajax.php:602
 msgid "Failed to save uploaded file."
 msgstr ""
 
-#: pro/includes/Ajax.php:667
-#: pro/includes/Ajax.php:713
+#: pro/includes/Ajax.php:675
+#: pro/includes/Ajax.php:721
 msgid "Missing entry ID."
 msgstr ""
 
-#: pro/includes/Ajax.php:674
-#: pro/includes/Ajax.php:720
+#: pro/includes/Ajax.php:682
+#: pro/includes/Ajax.php:728
 msgid "History entry not found."
 msgstr ""
 
-#: pro/includes/Ajax.php:678
+#: pro/includes/Ajax.php:686
 msgid "This entry has already been undone."
 msgstr ""
 
-#: pro/includes/Ajax.php:684
+#: pro/includes/Ajax.php:692
 msgid "No details available to undo."
 msgstr ""
 
 #. translators: 1: restored count, 2: skipped count
-#: pro/includes/Ajax.php:695
+#: pro/includes/Ajax.php:703
 msgid "%1$d restored, %2$d skipped (data changed since replacement)."
 msgstr ""
 
-#: pro/includes/Ajax.php:724
+#: pro/includes/Ajax.php:732
 msgid "History entry deleted."
 msgstr ""
 
 #. translators: %s: PHP version
 #: update-urls.php:97
-msgid "Update URLs requires PHP version %s+, plugin is currently NOT RUNNING."
+msgid "Update URLS requires PHP version %s+, plugin is currently NOT RUNNING."
 msgstr ""

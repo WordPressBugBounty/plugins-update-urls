@@ -5,6 +5,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
+use KaizenCoders\UpdateURLS\Install;
 use KaizenCoders\UpdateURLS\Option;
 
 /* --------------------- 1.0.0 (Start)--------------------------- */
@@ -20,9 +21,20 @@ function kc_uu_update_123_add_installed_on_option() {
 
 /* --------------------- 1.0.0 (End)--------------------------- */
 
-/* --------------------- 1.5.0 (Start)--------------------------- */
+/* --------------------- 1.4.2 (Start)--------------------------- */
 
-use KaizenCoders\UpdateURLS\Install;
+/**
+ * Set email digest defaults: enabled = true, frequency = daily.
+ *
+ * @since 1.4.2
+ */
+function kc_uu_update_142_set_email_digest_defaults() {
+	Install::set_email_digest_defaults();
+}
+
+/* --------------------- 1.4.2 (End)--------------------------- */
+
+/* --------------------- 1.5.0 (Start)--------------------------- */
 
 /**
  * Create custom tables for history and profiles.

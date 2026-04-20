@@ -29,7 +29,7 @@ class Feedback {
      *
      * @since 1.2
 	 */
-	public $name = 'Update URLs';
+	public $name = 'Update URLS';
 
 
 	/**

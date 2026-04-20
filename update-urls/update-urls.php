@@ -16,7 +16,7 @@
  * Plugin Name:       Update URLS
  * Plugin URI:        https://kaizencoders.com/update-urls
  * Description:       Search & Replace Everything - Quick and Easy Way to Find and Replace Text, Links
- * Version:           1.4.1
+ * Version:           1.4.2
  * Requires PHP:      5.6
  * Tested up to:      6.9
  * Author:            KaizenCoders
@@ -37,7 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! defined( 'KC_UU_PLUGIN_VERSION' ) ) {
-	define( 'KC_UU_PLUGIN_VERSION', '1.4.1' );
+	define( 'KC_UU_PLUGIN_VERSION', '1.4.2' );
 }
 
 if ( function_exists( 'kc_uu_fs' ) ) {
@@ -84,7 +84,7 @@ if ( function_exists( 'kc_uu_fs' ) ) {
 	if ( ! function_exists( 'kc_uu_fail_php_version_notice' ) ) {
 
 		/**
-		 * Update URLs admin notice for minimum PHP version.
+		 * Update URLS admin notice for minimum PHP version.
 		 *
 		 * Warning when the site doesn't have the minimum required PHP version.
 		 *
@@ -94,7 +94,7 @@ if ( function_exists( 'kc_uu_fs' ) ) {
 		 */
 		function kc_uu_fail_php_version_notice() {
 			/* translators: %s: PHP version */
-			$message      = sprintf( esc_html__( 'Update URLs requires PHP version %s+, plugin is currently NOT RUNNING.',
+			$message      = sprintf( esc_html__( 'Update URLS requires PHP version %s+, plugin is currently NOT RUNNING.',
 				'update-urls' ), '5.6' );
 			$html_message = sprintf( '<div class="error">%s</div>', wpautop( $message ) );
 			echo wp_kses_post( $html_message );
@@ -111,6 +111,8 @@ if ( function_exists( 'kc_uu_fs' ) ) {
 	if ( file_exists( dirname( __FILE__ ) . '/vendor/autoload.php' ) ) {
 		require_once dirname( __FILE__ ) . '/vendor/autoload.php';
 	}
+
+	require_once dirname( __FILE__ ) . '/libs/action-scheduler/action-scheduler.php';
 
 	if ( ! defined( 'KC_UU_PLUGIN_DIR' ) ) {
 		/* @const KC_UU_PLUGIN_DIR */

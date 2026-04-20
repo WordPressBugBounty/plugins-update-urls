@@ -5,7 +5,7 @@ Requires at least: 5.0.0
 Author URI: https://www.kaizencoders.com/
 Tested up to: 6.9
 Requires PHP: 5.6
-Stable tag: 1.4.1
+Stable tag: 1.4.2
 License: GPL-3.0+
 License URI: http://www.gnu.org/licenses
 
@@ -27,7 +27,7 @@ If you move your WordPress website to a new domain name, you will find that inte
 * 👉 Users can choose whether to update links for attachments
 * 👉 View how many items were updated
 
-=== 🚀 Time-Saving Features in Update URLs PRO ===
+=== 🚀 Time-Saving Features in Update URLS PRO ===
 
 Upgrade to PRO and unlock powerful tools designed to give you complete control, safety, and efficiency while performing database search & replace operations.
 
@@ -55,11 +55,11 @@ Upgrade to PRO and unlock powerful tools designed to give you complete control, 
 > 👉 **Priority Email Support and updates**
 > Your success matters to us. PRO users receive priority support and ongoing updates to ensure a smooth and reliable experience.
 
-[Update URLs PRO](https://kaizencoders.com/update-urls) is built for developers, agencies, and site owners who want speed, safety, and total confidence while managing their WordPress database.
+[Update URLS PRO](https://kaizencoders.com/update-urls) is built for developers, agencies, and site owners who want speed, safety, and total confidence while managing their WordPress database.
 
 **Spread The Love ❤️**
 
-If you like Update URLs, please leave a [five stars ⭐⭐⭐⭐⭐](https://wordpress.org/support/plugin/update-urls/reviews/#new-post) and also spread the word about it via [Facebook](https://www.facebook.com/sharer.php?u=https://wordpress.org/plugins/update-urls/) and [Twitter](https://twitter.com/intent/tweet?url=https://wordpress.org/plugins/update-urls/). That helps fellow website owners assess Update URLs easily and benefit from it!
+If you like Update URLS, please leave a [five stars ⭐⭐⭐⭐⭐](https://wordpress.org/support/plugin/update-urls/reviews/#new-post) and also spread the word about it via [Facebook](https://www.facebook.com/sharer.php?u=https://wordpress.org/plugins/update-urls/) and [Twitter](https://twitter.com/intent/tweet?url=https://wordpress.org/plugins/update-urls/). That helps fellow website owners assess Update URLS easily and benefit from it!
 
 **What's Next**
 
@@ -130,12 +130,25 @@ Make sure that the plugin is activated and that you are an administrator level u
 
 == Upgrade Notice ==
 
-= 1.4.1 =
+= 1.4.2 =
 
+* New: Move history to a separate submenu in the admin screen. **PRO**
+* New: Move database backup/ import to a separate submenu in the admin screen. **PRO**
+* New: Added support to Email Digest of performed search/replace.
+* Fix: Fixed import DB issue. **PRO**
 * Update: UI Enhancements.
 * Translation: Update .POT file
 
 == Change Log ==
+
+= 1.4.2 =
+
+* New: Move history to a separate submenu in the admin screen. **PRO**
+* New: Move database backup/ import to a separate submenu in the admin screen. **PRO**
+* New: Added support to Email Digest of performed search/replace.
+* Fix: Fixed import DB issue. **PRO**
+* Update: UI Enhancements.
+* Translation: Update .POT file
 
 = 1.4.1 =
 

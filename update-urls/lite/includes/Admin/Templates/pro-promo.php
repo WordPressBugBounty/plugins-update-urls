@@ -31,8 +31,8 @@
 			<div class="mx-auto flex max-w-2xl flex-col gap-16 bg-white/3 px-6 py-16 ring-1 ring-white/10 sm:rounded-3xl sm:p-8 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:px-20">
 
 				<div class="w-full flex-auto">
-					<h2 class="text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">Upgrade TO PRO</h2>
-					<p class="mt-6 text-lg/8 text-pretty text-gray-400">With Update URLs PRO, You get powerful built-in safety tools so you don’t have to rely on manual backups:</p>
+					<h2 class="text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">Upgrade to PRO</h2>
+					<p class="mt-6 text-lg/8 text-pretty text-gray-400">With Update URLS PRO, You get powerful built-in safety tools so you don’t have to rely on manual backups:</p>
 					<ul role="list" class="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 text-base/7 text-gray-200 sm:grid-cols-2">
 						<li class="flex gap-x-3">
 							<svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="h-7 w-5 flex-none text-gray-200">

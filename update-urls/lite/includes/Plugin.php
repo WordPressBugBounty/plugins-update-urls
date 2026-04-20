@@ -228,6 +228,7 @@ class Plugin {
 			'KaizenCoders\UpdateURLS\Feedback',
 			'KaizenCoders\UpdateURLS\Promo',
 			'KaizenCoders\UpdateURLS\Ajax',
+			'KaizenCoders\UpdateURLS\EmailReports\Init',
 		);
 
 		if ( $this->is_pro() ) {

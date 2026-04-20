@@ -16,3 +16,36 @@ textarea[readonly] {
     border: none;
     box-shadow: 0px 2px 2px rgba(182, 181, 204, 0.25);
 }
+
+/* Toggle switch */
+.kc-us-mail-toggle-line {
+    display: block;
+    height: 1.25rem;
+    width: 2.5rem;
+    border-radius: 9999px;
+    background-color: rgb(209 213 219);
+    box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+    flex-shrink: 0;
+}
+
+.kc-us-mail-toggle-dot {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) translateX(0.2rem);
+    display: block;
+    height: 0.875rem;
+    width: 0.875rem;
+    border-radius: 9999px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.kc-us-check-toggle:checked ~ .kc-us-mail-toggle-line {
+    background-color: rgb(79 70 229);
+}
+
+.kc-us-check-toggle:checked ~ .kc-us-mail-toggle-dot {
+    transform: translateY(-50%) translateX(1.4rem);
+}

@@ -462,6 +462,9 @@ class Helper {
 
         $screens = [
                 "toplevel_page_update-urls",
+                "{$prefix}_page_update-urls-history",
+                "{$prefix}_page_kc-uu-settings",
+                "{$prefix}_page_update-urls-tools",
                 "{$prefix}_page_update-urls-other-products",
         ];
 
@@ -539,7 +542,7 @@ class Helper {
     }
 
     /**
-     * Update URLs
+     * Update URLS
      *
      * @param $options
      * @param $oldurl
@@ -588,10 +591,8 @@ class Helper {
                 $pages     = ceil( $row_count / $page_size );
 
                 for ( $page = 0; $page < $pages; $page ++ ) {
-                    $current_row = 0;
-                    $start       = $page * $page_size;
-                    $end         = $start + $page_size;
-                    $pmquery     = "SELECT * FROM $wpdb->postmeta WHERE meta_value <> ''";
+                    $start   = $page * $page_size;
+                    $pmquery = "SELECT * FROM $wpdb->postmeta WHERE meta_value <> '' LIMIT $page_size OFFSET $start";
                     $items       = $wpdb->get_results( $pmquery );
                     foreach ( $items as $item ) {
                         $value = $item->meta_value;
@@ -602,7 +603,7 @@ class Helper {
                         $edited = self::replace_into_serialized_data( $oldurl, $newurl, $value );
 
                         if ( $edited != $value ) {
-                            $fix = $wpdb->query( "UPDATE $wpdb->postmeta SET meta_value = '" . $edited . "' WHERE meta_id = " . $item->meta_id );
+                            $fix = $wpdb->query( $wpdb->prepare( "UPDATE $wpdb->postmeta SET meta_value = %s WHERE meta_id = %d", $edited, $item->meta_id ) );
                             if ( $fix ) {
                                 $n ++;
                             }

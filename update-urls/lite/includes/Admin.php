@@ -137,29 +137,65 @@ class Admin {
 		add_menu_page( __( 'Update URLS', 'url-shortify' ), __( 'Update URLS', 'update-urls' ), 'manage_options',
 			'update-urls', [
 				$this,
-				'render_UpdateURLS_page',
+				'render_search_and_replace_page',
 			], 'dashicons-update', 30 );
 
+		add_submenu_page(
+			'update-urls',
+			__( 'Search & Replace', 'update-urls' ),
+			__( 'Search & Replace', 'update-urls' ),
+			'manage_options',
+			'update-urls',
+			[ $this, 'render_search_and_replace_page' ],
+			2
+		);
 
-		$hook = add_submenu_page(
+		add_submenu_page(
+			'update-urls',
+			__( 'History', 'update-urls' ),
+			__( 'History', 'update-urls' ),
+			'manage_options',
+			'update-urls-history',
+			[ $this, 'render_history_page' ],
+			2
+		);
+
+		add_submenu_page(
+			'update-urls',
+			__( 'Tools', 'update-urls' ),
+			__( 'Tools', 'update-urls' ),
+			'manage_options',
+			'update-urls-tools',
+			[ $this, 'render_tools_page' ],
+			5
+		);
+
+		add_submenu_page(
 			'update-urls',
 			__( 'Other Products', 'update-urls' ),
 			__( 'Other Products', 'update-urls' ),
 			'manage_options',
 			'update-urls-other-products',
-			[
-				$this,
-				'render_other_products_page',
-			],
+			[ $this, 'render_other_products_page' ],
 			9
 		);
+
+		new \KaizenCoders\UpdateURLS\Admin\Settings();
+	}
+
+	public function render_history_page() {
+		include_once KC_UU_ADMIN_TEMPLATES_DIR . '/history.php';
+	}
+
+	public function render_tools_page() {
+		include_once KC_UU_ADMIN_TEMPLATES_DIR . '/tools.php';
 	}
 
 	public function render_other_products_page() {
 		include_once KC_UU_ADMIN_TEMPLATES_DIR . '/other-products.php';
 	}
 
-	function render_UpdateURLS_page() {
+	function render_search_and_replace_page() {
         include KC_UU_ADMIN_TEMPLATES_DIR . '/update-urls.php';
 	}
 
@@ -232,14 +268,14 @@ class Admin {
 	 */
 	public function update_admin_footer_text( $footer_text ) {
 
-		// Update Footer admin only on Update URLs pages
+		// Update Footer admin only on Update URLS pages
 		if ( Helper::is_plugin_admin_screen() ) {
 
 
 			$wordpress_url = 'https://www.wordpress.org';
 			$website_url   = 'https://www.kaizencoders.com';
 
-			$UpdateURLS_plugin_name = ( UU()->is_pro() ) ? 'Update URLs PRO' : 'Update URLs';
+			$UpdateURLS_plugin_name = ( UU()->is_pro() ) ? 'Update URLS PRO' : 'Update URLS';
 
 			$footer_text = sprintf( __( '<span id="footer-thankyou">Thank you for creating with <a href="%1$s" target="_blank">WordPress</a> | %2$s <b>%3$s</b>. Developed by team <a href="%4$s" target="_blank">KaizenCoders</a></span>', 'update-urls' ), $wordpress_url, $UpdateURLS_plugin_name, KC_UU_PLUGIN_VERSION, $website_url );
 		}
