@@ -93,7 +93,7 @@ class Settings {
 
         $this->options_path = plugin_dir_path( __FILE__ );
         //$this->options_url  = plugin_dir_url( __FILE__ );
-        $this->options_url = KC_ML_PLUGIN_ASSETS_DIR_URL . '/';
+        $this->options_url = KC_UU_PLUGIN_ASSETS_DIR_URL . '/';
 
         $this->construct_settings();
 

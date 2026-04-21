@@ -16,7 +16,7 @@
  * Plugin Name:       Update URLS
  * Plugin URI:        https://kaizencoders.com/update-urls
  * Description:       Search & Replace Everything - Quick and Easy Way to Find and Replace Text, Links
- * Version:           1.4.2
+ * Version:           1.4.3
  * Requires PHP:      5.6
  * Tested up to:      6.9
  * Author:            KaizenCoders
@@ -37,7 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! defined( 'KC_UU_PLUGIN_VERSION' ) ) {
-	define( 'KC_UU_PLUGIN_VERSION', '1.4.2' );
+	define( 'KC_UU_PLUGIN_VERSION', '1.4.3' );
 }
 
 if ( function_exists( 'kc_uu_fs' ) ) {

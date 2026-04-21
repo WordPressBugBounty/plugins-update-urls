@@ -5,7 +5,7 @@ Requires at least: 5.0.0
 Author URI: https://www.kaizencoders.com/
 Tested up to: 6.9
 Requires PHP: 5.6
-Stable tag: 1.4.2
+Stable tag: 1.4.3
 License: GPL-3.0+
 License URI: http://www.gnu.org/licenses
 
@@ -130,7 +130,7 @@ Make sure that the plugin is activated and that you are an administrator level u
 
 == Upgrade Notice ==
 
-= 1.4.2 =
+= 1.4.3 =
 
 * New: Move history to a separate submenu in the admin screen. **PRO**
 * New: Move database backup/ import to a separate submenu in the admin screen. **PRO**
@@ -138,8 +138,13 @@ Make sure that the plugin is activated and that you are an administrator level u
 * Fix: Fixed import DB issue. **PRO**
 * Update: UI Enhancements.
 * Translation: Update .POT file
+* Fix: Fixed "PHP Fatal error:  Uncaught Error: Undefined constant "KaizenCoders\UpdateURLS\KC_ML_PLUGIN_ASSETS_DIR_URL". **PRO**
 
 == Change Log ==
+
+= 1.4.3 =
+
+* Fix: Fixed "PHP Fatal error:  Uncaught Error: Undefined constant "KaizenCoders\UpdateURLS\KC_ML_PLUGIN_ASSETS_DIR_URL". **PRO**
 
 = 1.4.2 =
 
@@ -171,105 +176,4 @@ Make sure that the plugin is activated and that you are an administrator level u
 * Update: UX Improvements
 * Translation: Update .POT file
 
-= 1.2.15 =
-
-* Update: UX Improvements
-* Translation: Update .POT file
-
-= 1.2.14 =
-
-* Update: WordPress 6.8.2 compatibility check.
-
-= 1.2.13 =
-
-* Update: WordPress 6.8.1 compatibility check.
-
-= 1.2.12 =
-
-* Update: WordPress 6.7.2 compatibility check.
-
-= 1.2.11 =
-
-* Fix: Undefined constant error.
-
-= 1.2.10 =
-
-* Update: WordPress 6.6.2 compatibility check.
-* Update: Improve UI / UX.
-
-**1.2.9**
-
-* Fix: UI / UX Improvements.
-
-= 1.2.8 =
-
-* Update: WordPress 6.6.1 compatibility check.
-* Update: Improve UI / UX.
-* Update: .POT file
-
-= 1.2.7.1 =
-
-* Update: Small bug fix.
-* Update: WordPress 6.5.2 compatibility check.
-
-= 1.2.6 =
-
-* Fix: Remove unused JS & CSS files.
-
-= 1.2.5 =
-
-* Update: WordPress 6.4.2 compatibility check.
-* Fix: Deprecated: Creation of dynamic property is deprecated issue.
-
-= 1.2.4 =
-
-* Update: WordPress 6.3 compatibility check.
-
-= 1.2.3 =
-
-* Fix: Checkbox enable/ disable issue.
-
-= 1.2.2 =
-
-* New: Improve UI/ UX of admin screen.
-* Update: WordPress 6.2.2 compatibility check.
-* Update: Minor bug fixes.
-* Update: Update .POT file.
-
-= 1.2.1 =
-
-* Update: Minor bug fixes.
-
-= 1.2 =
-
-* New: UI/ UX enhancements.
-
-= 1.1 =
-
-* Update: WordPress 6.2 compatibility check.
-
-= 1.0.4.1 =
-
-* Update: WordPress 6.1.1 Compatibility check.
-
-= 1.0.4 =
-
-* Update: Fixed link.
-* Update: Icon & Banner update.
-
-= 1.0.3 =
-
-* Update: Compatibility check with WordPress 6.0
-
-= 1.0.2 =
-
-* Fix: Minor bug fix.
-
-= 1.0.1 =
-
-* Update readme.txt
-
-= 1.0.0 =
-
-* Initial Release
-* This release is a fork of [Velvet Blues Update URLS](https://wordpress.org/plugins/velvet-blues-update-urls/#description).
+[See changelog for all versions](https://docs.kaizencoders.com/update-urls/changelog) file.
