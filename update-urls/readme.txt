@@ -5,7 +5,7 @@ Requires at least: 5.0.0
 Author URI: https://www.kaizencoders.com/
 Tested up to: 6.9
 Requires PHP: 5.6
-Stable tag: 1.4.3
+Stable tag: 1.4.5
 License: GPL-3.0+
 License URI: http://www.gnu.org/licenses
 
@@ -130,50 +130,14 @@ Make sure that the plugin is activated and that you are an administrator level u
 
 == Upgrade Notice ==
 
-= 1.4.3 =
+= 1.4.5 =
 
-* New: Move history to a separate submenu in the admin screen. **PRO**
-* New: Move database backup/ import to a separate submenu in the admin screen. **PRO**
-* New: Added support to Email Digest of performed search/replace.
-* Fix: Fixed import DB issue. **PRO**
-* Update: UI Enhancements.
-* Translation: Update .POT file
-* Fix: Fixed "PHP Fatal error:  Uncaught Error: Undefined constant "KaizenCoders\UpdateURLS\KC_ML_PLUGIN_ASSETS_DIR_URL". **PRO**
+* Update: Removed search and replace text max length limitation.
 
-== Change Log ==
+== Changelog ==
 
-= 1.4.3 =
+= 1.4.5 - 2026-04-24 =
 
-* Fix: Fixed "PHP Fatal error:  Uncaught Error: Undefined constant "KaizenCoders\UpdateURLS\KC_ML_PLUGIN_ASSETS_DIR_URL". **PRO**
+* Update: Removed search and replace text max length limitation.
 
-= 1.4.2 =
-
-* New: Move history to a separate submenu in the admin screen. **PRO**
-* New: Move database backup/ import to a separate submenu in the admin screen. **PRO**
-* New: Added support to Email Digest of performed search/replace.
-* Fix: Fixed import DB issue. **PRO**
-* Update: UI Enhancements.
-* Translation: Update .POT file
-
-= 1.4.1 =
-
-* Update: UI Enhancements.
-* Translation: Update .POT file
-
-= 1.4.0 =
-
-* New: Added support to select tables to do search/replace. **PRO**
-* New: Added support to do dry run before actually perform search/replace. **PRO**
-* New: Added support to select which search/replace to perform after doing dry-run. **PRO**
-* New: Added support to do one-click database Export/Import. **PRO**
-* New: Added support to store a complete history of performed search/replace. **PRO**
-* New: Added support to do one-click undo of performed search/replace.
-* Update: WordPress 6.9.1 compatibility check.
-* Translation: Update .POT file
-
-= 1.3.0 =
-
-* Update: UX Improvements
-* Translation: Update .POT file
-
-[See changelog for all versions](https://docs.kaizencoders.com/update-urls/changelog) file.
+[See the detailed changelog](https://docs.kaizencoders.com/update-urls/changelog)

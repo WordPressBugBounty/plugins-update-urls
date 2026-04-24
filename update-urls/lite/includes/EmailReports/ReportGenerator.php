@@ -228,6 +228,13 @@ class ReportGenerator {
 				'url'         => 'https://kaizencoders.com/update-urls',
 				'url_label'   => __( 'Upgrade to PRO →', 'update-urls' ),
 			),
+			array(
+				'badge'       => 'News',
+				'title'       => __( 'What\'s new in Update URLS PRO', 'update-urls' ),
+				'description' => __( 'Update URLS PRO — The Complete Search & Replace Plugin for WordPress', 'update-urls' ),
+				'url'         => 'https://docs.kaizencoders.com/blog/update-urls-features',
+				'url_label'   => __( 'Learn more →', 'update-urls' ),
+			),
 		);
 
 		$items = array( $items[ array_rand( $items ) ] );

@@ -208,7 +208,7 @@ if ( $empty ) :
                                                    placeholder=""
                                                    name="search_for"
                                                    value=""
-                                                   size="30" maxlength="100"/>
+                                                   size="30" />
                                         </div>
                                     </div>
 
@@ -223,7 +223,7 @@ if ( $empty ) :
                                                    placeholder=""
                                                    name="replace_with"
                                                    value=""
-                                                   size="30" maxlength="100"/>
+                                                   size="30"/>
                                         </div>
                                     </div>
                                 </div>
