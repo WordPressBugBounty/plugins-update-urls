@@ -821,7 +821,7 @@ class Helper {
                 if ( ! is_wp_error( $api ) ) {
                     $data = [
                             'title'      => $api->name,
-                            'logo'       => $api->icons['2x'] ?? ( $api->icons['1x'] ?? ( $api->icons['default'] ?? '' ) ),
+                            'logo'       => isset( $api->icons['2x'] ) ? $api->icons['2x'] : ( isset( $api->icons['1x'] ) ? $api->icons['1x'] : ( isset( $api->icons['default'] ) ? $api->icons['default'] : '' ) ),
                             'desc'       => $api->short_description,
                             'plugin_url' => "https://wordpress.org/plugins/{$slug}/",
                             'slug'       => $slug,
