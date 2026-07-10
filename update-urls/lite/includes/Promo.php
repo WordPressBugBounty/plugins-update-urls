@@ -35,6 +35,7 @@ class Promo {
                 'magic_link_launch_offer',
                 'pre_launch_offer',
                 'major_upgrade_pro',
+                'off_50',
         ];
     }
 
@@ -71,21 +72,21 @@ class Promo {
      * @since 1.4.2
      */
     public function handle_promotions() {
-        $major_upgrade = [
-                'title'                         => "<b class='text-red-600 text-xl'>" . __( 'Major Upgrade', 'update-urls' ) . "</b>",
-                'start_date'                    => '2026-02-20',
-                'end_date'                      => '2026-03-05',
+        $off_50 = [
+                'title'                         => "<b class='text-red-600 text-xl'>Get 50% Off</b>",
+                'start_date'                    => '2026-07-09',
+                'end_date'                      => '2026-07-16',
                 'start_after_installation_days' => 0,
-                'pricing_url'                   => 'https://kaizencoders.com/update-urls/',
-                'promotion'                     => 'major_upgrade_pro',
-                'message'                       => __( '<p class="text-xl">Get Dry-Run, One Click Export/Import Database, History and much more at flat 50% OFF until <b class="text-red-600 text-xl">April 30, 2026</b></p>', 'update-urls' ),
+                'pricing_url'                   => 'https://kaizencoders.com/update-urls/#pricing?utm_source=update-urls-in-app&utm_medium=banner&utm_campaign=july-2026-offer',
+                'promotion'                     => 'off_50',
+                'message'                       => __( '<p class="text-xl">Get Dry-Run, One Click Export/Import Database, History and much more at flat 50% OFF until <b class="text-red-600 text-xl">July 15, 2026</b></p>', 'update-urls' ),
                 'coupon_message'                => '<p class="text-xl">Use Coupon Code - <b class="text-red-600">SPECIAL50</b></p>',
                 'check_plan'                    => 'free',
         ];
 
         // Promotion.
-        if ( Helper::can_show_promotion( $major_upgrade ) ) {
-            $this->show_promotion( 'major_upgrade_pro', $major_upgrade );
+        if ( Helper::can_show_promotion( $off_50 ) ) {
+            $this->show_promotion( 'off_50', $off_50 );
         }
     }
 

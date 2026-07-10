@@ -301,7 +301,7 @@ class EmailTemplate {
 	}
 
 	private static function render_cta() {
-		$upgrade_url = 'https://kaizencoders.com/update-urls?utm_campaign=email-digest&utm_medium=email&utm_source=digest-cta';
+		$upgrade_url = 'https://kaizencoders.com/update-urls?utm_campaign=update-urls-upgrade&utm_medium=email&utm_source=digest-cta';
 		?>
 		<h2><?php esc_html_e( 'Unlock the Full Power of Update URLS', 'update-urls' ); ?></h2>
 		<p><?php esc_html_e( 'Upgrade to PRO for complete database safety tools, operation history, one-click undo, and more.', 'update-urls' ); ?></p>

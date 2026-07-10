@@ -5,7 +5,7 @@ Requires at least: 5.0.0
 Author URI: https://www.kaizencoders.com/
 Tested up to: 7.0
 Requires PHP: 5.6
-Stable tag: 1.4.6
+Stable tag: 1.4.7
 License: GPL-3.0+
 License URI: http://www.gnu.org/licenses
 
@@ -73,9 +73,9 @@ If you like this plugin then consider checking out our other solutions:
 
 > Easily place social share icon on your posts, pages etc..
 
-[Utilitify](https://wordpress.org/plugins/utilitify/) - Supercharge Your WordPress Site With Power Pack WordPress Utilities
+[UtilityKit](https://wordpress.org/plugins/utility-kit/)
 
-> It’s a simple & neat plugin which helps you to customize your WordPress setup in a very elegant way.
+> UtilityKit is a powerful and versatile WordPress plugin that provides a collection of essential tools and features to enhance your website's functionality. It includes a variety of utilities such as show/hide admin bar, disable comments, enable/disable WordPress debug log and see logs inside WordPress admin and many more.  All designed to improve user experience and streamline website management.
 
 [Logify](https://wordpress.org/plugins/logify/)
 
@@ -130,11 +130,15 @@ Make sure that the plugin is activated and that you are an administrator level u
 
 == Upgrade Notice ==
 
-= 1.4.6 =
+= 1.4.7 =
 
-* Update: WordPress 7.0 compatibility.
+* Update: Small enhancements.
 
 == Changelog ==
+
+= 1.4.7 - 2026-07-10 =
+
+* Update: Small enhancements.
 
 = 1.4.6 - 2026-04-24 =
 
