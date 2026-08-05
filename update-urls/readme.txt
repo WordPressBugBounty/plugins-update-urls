@@ -1,11 +1,11 @@
 === Search & Replace Everything - Quick and Easy Way to Find and Replace Text, Links ===
 Contributors: kaizencoders, mikeatkaizencoders
-Tags: search replace, migration, update urls, search and replace, change links
+Tags: search replace database, migration, update database urls, search replace, search and replace
 Requires at least: 5.0.0
 Author URI: https://www.kaizencoders.com/
 Tested up to: 7.0
 Requires PHP: 5.6
-Stable tag: 1.5.0
+Stable tag: 1.5.1
 License: GPL-3.0+
 License URI: http://www.gnu.org/licenses
 
@@ -130,13 +130,17 @@ Make sure that the plugin is activated and that you are an administrator level u
 
 == Upgrade Notice ==
 
-## 1.5.0
+= 1.5.1 =
 
 * New version of Update URLS with new features, improvements and bug fixes. Please update to the latest version to get the best experience. Learn more about the new features and improvements in the [changelog](https://kaizencoders.com/docs/update-urls/changelog).
 
 == Changelog ==
 
-## 1.5.0 - 2026-08-05
+= 1.5.1 - 2026-08-05 =
+
+* Fix: Readme.txt format.
+
+= 1.5.0 - 2026-08-05 =
 
 * New: Search & Replace now runs on the server. Start it and close the tab, leave the page or shut your browser — it carries on, and reopening the page picks it back up. You get a notice when it finishes, wherever you are in the admin. **PRO**
 * New: A Stop button for a running replace. Whatever was already changed is saved to History and can still be undone. **PRO**
