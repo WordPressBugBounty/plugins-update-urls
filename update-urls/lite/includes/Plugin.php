@@ -31,6 +31,13 @@ namespace KaizenCoders\UpdateURLS;
 class Plugin {
 
 	/**
+	 * Marketing site for this plugin, used as the base for outbound links.
+	 *
+	 * @since 1.5.0
+	 */
+	const WEBSITE_URL = 'https://kaizencoders.com/update-urls/';
+
+	/**
 	 * @var Plugin $instance
 	 */
 	static $instance = null;
@@ -206,6 +213,50 @@ class Plugin {
 	}
 
 	/**
+	 * Should premium promotions be shown at all?
+	 *
+	 * Covers both "already on PRO" and a site that has turned promotions off.
+	 *
+	 * @param bool $force_display Bypass the checks, for previewing.
+	 *
+	 * @return bool
+	 *
+	 * @since 1.5.0
+	 */
+	public function can_show_premium_promotion( $force_display = false ) {
+		if ( $force_display ) {
+			return true;
+		}
+
+		if ( $this->is_pro() ) {
+			return false;
+		}
+
+		/**
+		 * Filter to switch off all premium promotions.
+		 *
+		 * @param bool $disable Whether to suppress promotions.
+		 *
+		 * @since 1.5.0
+		 */
+		return ! apply_filters( 'kc_uu_disable_promotion', false );
+	}
+
+	/**
+	 * Build a link to the marketing site, tagged for attribution.
+	 *
+	 * @param string $path Path or fragment appended to the website URL.
+	 * @param array  $utm  UTM parameters, see Helper::get_utm_url().
+	 *
+	 * @return string
+	 *
+	 * @since 1.5.0
+	 */
+	public function get_website_url( $path = '', $utm = [] ) {
+		return Helper::get_utm_url( self::WEBSITE_URL . ltrim( $path, '/' ), $utm );
+	}
+
+	/**
 	 * Retrieve the version number of the plugin.
 	 *
 	 * @return    string    The version number of the plugin.
@@ -227,6 +278,7 @@ class Plugin {
 			'KaizenCoders\UpdateURLS\Uninstall',
 			'KaizenCoders\UpdateURLS\Feedback',
 			'KaizenCoders\UpdateURLS\Promo',
+			'KaizenCoders\UpdateURLS\Admin\Promotions\PromoBanner',
 			'KaizenCoders\UpdateURLS\Ajax',
 			'KaizenCoders\UpdateURLS\EmailReports\Init',
 		);

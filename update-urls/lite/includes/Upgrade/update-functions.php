@@ -108,3 +108,46 @@ function kc_uu_update_150_migrate_data() {
 }
 
 /* --------------------- 1.5.0 (End)--------------------------- */
+
+/* --------------------- 1.5.0.1 (Start)--------------------------- */
+
+/**
+ * Add the undo journal and give existing history entries an undo status.
+ *
+ * History that predates the journal has nothing recorded against it, so
+ * undo_recorded stays 0 and the UI reports those entries as not undoable rather
+ * than offering a button that would restore a handful of rows and call it done.
+ *
+ * @since 1.5.0
+ */
+function kc_uu_update_1501_create_undo_journal() {
+	global $wpdb;
+
+	// dbDelta is idempotent: this adds the journal table and the undo columns
+	// without disturbing tables that are already in shape.
+	Install::create_tables();
+
+	$table = $wpdb->prefix . 'kc_uu_history';
+
+	$wpdb->query( "UPDATE {$table} SET undo_status = 'complete' WHERE undone = 1 AND undo_status = ''" );
+}
+
+/* --------------------- 1.5.0.1 (End)--------------------------- */
+
+/* --------------------- 1.5.0.2 (Start)--------------------------- */
+
+/**
+ * Record per-row outcomes on the undo journal.
+ *
+ * Rows processed before these columns existed are left blank rather than
+ * guessed at: a completed rollback flagged restored and skipped rows the same
+ * way, so which was which cannot be recovered. The UI says so for those
+ * entries instead of presenting an empty list as "nothing was skipped".
+ *
+ * @since 1.5.0
+ */
+function kc_uu_update_1502_record_undo_outcomes() {
+	Install::create_tables();
+}
+
+/* --------------------- 1.5.0.2 (End)--------------------------- */

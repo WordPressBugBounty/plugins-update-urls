@@ -26,6 +26,18 @@ class Install {
 			'kc_uu_update_150_migrate_data',
 		),
 
+		// A schema revision inside 1.5.0. Installs that ran a 1.5.0 build before
+		// the undo journal existed are already stamped 1.5.0, and the updater
+		// only queues callbacks for versions above the stored one — filed under
+		// 1.5.0 these would never run on the installs that need them most.
+		'1.5.0.1' => array(
+			'kc_uu_update_1501_create_undo_journal',
+		),
+
+		'1.5.0.2' => array(
+			'kc_uu_update_1502_record_undo_outcomes',
+		),
+
 	);
 
 	/**
@@ -514,10 +526,30 @@ CREATE TABLE {$wpdb->prefix}kc_uu_history (
   total_changes INT UNSIGNED NOT NULL DEFAULT 0,
   total_updates INT UNSIGNED NOT NULL DEFAULT 0,
   undone TINYINT(1) NOT NULL DEFAULT 0,
+  undo_recorded INT UNSIGNED NOT NULL DEFAULT 0,
+  undo_restored INT UNSIGNED NOT NULL DEFAULT 0,
+  undo_skipped INT UNSIGNED NOT NULL DEFAULT 0,
+  undo_status VARCHAR(20) NOT NULL DEFAULT '',
   details LONGTEXT,
   PRIMARY KEY (id),
   UNIQUE KEY entry_id (entry_id),
   KEY date (date)
+) $collate;
+CREATE TABLE {$wpdb->prefix}kc_uu_undo (
+  id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  entry_id VARCHAR(50) NOT NULL,
+  table_name VARCHAR(191) NOT NULL,
+  column_name VARCHAR(191) NOT NULL,
+  row_pk VARCHAR(191) NOT NULL,
+  old_value LONGTEXT NOT NULL,
+  old_hash CHAR(40) NOT NULL DEFAULT '',
+  new_hash CHAR(40) NOT NULL,
+  restored TINYINT(1) NOT NULL DEFAULT 0,
+  outcome VARCHAR(16) NOT NULL DEFAULT '',
+  skip_reason VARCHAR(24) NOT NULL DEFAULT '',
+  PRIMARY KEY (id),
+  KEY entry_pending (entry_id, restored),
+  KEY entry_outcome (entry_id, outcome)
 ) $collate;
 CREATE TABLE {$wpdb->prefix}kc_uu_profiles (
   id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,

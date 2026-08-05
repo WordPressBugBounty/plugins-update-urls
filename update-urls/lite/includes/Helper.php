@@ -451,6 +451,120 @@ class Helper {
     }
 
     /**
+     * Append UTM parameters to a url.
+     *
+     * Keys may be given with or without the `utm_` prefix. Existing query
+     * arguments are preserved and a fragment stays at the end where it belongs,
+     * so a url such as `.../update-urls/#pricing` keeps working.
+     *
+     * @param  string  $url     Target url.
+     * @param  array   $params  Parameters, e.g. [ 'source' => 'x', 'medium' => 'y' ].
+     *
+     * @return string
+     *
+     * @since 1.5.0
+     */
+    public static function add_utm_params( $url, $params ) {
+        if ( '' === (string) $url || empty( $params ) ) {
+            return (string) $url;
+        }
+
+        $utm = [];
+
+        foreach ( (array) $params as $key => $value ) {
+            $value = (string) $value;
+
+            if ( '' === $value ) {
+                continue;
+            }
+
+            $key = (string) $key;
+
+            if ( 0 !== strpos( $key, 'utm_' ) ) {
+                $key = 'utm_' . $key;
+            }
+
+            $utm[ $key ] = $value;
+        }
+
+        if ( empty( $utm ) ) {
+            return (string) $url;
+        }
+
+        $parts = wp_parse_url( $url );
+
+        $scheme   = isset( $parts['scheme'] ) ? $parts['scheme'] . '://' : '';
+        $user     = isset( $parts['user'] ) ? $parts['user'] . ( isset( $parts['pass'] ) ? ':' . $parts['pass'] : '' ) . '@' : '';
+        $host     = isset( $parts['host'] ) ? $parts['host'] : '';
+        $port     = isset( $parts['port'] ) ? ':' . $parts['port'] : '';
+        $path     = isset( $parts['path'] ) ? $parts['path'] : '';
+        $query    = isset( $parts['query'] ) ? $parts['query'] : '';
+        $fragment = isset( $parts['fragment'] ) ? '#' . $parts['fragment'] : '';
+
+        // `https://example.com` has no path, which would render as
+        // `https://example.com?utm_source=…`. Valid, but the slash belongs there.
+        if ( '' === $path && '' !== $host ) {
+            $path = '/';
+        }
+
+        $existing = [];
+
+        if ( '' !== $query ) {
+            parse_str( $query, $existing );
+        }
+
+        $merged = array_merge( is_array( $existing ) ? $existing : [], $utm );
+
+        $rebuilt_query = http_build_query( $merged );
+
+        return $scheme . $user . $host . $port . $path
+               . ( '' !== $rebuilt_query ? '?' . $rebuilt_query : '' )
+               . $fragment;
+    }
+
+    /**
+     * Tag an outbound url with the plugin's standard campaign parameters.
+     *
+     * Single place where the UTM convention lives, so every link that leaves
+     * the plugin for kaizencoders.com is attributed the same way.
+     *
+     * @param  string  $url   Target url.
+     * @param  array   $args  {
+     *     @type string $source    Defaults to `update-urls-in-app`.
+     *     @type string $medium    Where the click came from, e.g. `banner`, `email`.
+     *     @type string $campaign  Campaign identifier.
+     *     @type string $content   Optional placement within the medium.
+     * }
+     *
+     * @return string
+     *
+     * @since 1.5.0
+     */
+    public static function get_utm_url( $url, $args = [] ) {
+        $args = wp_parse_args(
+            $args,
+            [
+                'source'   => 'update-urls-in-app',
+                'medium'   => '',
+                'campaign' => '',
+                'content'  => '',
+            ]
+        );
+
+        /**
+         * Filter the UTM parameters applied to outbound plugin links.
+         *
+         * @param array  $args UTM parameters.
+         * @param string $url  Target url.
+         *
+         * @since 1.5.0
+         */
+        $args = apply_filters( 'kc_uu_utm_params', $args, $url );
+
+        return self::add_utm_params( $url, $args );
+    }
+
+    /**
      * Get all Plugin admin screens
      *
      * @return array|mixed|void

@@ -12,6 +12,8 @@
 
 namespace KaizenCoders\UpdateURLS;
 
+use KaizenCoders\UpdateURLS\Admin\Promotions\PromoBanner;
+
 /**
  * The dashboard-specific functionality of the plugin.
  *
@@ -217,7 +219,8 @@ class Admin {
 			'kc_uu_show_admin_notice',
 			'show_custom_notices',
 			'handle_promotions',
-			'_admin_notices_hook'
+			'_admin_notices_hook',
+			PromoBanner::RENDER_CALLBACK,
 		);
 
 		$filters = array(

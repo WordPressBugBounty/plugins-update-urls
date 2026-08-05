@@ -25,6 +25,14 @@ class Uninstall {
 		// Drop custom tables.
 		$wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}kc_uu_history" );
 		$wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}kc_uu_profiles" );
+
+		// Background search/replace state.
+		delete_option( 'kc_uu_sr_job' );
+		delete_option( 'kc_uu_sr_job_report' );
+		delete_option( 'kc_uu_sr_job_lock' );
+		delete_option( 'kc_uu_data' );
+		delete_option( 'kc_uu_update_site_url' );
+		delete_transient( 'kc_uu_results' );
 	}
 
 }

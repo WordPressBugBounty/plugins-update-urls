@@ -5,7 +5,7 @@ Requires at least: 5.0.0
 Author URI: https://www.kaizencoders.com/
 Tested up to: 7.0
 Requires PHP: 5.6
-Stable tag: 1.4.7
+Stable tag: 1.5.0
 License: GPL-3.0+
 License URI: http://www.gnu.org/licenses
 
@@ -69,10 +69,6 @@ If you like this plugin then consider checking out our other solutions:
 
 > URL Shortify helps you beautify, manage, and share any URL on or off of your WordPress website. Create links that look how you want using your domain name! It’s a Simple, Easy & Elegant self hosted alternative to Bitly, TinyURL, Cuttly, Pretty Links, URL Shortener By My Theme Shop, Rebrandly, BL.Link, Short.io, and many other SaaS URL Shortener services.
 
-[Social Linkz](https://wordpress.org/plugins/social-linkz/) - Lightweight and fast social media sharing plugin
-
-> Easily place social share icon on your posts, pages etc..
-
 [UtilityKit](https://wordpress.org/plugins/utility-kit/)
 
 > UtilityKit is a powerful and versatile WordPress plugin that provides a collection of essential tools and features to enhance your website's functionality. It includes a variety of utilities such as show/hide admin bar, disable comments, enable/disable WordPress debug log and see logs inside WordPress admin and many more.  All designed to improve user experience and streamline website management.
@@ -86,6 +82,10 @@ If you like this plugin then consider checking out our other solutions:
 > Magic Link is a passwordless authentication plugin for WordPress that allows users to log in securely via email links. It eliminates the need for traditional passwords, enhancing both security and user convenience.
 
 > With Magic Link, users simply enter their email address, receive a unique login link, and gain instant access to their accounts. This plugin is perfect for improving user experience while maintaining strong security standards.
+
+[Social Linkz](https://wordpress.org/plugins/social-linkz/) - Lightweight and fast social media sharing plugin
+
+> Easily place social share icon on your posts, pages etc..
 
 == Installation ==
 
@@ -130,22 +130,30 @@ Make sure that the plugin is activated and that you are an administrator level u
 
 == Upgrade Notice ==
 
-= 1.4.7 =
+## 1.5.0
 
-* Update: Small enhancements.
+* New version of Update URLS with new features, improvements and bug fixes. Please update to the latest version to get the best experience. Learn more about the new features and improvements in the [changelog](https://kaizencoders.com/docs/update-urls/changelog).
 
 == Changelog ==
 
-= 1.4.7 - 2026-07-10 =
+## 1.5.0 - 2026-08-05
 
-* Update: Small enhancements.
+* New: Search & Replace now runs on the server. Start it and close the tab, leave the page or shut your browser — it carries on, and reopening the page picks it back up. You get a notice when it finishes, wherever you are in the admin. **PRO**
+* New: A Stop button for a running replace. Whatever was already changed is saved to History and can still be undone. **PRO**
+* New: Undo now puts back everything a replace changed. Before, it restored only a small part of a large replace and reported success anyway — and on longer content it could put back a shortened copy. **PRO**
+* New: When Undo cannot restore something, it now tells you which items and why, shows you what is there now next to the original, and offers to put the original back anyway if that is what you want. **PRO**
+* New: An interrupted Undo carries on from where it stopped instead of finishing half done and calling itself complete. **PRO**
+* New: History now shows whether an operation was fully undone, partly undone, or cannot be undone, and how much of it can still be restored. **PRO**
+* New: A dry run that finds nothing now says so, instead of ending with an empty result and no explanation. **PRO**
+* Fix: Links saved by page builders, directory plugins and similar tools were being missed, so images and links stayed broken even though the replace reported success. **PRO**
+* Fix: A dry run could change your site address. It is now genuinely preview-only. **PRO**
+* Fix: On very large sites, some rows could be missed or changed twice. **PRO**
+* Fix: On sites with caching, changes could look as though they had not happened — including your site address still showing the old one after an undo. **PRO**
+* Fix: Search & Replace no longer touches the plugin's own records. "Select All" previously included them, which could damage your History and leave Undo unable to work. **PRO**
+* Fix: Some stored settings were being rewritten even when they did not contain the text you searched for. **PRO**
+* Fix: Pressing Tab in "Search For" now moves to "Replace With" rather than the swap button. **PRO**
+* Update: Large databases are considerably faster. The later stages of a big replace no longer slow to a crawl. **PRO**
+* Update: "Max Results" now only controls how many changes are listed on screen. It no longer limits what Undo can restore. **PRO**
+* Update: So that Undo can be relied on, the plugin now keeps the original values from your 50 most recent operations, which uses some database space. Operations from before this update cannot be undone and are marked as such. **PRO**
 
-= 1.4.6 - 2026-04-24 =
-
-* Update: WordPress 7.0 compatibility.
-
-= 1.4.5 - 2026-04-24 =
-
-* Update: Removed search and replace text max length limitation.
-
-[See the detailed changelog](https://docs.kaizencoders.com/update-urls/changelog)
+[See the detailed changelog](https://kaizencoders.com/docs/update-urls/changelog)

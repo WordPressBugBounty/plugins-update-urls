@@ -59,6 +59,13 @@ class Deactivator {
 
     public static function do_deactivation() {
         \KaizenCoders\UpdateURLS\EmailReports\Init::unschedule();
+
+        // Stop any background search/replace still in flight. Cancelling records
+        // the work already written to history, so the partial change set stays
+        // visible and undoable rather than vanishing with the plugin.
+        if ( class_exists( '\KaizenCoders\UpdateURLS\PRO\Job' ) ) {
+            \KaizenCoders\UpdateURLS\PRO\Job::cancel();
+        }
     }
 
 }
