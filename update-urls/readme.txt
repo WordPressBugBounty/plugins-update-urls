@@ -3,9 +3,9 @@ Contributors: kaizencoders, mikeatkaizencoders
 Tags: search replace database, migration, update database urls, search replace, search and replace
 Requires at least: 5.0.0
 Author URI: https://www.kaizencoders.com/
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 5.6
-Stable tag: 1.5.1
+Stable tag: 1.5.2
 License: GPL-3.0+
 License URI: http://www.gnu.org/licenses
 
@@ -130,11 +130,16 @@ Make sure that the plugin is activated and that you are an administrator level u
 
 == Upgrade Notice ==
 
-= 1.5.1 =
+= 1.5.2 =
 
 * New version of Update URLS with new features, improvements and bug fixes. Please update to the latest version to get the best experience. Learn more about the new features and improvements in the [changelog](https://kaizencoders.com/docs/update-urls/changelog).
 
 == Changelog ==
+
+= 1.5.2 - 2026-08-24 =
+
+* Update: WordPress 7.1 compatibility.
+* Translation: Updated translation files.
 
 = 1.5.1 - 2026-08-05 =
 

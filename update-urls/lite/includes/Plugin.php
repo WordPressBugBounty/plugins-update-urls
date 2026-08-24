@@ -155,7 +155,8 @@ class Plugin {
 
 		// Utilities.
 		$this->loader->add_action( 'admin_print_scripts', $plugin_admin, 'handle_admin_notices' );
-		$this->loader->add_filter( 'admin_footer_text', $plugin_admin, 'update_admin_footer_text' );
+		// The footer is now Admin\Footer's, which empties core's two lines and
+		// renders one row in their place. See lite/includes/Admin/Footer.php.
 		$this->loader->add_action( 'in_plugin_update_message-update-urls/update-urls.php', $plugin_admin, 'in_plugin_update_message', 10, 2 );
 	}
 
@@ -279,6 +280,7 @@ class Plugin {
 			'KaizenCoders\UpdateURLS\Feedback',
 			'KaizenCoders\UpdateURLS\Promo',
 			'KaizenCoders\UpdateURLS\Admin\Promotions\PromoBanner',
+			'KaizenCoders\UpdateURLS\Admin\Footer',
 			'KaizenCoders\UpdateURLS\Ajax',
 			'KaizenCoders\UpdateURLS\EmailReports\Init',
 		);

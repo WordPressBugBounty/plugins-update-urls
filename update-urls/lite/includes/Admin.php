@@ -260,32 +260,6 @@ class Admin {
 		}
 	}
 
-	/**
-	 * Update admin footer text
-	 *
-	 * @param $footer_text
-	 *
-	 * @return string
-	 *
-	 * @since 1.2
-	 */
-	public function update_admin_footer_text( $footer_text ) {
-
-		// Update Footer admin only on Update URLS pages
-		if ( Helper::is_plugin_admin_screen() ) {
-
-
-			$wordpress_url = 'https://www.wordpress.org';
-			$website_url   = 'https://www.kaizencoders.com';
-
-			$UpdateURLS_plugin_name = ( UU()->is_pro() ) ? 'Update URLS PRO' : 'Update URLS';
-
-			$footer_text = sprintf( __( '<span id="footer-thankyou">Thank you for creating with <a href="%1$s" target="_blank">WordPress</a> | %2$s <b>%3$s</b>. Developed by team <a href="%4$s" target="_blank">KaizenCoders</a></span>', 'update-urls' ), $wordpress_url, $UpdateURLS_plugin_name, KC_UU_PLUGIN_VERSION, $website_url );
-		}
-
-		return $footer_text;
-	}
-
 
 	/**
 	 * Update plugin notice

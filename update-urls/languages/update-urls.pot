@@ -2,21 +2,23 @@
 # This file is distributed under the GPL-3.0+.
 msgid ""
 msgstr ""
-"Project-Id-Version: Update URLS 1.4.2\n"
+"Project-Id-Version: Update URLS 1.5.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/update-urls\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-04-20T08:52:19+00:00\n"
+"POT-Creation-Date: 2026-08-24T09:25:34+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: update-urls\n"
 
 #. Plugin Name of the plugin
-#: lite/includes/Admin.php:137
-#: lite/includes/Helper.php:461
+#: lite/includes/Admin.php:139
+#: lite/includes/Admin/Footer.php:142
+#: lite/includes/Helper.php:575
+#: pro/includes/Admin.php:106
 msgid "Update URLS"
 msgstr ""
 
@@ -36,31 +38,27 @@ msgstr ""
 msgid "https://kaizencoders.com"
 msgstr ""
 
-#: lite/includes/Admin.php:145
-#: lite/includes/Admin.php:146
+#: lite/includes/Admin.php:147
+#: lite/includes/Admin.php:148
 #: lite/includes/Admin/Templates/update-urls.php:10
 msgid "Search & Replace"
 msgstr ""
 
-#: lite/includes/Admin.php:155
-#: lite/includes/Admin.php:156
+#: lite/includes/Admin.php:157
+#: lite/includes/Admin.php:158
 #: lite/includes/Admin/Templates/history.php:9
 msgid "History"
 msgstr ""
 
-#: lite/includes/Admin.php:165
-#: lite/includes/Admin.php:166
+#: lite/includes/Admin.php:167
+#: lite/includes/Admin.php:168
 #: lite/includes/Admin/Templates/tools.php:15
 msgid "Tools"
 msgstr ""
 
-#: lite/includes/Admin.php:175
-#: lite/includes/Admin.php:176
+#: lite/includes/Admin.php:177
+#: lite/includes/Admin.php:178
 msgid "Other Products"
-msgstr ""
-
-#: lite/includes/Admin.php:280
-msgid "<span id=\"footer-thankyou\">Thank you for creating with <a href=\"%1$s\" target=\"_blank\">WordPress</a> | %2$s <b>%3$s</b>. Developed by team <a href=\"%4$s\" target=\"_blank\">KaizenCoders</a></span>"
 msgstr ""
 
 #: lite/includes/Admin/admin-settings.php:9
@@ -98,7 +96,6 @@ msgstr ""
 
 #: lite/includes/Admin/admin-settings.php:41
 #: lite/includes/Admin/admin-settings.php:42
-#: pro/includes/Admin/Templates/settings.php:55
 msgid "Maximum number of change details to track per table. Higher values use more memory."
 msgstr ""
 
@@ -209,7 +206,6 @@ msgid "Sunday"
 msgstr ""
 
 #: lite/includes/Admin/admin-settings.php:206
-#: pro/includes/Admin/Templates/history.php:93
 msgid "Active"
 msgstr ""
 
@@ -222,7 +218,7 @@ msgid "Never"
 msgstr ""
 
 #: lite/includes/Admin/admin-settings.php:227
-#: pro/includes/Admin/Templates/history.php:51
+#: pro/includes/Admin/Templates/history.php:57
 msgid "Status"
 msgstr ""
 
@@ -259,9 +255,103 @@ msgstr ""
 msgid "Send Test"
 msgstr ""
 
+#: lite/includes/Admin/Footer.php:142
+msgid "Update URLS PRO"
+msgstr ""
+
+#: lite/includes/Admin/Footer.php:180
+msgid "About"
+msgstr ""
+
+#: lite/includes/Admin/Footer.php:184
+msgid "Documentation"
+msgstr ""
+
+#: lite/includes/Admin/Footer.php:188
+msgid "Support"
+msgstr ""
+
+#: lite/includes/Admin/Footer.php:205
+msgid "Go PRO"
+msgstr ""
+
+#: lite/includes/Admin/Promotions/PromoBanner.php:74
+msgid "Upgrade Now"
+msgstr ""
+
+#: lite/includes/Admin/Promotions/PromoBanner.php:76
+msgid "Compare plans"
+msgstr ""
+
+#: lite/includes/Admin/Promotions/PromoBanner.php:110
+msgid "🛟 Your last search & replace had no undo"
+msgstr ""
+
+#: lite/includes/Admin/Promotions/PromoBanner.php:111
+msgid "PRO adds a dry run to preview every change first, a one-click database backup, and a full history you can roll back. Large replaces run in the background too, so they survive a closed browser."
+msgstr ""
+
+#: lite/includes/Admin/Promotions/PromoBanner.php:112
+#: lite/includes/Admin/Templates/search-replace.php:173
+msgid "Upgrade to PRO"
+msgstr ""
+
+#: lite/includes/Admin/Promotions/PromoBanner.php:119
+msgid "👋 Enjoying Update URLS?"
+msgstr ""
+
+#: lite/includes/Admin/Promotions/PromoBanner.php:120
+msgid "Unlock dry runs, database backup and import, saved profiles, and searching any table in your database."
+msgstr ""
+
+#: lite/includes/Admin/Promotions/PromoBanner.php:121
+msgid "See what PRO adds"
+msgstr ""
+
+#: lite/includes/Admin/Promotions/PromoBanner.php:460
+msgid "Update URLS promotion"
+msgstr ""
+
+#: lite/includes/Admin/Promotions/PromoBanner.php:481
+msgid "Coupon"
+msgstr ""
+
+#: lite/includes/Admin/Promotions/PromoBanner.php:485
+msgid "Copied!"
+msgstr ""
+
+#: lite/includes/Admin/Promotions/PromoBanner.php:486
+msgid "Copy coupon code"
+msgstr ""
+
+#: lite/includes/Admin/Promotions/PromoBanner.php:487
+msgid "Copy"
+msgstr ""
+
+#: lite/includes/Admin/Promotions/PromoBanner.php:507
+msgid "Dismiss this promotion"
+msgstr ""
+
 #: lite/includes/Admin/Settings.php:77
 #: lite/includes/Admin/Settings.php:78
 msgid "Settings"
+msgstr ""
+
+#. translators: 1: a heart, 2: link opening tag, 3: link closing tag
+#: lite/includes/Admin/Templates/footer.php:58
+msgid "Made with %1$s by %2$sKaizenCoders%3$s"
+msgstr ""
+
+#: lite/includes/Admin/Templates/footer.php:66
+msgid "Update URLS links"
+msgstr ""
+
+#: lite/includes/Admin/Templates/footer.php:106
+msgid "Rate Update URLS"
+msgstr ""
+
+#: lite/includes/Admin/Templates/footer.php:110
+msgid "on WordPress.org (opens in a new tab)"
 msgstr ""
 
 #: lite/includes/Admin/Templates/search-replace.php:5
@@ -273,7 +363,7 @@ msgid "Search in page content (posts, pages, custom post types, revisions)"
 msgstr ""
 
 #: lite/includes/Admin/Templates/search-replace.php:9
-#: lite/includes/Helper.php:566
+#: lite/includes/Helper.php:680
 msgid "Excerpts"
 msgstr ""
 
@@ -282,7 +372,7 @@ msgid "Search in excerpts"
 msgstr ""
 
 #: lite/includes/Admin/Templates/search-replace.php:14
-#: lite/includes/Helper.php:570
+#: lite/includes/Helper.php:684
 msgid "Attachments"
 msgstr ""
 
@@ -291,7 +381,7 @@ msgid "Search in attachments (images, documents, general media)"
 msgstr ""
 
 #: lite/includes/Admin/Templates/search-replace.php:19
-#: lite/includes/Helper.php:574
+#: lite/includes/Helper.php:688
 msgid "Links"
 msgstr ""
 
@@ -308,7 +398,7 @@ msgid "Search in custom fields and meta boxes"
 msgstr ""
 
 #: lite/includes/Admin/Templates/search-replace.php:36
-#: pro/includes/Admin/Templates/search-replace.php:221
+#: pro/includes/Admin/Templates/search-replace.php:227
 msgid "Replace GUIDs"
 msgstr ""
 
@@ -384,10 +474,6 @@ msgstr ""
 msgid "Backup your entire database before any operation and restore it with a single click if needed."
 msgstr ""
 
-#: lite/includes/Admin/Templates/search-replace.php:173
-msgid "Upgrade to PRO"
-msgstr ""
-
 #: lite/includes/Admin/Templates/search-replace.php:183
 #: pro/includes/Admin/Templates/search-replace.php:83
 msgid "Want to be safe? "
@@ -409,12 +495,12 @@ msgid "Search / Replace"
 msgstr ""
 
 #: lite/includes/Admin/Templates/search-replace.php:203
-#: pro/includes/Admin/Templates/search-replace.php:103
+#: pro/includes/Admin/Templates/search-replace.php:108
 msgid "Search For"
 msgstr ""
 
 #: lite/includes/Admin/Templates/search-replace.php:218
-#: pro/includes/Admin/Templates/search-replace.php:120
+#: pro/includes/Admin/Templates/search-replace.php:121
 msgid "Replace With"
 msgstr ""
 
@@ -423,12 +509,12 @@ msgid "Where to Update?"
 msgstr ""
 
 #: lite/includes/Admin/Templates/search-replace.php:266
-#: pro/includes/Admin/Templates/search-replace.php:198
+#: pro/includes/Admin/Templates/search-replace.php:204
 msgid "Additional Settings"
 msgstr ""
 
 #: lite/includes/Admin/Templates/search-replace.php:298
-#: pro/includes/Admin/Templates/search-replace.php:278
+#: pro/includes/Admin/Templates/search-replace.php:305
 msgid "Run Search/Replace"
 msgstr ""
 
@@ -555,7 +641,7 @@ msgid "ago"
 msgstr ""
 
 #: lite/includes/EmailReports/EmailTemplate.php:245
-#: pro/includes/Admin.php:186
+#: pro/includes/Admin.php:278
 msgid "From"
 msgstr ""
 
@@ -586,6 +672,7 @@ msgstr ""
 #: lite/includes/EmailReports/ReportGenerator.php:208
 #: lite/includes/EmailReports/ReportGenerator.php:215
 #: lite/includes/EmailReports/ReportGenerator.php:222
+#: lite/includes/EmailReports/ReportGenerator.php:236
 msgid "Learn more →"
 msgstr ""
 
@@ -642,9 +729,9 @@ msgstr ""
 
 #: lite/includes/EmailReports/Init.php:144
 #: lite/includes/EmailReports/Init.php:171
-#: pro/includes/Admin.php:127
-#: pro/includes/Admin.php:271
-#: pro/includes/Admin.php:307
+#: pro/includes/Admin.php:219
+#: pro/includes/Admin.php:397
+#: pro/includes/Admin.php:433
 #: pro/includes/Ajax.php:38
 #: pro/includes/Profile.php:101
 #: pro/includes/Profile.php:131
@@ -764,113 +851,286 @@ msgstr ""
 msgid "Every Search & Replace is logged in PRO. Browse your full history and undo any operation with a single click — no manual restore needed."
 msgstr ""
 
-#: lite/includes/Helper.php:562
+#: lite/includes/EmailReports/ReportGenerator.php:233
+msgid "What's new in Update URLS PRO"
+msgstr ""
+
+#: lite/includes/EmailReports/ReportGenerator.php:234
+msgid "Update URLS PRO — The Complete Search & Replace Plugin for WordPress"
+msgstr ""
+
+#: lite/includes/Helper.php:676
 msgid "Content Items (Posts, Pages, Custom Post Types, Revisions)"
 msgstr ""
 
-#: lite/includes/Helper.php:578
+#: lite/includes/Helper.php:692
 msgid "Custom Fields"
 msgstr ""
 
-#: lite/includes/Helper.php:582
+#: lite/includes/Helper.php:696
 msgid "GUIDs"
 msgstr ""
 
-#: lite/includes/Promo.php:75
-msgid "Major Upgrade"
+#: lite/includes/Promo.php:82
+msgid "<p class=\"text-xl\">Get Dry-Run, One Click Export/Import Database, History and much more at flat 50% OFF until <b class=\"text-red-600 text-xl\">July 15, 2026</b></p>"
 msgstr ""
 
-#: lite/includes/Promo.php:81
-msgid "<p class=\"text-xl\">Get Dry-Run, One Click Export/Import Database, History and much more at flat 50% OFF until <b class=\"text-red-600 text-xl\">April 30, 2026</b></p>"
+#. translators: %s: error message
+#: pro/includes/Admin.php:81
+msgid "Search/replace failed: %s"
 msgstr ""
 
-#: pro/includes/Admin.php:133
+#: pro/includes/Admin.php:82
+msgid "unknown error"
+msgstr ""
+
+#: pro/includes/Admin.php:86
+msgid "Search/replace stopped."
+msgstr ""
+
+#: pro/includes/Admin.php:87
+msgid "Search/replace finished."
+msgstr ""
+
+#. translators: 1: number of changes, 2: number of rows
+#: pro/includes/Admin.php:91
+msgid "%1$s changes across %2$s rows."
+msgstr ""
+
+#: pro/includes/Admin.php:109
+msgid "View history"
+msgstr ""
+
+#: pro/includes/Admin.php:111
+msgid "Dismiss"
+msgstr ""
+
+#: pro/includes/Admin.php:225
 msgid "No results found."
 msgstr ""
 
-#: pro/includes/Admin.php:152
+#: pro/includes/Admin.php:244
 msgid "Search/Replace Results Details"
 msgstr ""
 
-#: pro/includes/Admin.php:157
-#: pro/includes/Admin/Templates/history.php:169
-#: pro/includes/Admin/Templates/search-replace.php:318
+#: pro/includes/Admin.php:249
+#: pro/includes/Admin/Templates/history.php:242
+#: pro/includes/Admin/Templates/history.php:282
+#: pro/includes/Admin/Templates/search-replace.php:369
 msgid "Table"
 msgstr ""
 
-#: pro/includes/Admin.php:158
+#: pro/includes/Admin.php:250
 msgid "Changes Found"
 msgstr ""
 
-#: pro/includes/Admin.php:159
+#: pro/includes/Admin.php:251
 msgid "Rows Updated"
 msgstr ""
 
-#: pro/includes/Admin.php:160
+#: pro/includes/Admin.php:252
 msgid "Time (s)"
 msgstr ""
 
-#: pro/includes/Admin.php:184
-#: pro/includes/Admin/Templates/history.php:171
-#: pro/includes/Admin/Templates/search-replace.php:320
+#: pro/includes/Admin.php:276
+#: pro/includes/Admin/Templates/history.php:244
+#: pro/includes/Admin/Templates/history.php:284
+#: pro/includes/Admin/Templates/search-replace.php:371
 msgid "Row"
 msgstr ""
 
-#: pro/includes/Admin.php:185
-#: pro/includes/Admin/Templates/history.php:170
-#: pro/includes/Admin/Templates/search-replace.php:319
+#: pro/includes/Admin.php:277
+#: pro/includes/Admin/Templates/history.php:243
+#: pro/includes/Admin/Templates/history.php:283
+#: pro/includes/Admin/Templates/search-replace.php:370
 msgid "Column"
 msgstr ""
 
-#: pro/includes/Admin.php:187
+#: pro/includes/Admin.php:279
 msgid "To"
 msgstr ""
 
-#: pro/includes/Admin.php:236
+#: pro/includes/Admin.php:330
 msgid "Please select a file to import."
 msgstr ""
 
-#: pro/includes/Admin.php:237
-#: pro/includes/Ajax.php:92
-#: pro/includes/Ajax.php:232
+#: pro/includes/Admin.php:331
+#: pro/includes/Ajax.php:117
+#: pro/includes/Ajax.php:283
+#: pro/includes/Job.php:136
 msgid "Please enter a search string."
 msgstr ""
 
-#: pro/includes/Admin.php:238
-#: pro/includes/Ajax.php:96
+#: pro/includes/Admin.php:332
+#: pro/includes/Ajax.php:121
+#: pro/includes/Job.php:142
 msgid "Please select at least one table."
 msgstr ""
 
-#: pro/includes/Admin.php:239
+#: pro/includes/Admin.php:333
+#: pro/includes/Admin/Templates/search-replace.php:186
+msgid "No tables selected"
+msgstr ""
+
+#: pro/includes/Admin.php:334
+#: pro/includes/Ajax.php:287
+msgid "No rows selected."
+msgstr ""
+
+#: pro/includes/Admin.php:335
 msgid "An unknown error occurred."
 msgstr ""
 
-#: pro/includes/Admin.php:240
-#: pro/includes/Admin/Templates/search-replace.php:292
+#: pro/includes/Admin.php:336
+#: pro/includes/Admin/Templates/search-replace.php:319
 msgid "Processing..."
 msgstr ""
 
-#: pro/includes/Admin.php:241
+#: pro/includes/Admin.php:337
+msgid "Replacing..."
+msgstr ""
+
+#: pro/includes/Admin.php:338
+msgid "Complete"
+msgstr ""
+
+#: pro/includes/Admin.php:339
+msgid "Failed"
+msgstr ""
+
+#: pro/includes/Admin.php:340
+msgid "Stopped"
+msgstr ""
+
+#: pro/includes/Admin.php:341
+msgid "Dry Run Complete"
+msgstr ""
+
+#: pro/includes/Admin.php:342
+#: pro/includes/Admin/Templates/search-replace.php:382
+msgid "Replace Selected"
+msgstr ""
+
+#: pro/includes/Admin.php:343
+#: pro/includes/Admin/Templates/search-replace.php:174
+#: pro/includes/Admin/Templates/search-replace.php:367
+msgid "Select All"
+msgstr ""
+
+#: pro/includes/Admin.php:344
+msgid "Deselect All"
+msgstr ""
+
+#: pro/includes/Admin.php:345
 msgid "Are you sure you want to proceed? This will make changes to your database that are not easily reversible."
 msgstr ""
 
-#: pro/includes/Admin.php:242
+#: pro/includes/Admin.php:346
 msgid "Are you sure you want to undo this operation? This will restore the original values where possible."
 msgstr ""
 
-#: pro/includes/Admin.php:243
+#: pro/includes/Admin.php:347
 msgid "Are you sure you want to delete this history entry? This cannot be undone."
 msgstr ""
 
-#: pro/includes/Admin.php:244
+#: pro/includes/Admin.php:348
 msgid "Undoing..."
 msgstr ""
 
-#: pro/includes/Admin.php:245
+#: pro/includes/Admin.php:349
+#: pro/includes/Admin/Templates/history.php:136
+msgid "Undone"
+msgstr ""
+
+#: pro/includes/Admin.php:350
+#: pro/includes/Admin/Templates/history.php:148
+msgid "Partly undone"
+msgstr ""
+
+#: pro/includes/Admin.php:351
+msgid "The undo was interrupted. Nothing already restored has been lost — click Undo again to carry on from where it stopped."
+msgstr ""
+
+#: pro/includes/Admin.php:352
+msgid "Loading..."
+msgstr ""
+
+#: pro/includes/Admin.php:353
+msgid "Restore this"
+msgstr ""
+
+#: pro/includes/Admin.php:354
+msgid "Restoring..."
+msgstr ""
+
+#: pro/includes/Admin.php:355
+msgid "Restored"
+msgstr ""
+
+#: pro/includes/Admin.php:356
+msgid "This row was left alone because its value is not the one this replacement wrote. Restoring it will overwrite the value shown under \"Value now\", and that overwritten value is not recoverable. Continue?"
+msgstr ""
+
+#: pro/includes/Admin.php:357
+#: pro/includes/Admin/Templates/history.php:173
+#: pro/includes/Admin/Templates/history.php:232
+msgid "Not undone"
+msgstr ""
+
+#: pro/includes/Admin.php:358
+#: pro/includes/Admin/Templates/history.php:172
+msgid "List the rows this rollback could not put back, and why."
+msgstr ""
+
+#: pro/includes/Admin.php:359
+#: pro/includes/Admin/Templates/history.php:153
+msgid "Undo unfinished"
+msgstr ""
+
+#: pro/includes/Admin.php:360
+#: pro/includes/Admin/Templates/history.php:182
+msgid "Resume undo"
+msgstr ""
+
+#. translators: 1: rows shown, 2: total rows
+#: pro/includes/Admin.php:362
+msgid "Showing %1$s of %2$s rows left in place. Their current values were not written by this replacement, so restoring them would overwrite someone else's edit."
+msgstr ""
+
+#: pro/includes/Admin.php:363
 msgid "Deleting..."
 msgstr ""
 
-#: pro/includes/Admin.php:319
+#: pro/includes/Admin.php:364
+msgid "Queued..."
+msgstr ""
+
+#: pro/includes/Admin.php:365
+msgid "This is running on the server. You can close this window, leave the page, or shut your browser — the replace will keep going. Come back any time to check progress."
+msgstr ""
+
+#: pro/includes/Admin.php:366
+msgid "Processing in this browser tab. Keep this page open until it finishes."
+msgstr ""
+
+#: pro/includes/Admin.php:367
+msgid "This site's background queue does not appear to be running, so the job has not started. You can process it in this browser instead — the page must stay open."
+msgstr ""
+
+#: pro/includes/Admin.php:368
+msgid "Stop the running search/replace? Changes already written will not be rolled back."
+msgstr ""
+
+#: pro/includes/Admin.php:369
+msgid "Lost contact with this page's session — the job is unaffected and is still running. Reload the page to see current progress."
+msgstr ""
+
+#. translators: 1: rows processed, 2: total rows
+#: pro/includes/Admin.php:371
+msgid "%1$s of %2$s rows"
+msgstr ""
+
+#: pro/includes/Admin.php:445
 msgid "Backup file not found."
 msgstr ""
 
@@ -946,78 +1206,134 @@ msgstr ""
 msgid "No SQL files found in the upload directory. Upload a .sql file via FTP/SFTP to the path shown above, then refresh this page."
 msgstr ""
 
-#: pro/includes/Admin/Templates/history.php:37
+#: pro/includes/Admin/Templates/history.php:43
 msgid "No search/replace history yet."
 msgstr ""
 
-#: pro/includes/Admin/Templates/history.php:38
+#: pro/includes/Admin/Templates/history.php:44
 msgid "History entries are created automatically when you run a non-dry-run search/replace operation."
 msgstr ""
 
-#: pro/includes/Admin/Templates/history.php:46
+#: pro/includes/Admin/Templates/history.php:52
 msgid "Date"
 msgstr ""
 
-#: pro/includes/Admin/Templates/history.php:47
+#: pro/includes/Admin/Templates/history.php:53
 msgid "Search"
 msgstr ""
 
-#: pro/includes/Admin/Templates/history.php:48
+#: pro/includes/Admin/Templates/history.php:54
 msgid "Replace"
 msgstr ""
 
-#: pro/includes/Admin/Templates/history.php:49
+#: pro/includes/Admin/Templates/history.php:55
 msgid "Tables"
 msgstr ""
 
-#: pro/includes/Admin/Templates/history.php:50
+#: pro/includes/Admin/Templates/history.php:56
 msgid "Changes"
 msgstr ""
 
-#: pro/includes/Admin/Templates/history.php:52
+#: pro/includes/Admin/Templates/history.php:58
 msgid "Actions"
 msgstr ""
 
-#: pro/includes/Admin/Templates/history.php:76
+#: pro/includes/Admin/Templates/history.php:87
+msgid "No undo data was recorded for this entry. Restore from a database backup instead."
+msgstr ""
+
+#: pro/includes/Admin/Templates/history.php:89
+msgid "Already undone."
+msgstr ""
+
+#: pro/includes/Admin/Templates/history.php:91
+msgid "Already rolled back as far as it could be."
+msgstr ""
+
+#. translators: 1: recoverable count, 2: total changes
+#: pro/includes/Admin/Templates/history.php:95
+msgid "Only %1$s of %2$s changes can be restored."
+msgstr ""
+
+#: pro/includes/Admin/Templates/history.php:108
 msgid "table(s)"
 msgstr ""
 
 #. translators: 1: changes count, 2: updates count
-#: pro/includes/Admin/Templates/history.php:83
-msgid "%1$d changes / %2$d rows"
+#: pro/includes/Admin/Templates/history.php:115
+msgid "%1$s changes / %2$s rows"
 msgstr ""
 
-#: pro/includes/Admin/Templates/history.php:91
-msgid "Undone"
+#. translators: %s: number of changes that can be restored
+#: pro/includes/Admin/Templates/history.php:125
+msgid "%s undoable"
 msgstr ""
 
-#: pro/includes/Admin/Templates/history.php:99
+#: pro/includes/Admin/Templates/history.php:135
+msgid "This replacement was rolled back in full."
+msgstr ""
+
+#. translators: 1: restored count, 2: skipped count
+#: pro/includes/Admin/Templates/history.php:143
+msgid "%1$s restored, %2$s left in place because those values changed after the replacement."
+msgstr ""
+
+#: pro/includes/Admin/Templates/history.php:152
+msgid "An undo was started but did not finish. Click Undo to carry on from where it stopped."
+msgstr ""
+
 #: pro/includes/Admin/Templates/history.php:157
+msgid "This replacement finished and is still in effect. History entries are only created once a run completes."
+msgstr ""
+
+#: pro/includes/Admin/Templates/history.php:158
+msgid "Applied"
+msgstr ""
+
+#: pro/includes/Admin/Templates/history.php:165
+#: pro/includes/Admin/Templates/history.php:270
 msgid "Details"
 msgstr ""
 
-#: pro/includes/Admin/Templates/history.php:107
+#: pro/includes/Admin/Templates/history.php:182
 msgid "Undo"
 msgstr ""
 
-#: pro/includes/Admin/Templates/history.php:110
+#: pro/includes/Admin/Templates/history.php:185
 #: pro/includes/Admin/Templates/search-replace.php:56
 msgid "Delete"
 msgstr ""
 
-#: pro/includes/Admin/Templates/history.php:172
-#: pro/includes/Admin/Templates/search-replace.php:321
+#: pro/includes/Admin/Templates/history.php:245
+msgid "Why"
+msgstr ""
+
+#: pro/includes/Admin/Templates/history.php:246
+msgid "Value now"
+msgstr ""
+
+#: pro/includes/Admin/Templates/history.php:247
+msgid "Would have been restored to"
+msgstr ""
+
+#: pro/includes/Admin/Templates/history.php:257
+msgid "Load more"
+msgstr ""
+
+#: pro/includes/Admin/Templates/history.php:260
+#: pro/includes/Admin/Templates/history.php:295
+#: pro/includes/Admin/Templates/search-replace.php:391
+msgid "Close"
+msgstr ""
+
+#: pro/includes/Admin/Templates/history.php:285
+#: pro/includes/Admin/Templates/search-replace.php:372
 msgid "Before"
 msgstr ""
 
-#: pro/includes/Admin/Templates/history.php:173
-#: pro/includes/Admin/Templates/search-replace.php:322
+#: pro/includes/Admin/Templates/history.php:286
+#: pro/includes/Admin/Templates/search-replace.php:373
 msgid "After"
-msgstr ""
-
-#: pro/includes/Admin/Templates/history.php:182
-#: pro/includes/Admin/Templates/search-replace.php:337
-msgid "Close"
 msgstr ""
 
 #: pro/includes/Admin/Templates/partials/results.php:20
@@ -1059,78 +1375,98 @@ msgstr ""
 msgid "Saved Profiles"
 msgstr ""
 
-#: pro/includes/Admin/Templates/search-replace.php:115
+#: pro/includes/Admin/Templates/search-replace.php:134
+msgid "Swap Search For and Replace With"
+msgstr ""
+
+#: pro/includes/Admin/Templates/search-replace.php:134
 msgid "Swap values"
 msgstr ""
 
-#: pro/includes/Admin/Templates/search-replace.php:136
+#: pro/includes/Admin/Templates/search-replace.php:142
 msgid "Select Tables"
 msgstr ""
 
-#: pro/includes/Admin/Templates/search-replace.php:137
+#: pro/includes/Admin/Templates/search-replace.php:143
 msgid "Select the tables you want to search."
 msgstr ""
 
-#: pro/includes/Admin/Templates/search-replace.php:145
+#: pro/includes/Admin/Templates/search-replace.php:151
 msgid "Available Tables"
 msgstr ""
 
-#: pro/includes/Admin/Templates/search-replace.php:149
+#: pro/includes/Admin/Templates/search-replace.php:155
 msgid "Filter tables..."
 msgstr ""
 
-#: pro/includes/Admin/Templates/search-replace.php:168
-#: pro/includes/Admin/Templates/search-replace.php:316
-msgid "Select All"
-msgstr ""
-
-#: pro/includes/Admin/Templates/search-replace.php:175
+#: pro/includes/Admin/Templates/search-replace.php:181
 msgid "Tables to Include"
 msgstr ""
 
-#: pro/includes/Admin/Templates/search-replace.php:180
-msgid "No tables selected"
-msgstr ""
-
-#: pro/includes/Admin/Templates/search-replace.php:209
+#: pro/includes/Admin/Templates/search-replace.php:215
 msgid "Case-Insensitive"
 msgstr ""
 
-#: pro/includes/Admin/Templates/search-replace.php:210
+#: pro/includes/Admin/Templates/search-replace.php:216
 msgid "Searches are case-sensitive by default."
 msgstr ""
 
 #. translators: %s: URL to WordPress GUID documentation
-#: pro/includes/Admin/Templates/search-replace.php:225
+#: pro/includes/Admin/Templates/search-replace.php:231
 msgid "Update ALL GUIDs. GUIDs for posts should only be changed on development sites. <a href=\"%s\" target=\"_blank\">Learn More</a>."
 msgstr ""
 
-#: pro/includes/Admin/Templates/search-replace.php:239
+#: pro/includes/Admin/Templates/search-replace.php:245
+msgid "Match escaped URLs in JSON data"
+msgstr ""
+
+#. translators: 1: escaped URL example, 2: plain URL example
+#: pro/includes/Admin/Templates/search-replace.php:250
+msgid "Page builders and directory plugins store settings as JSON, where slashes are escaped (%1$s instead of %2$s). Leave this on unless you have a reason not to — without it those values are silently skipped and images can keep pointing at the old domain."
+msgstr ""
+
+#: pro/includes/Admin/Templates/search-replace.php:266
 msgid "Run as dry run"
 msgstr ""
 
-#: pro/includes/Admin/Templates/search-replace.php:240
+#: pro/includes/Admin/Templates/search-replace.php:267
 msgid "If checked, no changes will be made to the database, allowing you to check the results beforehand."
 msgstr ""
 
-#: pro/includes/Admin/Templates/search-replace.php:251
+#: pro/includes/Admin/Templates/search-replace.php:278
 msgid "Save as Profile"
 msgstr ""
 
-#: pro/includes/Admin/Templates/search-replace.php:252
+#: pro/includes/Admin/Templates/search-replace.php:279
 msgid "Save this search/replace configuration for reuse."
 msgstr ""
 
-#: pro/includes/Admin/Templates/search-replace.php:259
+#: pro/includes/Admin/Templates/search-replace.php:286
 msgid "Profile Name"
 msgstr ""
 
-#: pro/includes/Admin/Templates/search-replace.php:331
-msgid "Replace Selected"
+#: pro/includes/Admin/Templates/search-replace.php:339
+msgid "Process in this browser instead"
 msgstr ""
 
-#: pro/includes/Admin/Templates/search-replace.php:334
+#: pro/includes/Admin/Templates/search-replace.php:351
+msgid "No matches found."
+msgstr ""
+
+#: pro/includes/Admin/Templates/search-replace.php:353
+msgid "Nothing in the selected tables contains:"
+msgstr ""
+
+#: pro/includes/Admin/Templates/search-replace.php:357
+msgid "Searches are case-sensitive unless you turn that off, and they match exactly — check for http:// versus https://, a trailing slash, or www. If you expected matches in page builder or member plugin data, make sure \"Match escaped URLs in JSON data\" is on."
+msgstr ""
+
+#: pro/includes/Admin/Templates/search-replace.php:385
 msgid "Replace All"
+msgstr ""
+
+#: pro/includes/Admin/Templates/search-replace.php:388
+msgid "Stop"
 msgstr ""
 
 #: pro/includes/Admin/Templates/settings.php:19
@@ -1139,6 +1475,10 @@ msgstr ""
 
 #: pro/includes/Admin/Templates/settings.php:46
 msgid "Range: 1,000 - 50,000 (default: 20,000)"
+msgstr ""
+
+#: pro/includes/Admin/Templates/settings.php:55
+msgid "How many changes per table to list in the results and history views. Higher values use more memory. This does not limit Undo — every change is recorded for rollback regardless."
 msgstr ""
 
 #: pro/includes/Admin/Templates/settings.php:69
@@ -1157,107 +1497,223 @@ msgstr ""
 msgid "Save Settings"
 msgstr ""
 
-#: pro/includes/Ajax.php:68
+#: pro/includes/Ajax.php:92
 msgid "Unknown action."
 msgstr ""
 
 #: pro/includes/Ajax.php:130
+#: pro/includes/Job.php:153
+msgid "The selected tables are all excluded from search/replace. Update URLS keeps its own tables — including the undo journal — out of every run."
+msgstr ""
+
+#: pro/includes/Ajax.php:182
 msgid "Starting search/replace..."
 msgstr ""
 
-#: pro/includes/Ajax.php:140
+#: pro/includes/Ajax.php:192
 msgid "No search/replace data found."
 msgstr ""
 
-#: pro/includes/Ajax.php:161
+#: pro/includes/Ajax.php:208
+#: pro/includes/Job.php:462
 msgid "Search/replace complete!"
 msgstr ""
 
 #. translators: 1: current table number, 2: total tables, 3: table name
-#: pro/includes/Ajax.php:211
+#: pro/includes/Ajax.php:261
+#: pro/includes/Job.php:390
 msgid "Processing table %1$d of %2$d: %3$s"
 msgstr ""
 
-#: pro/includes/Ajax.php:236
-msgid "No rows selected."
-msgstr ""
-
 #. translators: 1: number of changes, 2: number of rows updated
-#: pro/includes/Ajax.php:322
+#: pro/includes/Ajax.php:390
 msgid "Replaced %1$d change(s) across %2$d row(s)."
 msgstr ""
 
-#: pro/includes/Ajax.php:411
+#: pro/includes/Ajax.php:447
 msgid "Starting backup..."
 msgstr ""
 
-#: pro/includes/Ajax.php:448
+#: pro/includes/Ajax.php:484
 msgid "Backup complete!"
 msgstr ""
 
 #. translators: 1: current table number, 2: total tables, 3: table name
-#: pro/includes/Ajax.php:481
+#: pro/includes/Ajax.php:517
 msgid "Backing up table %1$d of %2$d: %3$s"
 msgstr ""
 
-#: pro/includes/Ajax.php:507
+#: pro/includes/Ajax.php:543
 msgid "Invalid or missing import file."
 msgstr ""
 
-#: pro/includes/Ajax.php:517
+#: pro/includes/Ajax.php:553
 msgid "Starting import..."
 msgstr ""
 
-#: pro/includes/Ajax.php:533
+#: pro/includes/Ajax.php:569
 msgid "Import complete! Tables have been restored."
 msgstr ""
 
 #. translators: 1: current page, 2: total pages
-#: pro/includes/Ajax.php:550
+#: pro/includes/Ajax.php:586
 msgid "Importing page %1$d of %2$d..."
 msgstr ""
 
-#: pro/includes/Ajax.php:569
+#: pro/includes/Ajax.php:605
 msgid "Invalid or missing server file."
 msgstr ""
 
-#: pro/includes/Ajax.php:579
+#: pro/includes/Ajax.php:615
 msgid "No file selected. Please choose a SQL file to upload or select a file from the server."
 msgstr ""
 
-#: pro/includes/Ajax.php:589
+#: pro/includes/Ajax.php:625
 msgid "Invalid file type. Only .sql and .sql.gz files are allowed."
 msgstr ""
 
-#: pro/includes/Ajax.php:602
+#: pro/includes/Ajax.php:638
 msgid "Failed to save uploaded file."
 msgstr ""
 
-#: pro/includes/Ajax.php:675
-#: pro/includes/Ajax.php:721
+#: pro/includes/Ajax.php:666
+#: pro/includes/Ajax.php:750
+#: pro/includes/Ajax.php:978
 msgid "Missing entry ID."
 msgstr ""
 
-#: pro/includes/Ajax.php:682
-#: pro/includes/Ajax.php:728
+#: pro/includes/Ajax.php:673
+#: pro/includes/Ajax.php:985
 msgid "History entry not found."
 msgstr ""
 
-#: pro/includes/Ajax.php:686
+#: pro/includes/Ajax.php:682
 msgid "This entry has already been undone."
 msgstr ""
 
-#: pro/includes/Ajax.php:692
-msgid "No details available to undo."
+#: pro/includes/Ajax.php:687
+msgid "This entry was already rolled back as far as it could be. The rows that were skipped have changed since the replacement and will not be restored."
+msgstr ""
+
+#: pro/includes/Ajax.php:693
+msgid "No undo data was recorded for this entry, so it cannot be rolled back. Restore from a database backup instead."
+msgstr ""
+
+#. translators: %s: number of rows still to examine
+#: pro/includes/Ajax.php:769
+msgid "Working out which rows were left in place — %s to go..."
+msgstr ""
+
+#: pro/includes/Ajax.php:783
+msgid "Every change this entry recorded was put back. Nothing was left in place."
+msgstr ""
+
+#. translators: 1: rows recorded as skipped, 2: rows that cannot be determined
+#: pro/includes/Ajax.php:833
+msgid "This rollback ran before per-row outcomes were tracked. It recorded %1$s row(s) as left in place; %2$s of the rows below cannot be confirmed either way."
+msgstr ""
+
+#: pro/includes/Ajax.php:861
+msgid "Missing entry or row."
+msgstr ""
+
+#: pro/includes/Ajax.php:867
+msgid "That row is not part of this history entry."
+msgstr ""
+
+#: pro/includes/Ajax.php:871
+msgid "That row was already restored."
+msgstr ""
+
+#: pro/includes/Ajax.php:906
+msgid "Restored."
+msgstr ""
+
+#. translators: 1: restored count, 2: remaining count
+#: pro/includes/Ajax.php:947
+msgid "Restored %1$s change(s), %2$s to go..."
 msgstr ""
 
 #. translators: 1: restored count, 2: skipped count
-#: pro/includes/Ajax.php:703
-msgid "%1$d restored, %2$d skipped (data changed since replacement)."
+#: pro/includes/Ajax.php:956
+msgid "Restored %1$s change(s). %2$s could not be restored because those values have changed since the replacement."
 msgstr ""
 
-#: pro/includes/Ajax.php:732
+#. translators: %s: restored count
+#: pro/includes/Ajax.php:964
+msgid "Restored %s change(s). Nothing was skipped."
+msgstr ""
+
+#: pro/includes/Ajax.php:991
 msgid "History entry deleted."
+msgstr ""
+
+#: pro/includes/DB.php:1383
+msgid "That table or column no longer exists, so the value has nowhere to go."
+msgstr ""
+
+#: pro/includes/DB.php:1395
+msgid "That row no longer exists, so the value has nowhere to go."
+msgstr ""
+
+#: pro/includes/DB.php:1404
+msgid "The database refused the write."
+msgstr ""
+
+#: pro/includes/Job.php:131
+msgid "A search/replace is already running. Wait for it to finish, or stop it first."
+msgstr ""
+
+#: pro/includes/Job.php:195
+msgid "Queued. Waiting for the background queue to pick this up..."
+msgstr ""
+
+#: pro/includes/Job.php:214
+msgid "Background queue unavailable — processing in this browser tab."
+msgstr ""
+
+#: pro/includes/Job.php:486
+msgid "Stopped. Changes already written were not rolled back."
+msgstr ""
+
+#: pro/includes/Job.php:524
+msgid "Processing in this browser tab — keep this page open."
+msgstr ""
+
+#: pro/includes/Undo.php:421
+msgid "Value was edited after the replacement"
+msgstr ""
+
+#: pro/includes/Undo.php:422
+msgid "Row no longer exists"
+msgstr ""
+
+#: pro/includes/Undo.php:423
+msgid "Table or column no longer exists"
+msgstr ""
+
+#: pro/includes/Undo.php:424
+msgid "Database refused the write"
+msgstr ""
+
+#: pro/includes/Undo.php:425
+msgid "Restored by hand, over the value that was there"
+msgstr ""
+
+#: pro/includes/Undo.php:426
+msgid "Still holds the replaced value — it was not put back"
+msgstr ""
+
+#: pro/includes/Undo.php:427
+msgid "Undetermined — the value has changed since, so it cannot be told apart from one that was restored and then edited"
+msgstr ""
+
+#: pro/includes/Undo.php:428
+msgid "Undetermined — the row or column no longer exists, so it cannot be told apart from one that was restored and then deleted"
+msgstr ""
+
+#: pro/includes/Undo.php:431
+msgid "Unknown"
 msgstr ""
 
 #. translators: %s: PHP version
