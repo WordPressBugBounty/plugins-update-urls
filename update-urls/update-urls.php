@@ -9,14 +9,14 @@
  * @author    KaizenCoders <hello@kaizencoders.com>
  * @license   GPL-2.0+
  * @package   UpdateURLS
- * @copyright 2020 - 2025 KaizenCoders
+ * @copyright 2020 - 2026 KaizenCoders
  *
  * @wordpress-plugin
  *
  * Plugin Name:       Update URLS
  * Plugin URI:        https://kaizencoders.com/update-urls
  * Description:       Search & Replace Everything - Quick and Easy Way to Find and Replace Text, Links
- * Version:           1.5.2
+ * Version:           1.5.3
  * Requires PHP:      5.6
  * Tested up to:      7.1
  * Author:            KaizenCoders
@@ -37,7 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! defined( 'KC_UU_PLUGIN_VERSION' ) ) {
-	define( 'KC_UU_PLUGIN_VERSION', '1.5.2' );
+	define( 'KC_UU_PLUGIN_VERSION', '1.5.3' );
 }
 
 if ( function_exists( 'kc_uu_fs' ) ) {
