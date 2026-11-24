@@ -5,7 +5,7 @@ Requires at least: 5.0.0
 Author URI: https://www.kaizencoders.com/
 Tested up to: 7.1
 Requires PHP: 5.6
-Stable tag: 1.5.3
+Stable tag: 1.5.4
 License: GPL-3.0+
 License URI: http://www.gnu.org/licenses
 
@@ -130,11 +130,15 @@ Make sure that the plugin is activated and that you are an administrator level u
 
 == Upgrade Notice ==
 
-= 1.5.3 =
+= 1.5.4 =
 
 * New version of Update URLS with new features, improvements and bug fixes. Please update to the latest version to get the best experience. Learn more about the new features and improvements in the [changelog](https://kaizencoders.com/docs/update-urls/changelog).
 
 == Changelog ==
+
+= 1.5.4 - 2026-11-24 =
+
+* Update: UI & UX Improvements for better user experience.
 
 = 1.5.3 - 2026-10-10 =
 

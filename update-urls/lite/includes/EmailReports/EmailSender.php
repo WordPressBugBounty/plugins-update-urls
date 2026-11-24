@@ -41,13 +41,21 @@ class EmailSender {
 		$label     = isset( $data['period_label'] ) ? $data['period_label'] : '';
 		$prefix    = ! empty( $data['is_preview'] ) ? '[Preview] ' : '';
 
-		return sprintf(
+		$subject = sprintf(
 			/* translators: 1: preview prefix (may be empty), 2: period label, 3: site name */
 			__( '%1$sUpdate URLS %2$s Digest — %3$s', 'update-urls' ),
 			$prefix,
 			$label,
 			$site_name
 		);
+
+		// A seasonal offer (e.g. Black Friday) tags the subject while it runs.
+		$campaign = \KaizenCoders\UpdateURLS\Admin\Promotions\PromoBanner::get_email_campaign();
+		if ( $campaign && ! empty( $campaign['email_subject_tag'] ) ) {
+			$subject .= ' · ' . $campaign['email_subject_tag'];
+		}
+
+		return $subject;
 	}
 
 	/**

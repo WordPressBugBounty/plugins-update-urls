@@ -280,6 +280,8 @@ class Plugin {
 			'KaizenCoders\UpdateURLS\Feedback',
 			'KaizenCoders\UpdateURLS\Promo',
 			'KaizenCoders\UpdateURLS\Admin\Promotions\PromoBanner',
+			'KaizenCoders\UpdateURLS\Admin\ReviewPrompt',
+			'KaizenCoders\UpdateURLS\Admin\ReviewRequestEmail',
 			'KaizenCoders\UpdateURLS\Admin\Footer',
 			'KaizenCoders\UpdateURLS\Ajax',
 			'KaizenCoders\UpdateURLS\EmailReports\Init',

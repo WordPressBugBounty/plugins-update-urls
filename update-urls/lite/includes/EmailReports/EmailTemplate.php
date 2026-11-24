@@ -134,8 +134,18 @@ class EmailTemplate {
   <!-- News, Tips & Announcements -->
   <?php self::render_news_items( $data ); ?>
 
+  <?php
+  // A seasonal offer (e.g. Black Friday) replaces the upgrade box while it
+  // runs. Null for PRO users, with promotions switched off, or out of season.
+  $email_campaign = \KaizenCoders\UpdateURLS\Admin\Promotions\PromoBanner::get_email_campaign();
+  ?>
+  <?php if ( $email_campaign ) : ?>
+  <!-- Seasonal offer (free only, while it runs) -->
+  <div class="section">
+    <?php self::render_campaign( $email_campaign ); ?>
+  </div>
+  <?php elseif ( ! $is_pro ) : ?>
   <!-- Upgrade CTA (free only) -->
-  <?php if ( ! $is_pro ) : ?>
   <div class="cta-box">
     <?php self::render_cta(); ?>
   </div>
@@ -298,6 +308,52 @@ class EmailTemplate {
 		}
 
 		echo '</div>';
+	}
+
+	/**
+	 * Seasonal offer block, inline-styled so it survives email clients.
+	 *
+	 * @param array $campaign Prepared campaign from PromoBanner::get_email_campaign().
+	 *
+	 * @since 1.5.4
+	 */
+	private static function render_campaign( $campaign ) {
+		$campaign_url = \UU()->get_website_url(
+			'#pricing',
+			array(
+				'medium'   => 'email-digest',
+				'campaign' => str_replace( '_', '-', $campaign['id'] ),
+				'content'  => 'email-digest-offer',
+			)
+		);
+		?>
+		<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
+			<tr>
+				<td style="background-color:#111827;background:linear-gradient(135deg,#0b0b0f 0%,#1f1b2e 65%,#3b2a0a 100%);border-radius:10px;padding:26px 28px;text-align:center;">
+					<span style="display:inline-block;background:#fbbf24;color:#111827;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:3px 10px;border-radius:10px;">
+						<?php esc_html_e( 'Limited time offer', 'update-urls' ); ?>
+					</span>
+					<p style="font-size:20px;font-weight:700;color:#ffffff;margin:12px 0 6px;line-height:1.3;">
+						<?php echo esc_html( $campaign['headline'] ); ?>
+					</p>
+					<?php if ( ! empty( $campaign['subhead'] ) ) : ?>
+						<p style="font-size:13px;color:rgba(255,255,255,0.85);margin:0 0 16px;line-height:1.6;">
+							<?php echo esc_html( $campaign['subhead'] ); ?>
+						</p>
+					<?php endif; ?>
+					<?php if ( ! empty( $campaign['coupon'] ) ) : ?>
+						<p style="margin:0 0 18px;">
+							<span style="font-size:11px;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:1px;"><?php esc_html_e( 'Coupon code', 'update-urls' ); ?></span><br>
+							<span style="display:inline-block;margin-top:6px;border:2px dashed #fbbf24;color:#fbbf24;font-family:Menlo,Consolas,monospace;font-size:20px;font-weight:700;letter-spacing:2px;padding:8px 18px;border-radius:6px;"><?php echo esc_html( $campaign['coupon'] ); ?></span>
+						</p>
+					<?php endif; ?>
+					<a href="<?php echo esc_url( $campaign_url ); ?>" style="display:inline-block;background:#fbbf24;color:#111827;font-size:14px;font-weight:700;text-decoration:none;padding:12px 26px;border-radius:6px;">
+						<?php echo esc_html( $campaign['cta_text'] ); ?> &rarr;
+					</a>
+				</td>
+			</tr>
+		</table>
+		<?php
 	}
 
 	private static function render_cta() {
